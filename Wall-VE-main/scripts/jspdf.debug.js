@@ -5260,7 +5260,7 @@ Q\n";
 
               tableHeaderCell = this.tableHeaderRow[i];
               if (new_page) {
-                  this.margins.top = margin;
+                  this.margins.top = -50;
                   tableHeaderCell[1] = this.margins && this.margins.top || 0;
                   tempHeaderConf.push(tableHeaderCell);
               }
