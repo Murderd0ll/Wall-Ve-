@@ -5,17 +5,20 @@
 
 
 /*Este mediaquerie es de que tan larga va a ser la tabla*/
-@media (min-width: 1300px) {
+@media (max-width: 1400px) {
     .container {
-    max-width: 94%;
+    max-width: 80%;
+    
+    max-height: 450px;
+    overflow-y: scroll;
     }
     
     .container#reporteAudit{
         margin-left:240px;
-        max-width: 87%!important;
+        max-width: 80%;
         
-        max-height: 800px!important;
-        overflow-y: scroll!important;
+        max-height: 450px;
+        overflow-y: scroll;
     }
     #descripcion{
         width: 500px;
@@ -28,6 +31,31 @@
     }
 }
 
+@media (min-width:1900px){
+    .container {
+        max-width: 89%;
+        
+        max-height: 800px;
+        overflow-y: scroll;
+        }
+    .container#reporteAudit{
+        margin-left:240px;
+        max-width: 87%;
+        
+        max-height: 800px;
+        overflow-y: scroll;
+    }
+    
+    #descripcion{
+        width: 500px;
+    }
+    #usuarioR{
+        width: 100px;
+    }
+    #idR{
+        width: 100px;
+    }
+}
 
 .botonAccion{
     margin-left: 300px;
