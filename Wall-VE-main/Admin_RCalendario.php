@@ -21,7 +21,7 @@
 <body>
     <header>
         <ul class="navig">
-            <li><a>Reportes</a></li>            
+            <li><a>Reportes </a></li>            
         </ul>
     </header>
 
