@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+.botones{
+    margin-right: 40px !important;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+body{
+
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+.navig{
+    background-color:rgba(30, 33, 40,255) ;
+    padding: 15px;
+    box-shadow: 0 0 10px #000;
+    height: 80px;
+}
+.navig li{
+    display: absolute;
+    padding-left: 260px;
+    
+}
+.navig li a{
+    color:  #EFB034 !important;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: "Lexend";
+    font-weight: bold;
+}
+
+.barralateral {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 257px;
+    height: 100vh;
+    padding: 50px 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: rgba(30, 33, 40,255);
+}
+.logo{
+    height: 40px;
+    padding: 16px;
+}
+.menu{
+    height: 88%;
+    width: max-content;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.menu li{
+    padding: 1rem;
+    margin: 5% 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+.menu li:hover, .activo{
+    background: #EFB03495;
+}
+.activo{
+    color: #000;
+}
+.menu a{
+    color: #DEE1E6;
+    font-size: 14px;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    gap: 7px;
+}
+.menu a span{
+    overflow: hidden;
+}
+.menu a i{
+    font-size: 1.2rem;
+}
+.regresar{
+    padding: 1rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    position:sticky;
+    bottom: 0px;
+    left: 15px;
+    background: #0C6A6F;
+    width: 80%;
+}
+.regresar :active{
+    color: #34ef41;
+}
+.main--content{
+    position: relative;
+    background: rgba(30, 33, 40,255);
+    width: 100%;
+    padding:  1rem;
+}
+#subtitulo{
+    font-family: 'Manrope';
+    font-size:1.25rem;
+    padding-top: 3.125rem;
+    padding-left: 12.5rem;
+}
+
+#desde{
+    border-color:gray;
+    border-radius: 8px;
+    margin-top: -20px;
+    margin-left: 300px;
+    padding: 20px;
+    
+    padding-bottom: 200px;
+    width: 20%;
+    box-sizing: content-box;
+
+}
+
+#hasta{
+    border-color:gray;
+    border-radius: 8px;
+    margin-top: -345px;
+    margin-left: 800px;
+    padding: 20px;
+    
+    padding-bottom: 200px;
+    width: 20%;
+    box-sizing: content-box;
+
+}

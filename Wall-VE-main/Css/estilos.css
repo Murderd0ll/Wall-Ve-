@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+body{
+
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+.navig{
+    background-color:rgba(30, 33, 40,255) ;
+    padding: 15px;
+    box-shadow: 0 0 10px #000;
+    height: 80px;
+}
+.navig li{
+    display: absolute;
+    padding-left: 260px;
+    
+}
+.navig li a{
+    color:  #EFB034;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: "Lexend";
+    font-weight: bold;
+}
+
+.barralateral {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 257px;
+    height: 100vh;
+    padding: 50px 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: rgba(30, 33, 40,255);
+}
+.logo{
+    height: 40px;
+    padding: 16px;
+}
+.menu{
+    height: 88%;
+    width: max-content;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.menu li{
+    padding: 1rem;
+    margin: 5% 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+.menu li:hover, .activo{
+    background: #EFB03495;
+}
+.activo{
+    color: #000;
+}
+.menu a{
+    color: #DEE1E6;
+    font-size: 14px;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    gap: 7px;
+}
+.menu a span{
+    overflow: hidden;
+}
+.menu a i{
+    font-size: 1.2rem;
+}
+.regresar{
+    padding: 1rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    position:sticky;
+    bottom: 0px;
+    left: 15px;
+    background: #0C6A6F;
+    width: 80%;
+}
+.regresar :active{
+    color: #34ef41;
+}
+.main--content{
+    position: relative;
+    background: rgba(30, 33, 40,255);
+    width: 100%;
+    padding:  1rem;
+}
+
+/*Pantalla de usuarios */
+
+.Usuarios{
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 16rem;
+    width: max-content;
+    height: 30rem;
+    padding: 50px 1.7rem;
+    color: #000;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: #fff;
+    
+}
+.Usuarios a{
+    text-decoration: none;
+    color: #0C6A6F;
+    font-weight: 800;
+}
+table{
+    position: sticky;
+    border-collapse:separate;
+    border-color:#000;
+    width: 100%;
+}
+th,td{
+    text-align: center;
+    border-radius: 2px;
+    padding:8px;
+}
+tr:nth-child(even){
+    background-color:#fff;
+}
+tr:nth-child(odd){
+    background-color: #fff;
+}
+th{
+    background-color: #DEE1E6;
+    color:#000;
+}
+
+
+input{
+    border: 3px solid #f3f4f6;
+    background-color:#f3f4f6 ;
+    box-sizing: border-box;
+    color: #000;
+    border-radius: 3px;
+}
+
+label{
+    position: relative;
+    color: #424856;
+    text-align: left;
+    
+}
+
+.TAgregar{
+    display: flex;
+    position:relative;
+    
+    left: 14rem;
+    flex-direction: column;
+
+}
+.TEditar{
+    display: flex;
+    position:relative;
+    left: 14rem;
+    flex-direction: column;
+
+}
+.Did{
+
+    display: flex;
+    position: absolute;
+    
+    left: 18rem;
+    flex-direction: column;
+    
+}
+.DNombre{
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 18rem;
+    flex-direction: column;
+    
+}
+.DPAT{
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.DMAT{
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 42rem;
+    flex-direction: column;
+}
+.DFecha{
+    display: flex;
+    position: absolute;
+    top: 6rem;
+    left: 18rem;
+    flex-direction: column;
+}
+.DTel{
+    display: flex;
+    position: absolute;
+    top: 6rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.DgeneroLab{
+    display: flex;
+    position: absolute;
+    top: 6rem;
+    left: 42rem;
+    flex-direction:row;
+}
+.DGeneroInputs{
+    display: flex;
+    position: absolute;
+    
+    top: 7.5rem;
+    left: 42rem;
+    flex-direction:row;
+}
+.Dciudad{
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: 18rem;
+    flex-direction: column;
+}
+.DDire{
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.DEmail{
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: 42rem;
+    flex-direction: column;
+}
+.DTurno{
+    display: flex;
+    position: absolute;
+    top: 14rem;
+    left: 18rem;
+    flex-direction:row;
+}
+.DTurnoInputs{
+    display: flex;
+    position: absolute;
+    top: 15.5rem;
+    left: 18rem;
+    flex-direction:row;
+}
+
+.DRol{
+    display: flex;
+    position: absolute;
+    top: 14rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.DLogin{
+    display: flex;
+    position: absolute;
+    top: 20rem;
+    left: 18rem;
+    flex-direction: column;
+}
+.DContra{
+    display: flex;
+    position: absolute;
+    top: 20rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.BotonCan{
+    display: flex;
+    padding: .5rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;    
+    top: 25rem;
+    left: 50rem;
+    background: #effcfd;
+    
+    width: 7rem;
+}
+.BotonCan a{
+    text-decoration: none;
+    color: #0C6A6F;
+}
+.BotonCan :active{
+    color: #a30000;
+}
+.BotonAgg{
+    
+    display: flex;
+    padding: .5rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;    
+    top: 25rem;
+    left: 59rem;
+    background: #0C6A6F;
+    color: #effcfd;
+    width: 7rem;
+
+}
+.BotonAgg a{
+    text-decoration: none;
+    color: #0C6A6F;
+}
+.BotonAgg :active{
+    color: #00a313;
+}
+
+.botones a{
+    color: #DEE1E6;
+    font-size: 14px;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    gap: 7px;
+}
+.botones a span{
+    overflow: hidden;
+    color: #0C6A6F;
+}
+.botones a i{
+    font-size: 1.2rem;
+    color: #0C6A6F;
+}
+.btnagregar{
+    padding: 1rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    border-width: 4px;
+    border-color: #0C6A6F;
+    transition: all 0.5s ease-in-out;
+    position:absolute;
+    top: 2rem;
+    left: 48rem;
+    background: #effcfd;
+    
+    width: 19%;
+}
+.btnagregar :active{
+    color: #34ef41;
+}
+
+
+
+/* <div class="DNombre">
+    <div class="LabelNombre">
+    <label>Nombre </label>
+    </div>
+    <div class="inputnombre">
+    <input type="text" name ="nombreEmp"><br>
+    </div>
+    #effcfd
+    
+    </div>*/

@@ -1,0 +1,514 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+body{
+    font-family: 'Inter';
+    background: #2E2F2F;
+}
+
+/*!Esto es para el nav*/
+nav{
+    height: 80px;
+    background: #F5F1FEFF;
+}
+.logo{
+    position: absolute;
+    width: 150px;
+    top: 1rem;
+    left: 5%;
+}
+nav ul{
+    float:left;
+    margin-top: 0.313rem;
+    margin-left: 16rem
+}
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+    margin: 10px 15px;
+
+}
+nav ul li a{
+    position: relative;
+    font-size: 18px;
+}
+
+nav #perfil{
+    font-family: 'Manrope';
+    color:#EFB034FF;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+
+
+    float:right;
+    margin-top:29px;
+    margin-right:50px;
+    
+    /*Esto es parae l boton*/
+    background: none;
+    border: none;
+    font-size:16px;
+    cursor:pointer;
+
+}
+#nav-link{
+    display: none;
+}
+
+
+/*!Personalizacion*/
+#nav-link, .drop-down li{
+   
+
+
+    list-style: none;
+    height: 100%;
+    float:right;
+    margin-top: -10px;
+    margin-right:20px;
+    color:#0c6a6f;
+    font-family: 'Manrope';
+    
+}
+
+#nav-link .drop-down li{
+    text-align: center;
+    width: 100%;
+    background: white;
+    border-radius: 0.5rem;
+}
+
+
+
+
+
+
+
+label #btn,
+label #cancel{
+    color:black;
+    font-size:30px;
+    float:right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (min-width: 1300px) {
+    
+    .section.content.sau{
+        min-height: 100%;
+        margin-bottom:-100px;
+    }
+    /*si no poenrlo con el sue*/
+    section.content.sau:after{
+        content:"";
+        display: block;
+
+    }
+    section.content.sau:after, footer{
+        height: 100px;
+    }
+    body{
+        
+        /*
+        !Esto es del footer
+        background-color: #171A1F;*/
+    }
+    
+
+    
+    nav .perfil{
+        font-family: 'Manrope';
+        color:#EFB034FF;
+        text-transform: uppercase;
+        font-weight: bold;
+        float:right;
+        margin-top:29px;
+        margin-right:50px;
+    }
+    
+}
+
+
+
+
+@media (max-width: 1100px) {
+    #perfil{
+        display: none;
+    }
+    
+    nav .perfil{
+        display:none;
+    }
+    
+}
+
+
+
+/* ? Cuando llegue a esta resolución, va a actuar asi: */
+@media (max-width:1006px) {
+    
+    label #btn{
+        display:block;
+    }
+    ul{
+        position:fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2E2F2FFF;
+        top:80px;
+        left:-100%;
+        text-align: center;
+        /*transition: all .5s;*/
+}
+    nav ul{
+        margin-left: 0
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 17px;
+        color:#FEFEFE;
+        font-family: 'Inter';
+    }
+    
+    
+nav .perfil{
+    display:none;
+}
+
+    /* ? Esto controla lo que hace el botón hamburguesa */
+    #check:checked ~ ul {
+        left:0;
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+
+}
+
+
+/*!Aqui se acabó lo del nav , empieza el body y footer*/
+
+header{
+    display: flex;/*
+    justify-content: center;
+    align-items: center;*/
+  }
+
+  .head{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+   /* height: 6rem;*/
+    background: #F5F1FEFF;
+  }
+ header .title{
+    
+    font-size: 4rem;
+ }
+ header p{
+    margin-top:1rem;
+    font-size: 1.14rem;
+    width: 31rem;
+    text-wrap:wrap;
+ }
+
+  span{
+    color: #EFB034FF;
+    text-transform: uppercase;
+  }
+
+.content{
+    padding: 30px;
+    background:#2E2F2F;
+    color:#E3E3E3
+}
+
+.sau .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+
+/*? Estas son las cajas de cada cosa*/
+.box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    color: #171A1FFF;
+}
+.box-container .box{
+    height: 13.5rem;
+    width: 13.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin:1rem
+}
+.box img{
+    width: 5.5rem;
+    
+}
+.box p,h3{
+    
+    font-family: 'Lexend';
+    font-weight: bold;
+}
+.box p{
+    color:#9095A1;
+}
+
+/*! Esto de pregunta podría ser modificado para que quede más acorde como el original*/
+.fa-question-circle-o{
+    margin-left: 170px;
+    margin-top: 10px;
+    
+}
+#preguntaVentas{
+
+    color: #6D31EDFF;
+}
+#preguntaPrecios{
+    color: #62CD14FF;
+}
+#preguntaUsuarios{
+    color: #15ABFFFF;
+}
+#preguntaReportes{
+    color: #7D6600FF;
+}
+#preguntaBackups{
+    color: #FF56A5FF;
+}
+
+
+
+#cajaVentas{
+    background: #F5F1FEFF;
+}
+.ventas-box {
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent content from overflowing the box */
+  }
+  
+  .ventas-box .fa-question-circle-o {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ventas-box .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+.ventas-box:hover::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay element absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the width of the box */
+    height: 100%; /* Match the height of the box */
+    background-color: rgba(216, 199, 244, 0.3);/* Semi-transparent overlay color */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+
+
+
+#cajaPrecios{
+    background: #CCF7AE;
+}
+.precios-box {
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent content from overflowing the box */
+  }
+  
+  .precios-box .fa-question-circle-o {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .precios-box .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+.precios-box:hover::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay element absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the width of the box */
+    height: 100%; /* Match the height of the box */
+    background-color: rgba(204, 247, 174, 0.3); /* Semi-transparent overlay color */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+
+#cajaUsuarios{
+    background: #F0F9FF;
+}
+.usuarios-box {
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent content from overflowing the box */
+  }
+  .usuarios-box .fa-question-circle-o {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .usuarios-box .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+.usuarios-box:hover::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay element absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the width of the box */
+    height: 100%; /* Match the height of the box */
+    background-color: rgba(192, 249, 255, 0.3);/* Semi-transparent overlay color */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+
+
+
+#cajaReportes{
+    background: #FFFAE1;
+}
+.reportes-box {
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent content from overflowing the box */
+  }
+  .reportes-box .fa-question-circle-o {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .reportes-box .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+.reportes-box:hover::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay element absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the width of the box */
+    height: 100%; /* Match the height of the box */
+    background-color: rgba(255, 250, 225, 0.3);/* Semi-transparent overlay color */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+
+#cajaBackup{
+    background: #FFE5F8;
+}
+.backup-box {
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent content from overflowing the box */
+  }
+  
+  .backup-box .fa-question-circle-o {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .backup-box .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+
+.backup-box:hover::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay element absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the width of the box */
+    height: 100%; /* Match the height of the box */
+    background-color: rgba(255, 229, 248, 0.3); /* Semi-transparent overlay color */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+        
+  }
+
+
+
+
+
+
+/*Aqui empieza el footer*/
+
+
+
+  
+
+  footer{
+    padding:40px 0;
+    background: #171A1F;
+    height: 100%;
+    
+    color: #F5F1FEFF;
+  }
+  footer p{
+    text-align: center;
+  }
+  footer .social{
+    text-align: right;
+    padding-right: 1.5rem;
+    color: #DEE1E6FF;
+    font-family: epilogue;
+    font-size:1rem
+  }
+footer img{
+    height: 1.5rem;
+    padding-left: 1rem;
+  }
+  .logoFinal{
+
+  }
+  

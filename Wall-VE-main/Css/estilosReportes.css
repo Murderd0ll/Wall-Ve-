@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+
+
+
+/*Este mediaquerie es de que tan larga va a ser la tabla*/
+@media (min-width: 1300px) {
+    .container {
+    max-width: 94%;
+}
+    .container#reporteAudit{
+        margin-left:240px;
+        max-width: 90%!important;
+    }
+    #descripcion{
+        width: 500px;
+    }
+    #usuarioR{
+        width: 100px;
+    }
+    #idR{
+        width: 100px;
+    }
+}
+
+
+.botonAccion{
+    margin-left: 300px;
+}
+.botones{
+    margin-right: 130px;
+    padding: 16px;
+    background-color: #0C6A6F;
+    color: white;
+    font-family: 'Manrope';
+}
+.botones i{
+    padding-right: 10px;
+}
+
+#estacion{
+    width: 0px !important;
+}
+#fecha{
+    
+    width: 150px;
+}
+#watts{
+    width: 150px;
+}
+.container{
+    margin-left:200px;
+}
+
+
+@media print {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #dddddd;
+    }
+}
+
+
+
+
+table { overflow: visible !important; }
+thead { display: table-header-group }
+tfoot { display: table-row-group }
+tr { page-break-inside: avoid }

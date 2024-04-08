@@ -1,0 +1,36 @@
+CREATE TRIGGER `deleteProd` AFTER DELETE ON `tproducto`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('DELETE', 'Se realizó una consulta DELETE en la tabla tProducto', USER(), NOW())
+
+CREATE TRIGGER `insertProd` AFTER INSERT ON `tproducto`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('INSERT', 'Se realizó una consulta INSERT en la tabla tProducto', USER(), NOW())
+
+CREATE TRIGGER `updateProd` AFTER UPDATE ON `tproducto`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('UPDATE', 'Se realizó una consulta UPDATE en la tabla tProducto', USER(), NOW())
+
+CREATE TRIGGER `updateUsuario` AFTER UPDATE ON `tusuario`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('UPDATE', 'Se realizó una consulta UPDATE en la tabla tUsuario', USER(), NOW())
+
+CREATE TRIGGER `insertUsuario` AFTER INSERT ON `tusuario`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('INSERT', 'Se realizó una consulta INSERT en la tabla tUsuario', USER(), NOW())
+
+CREATE TRIGGER `deleteUsuario` AFTER DELETE ON `tusuario`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('DELETE', 'Se realizó una consulta DELETE en la tabla tUsuario', USER(), NOW())
+
+
+CREATE TRIGGER `deleteVenta` AFTER DELETE ON `tventa`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('DELETE', 'Se realizó una consulta DELETE en la tabla tVenta', USER(), NOW())
+
+CREATE TRIGGER `updateVenta` AFTER UPDATE ON `tventa`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('UPDATE', 'Se realizó una consulta UPDATE en la tabla tVenta', USER(), NOW())
+
+CREATE TRIGGER `insertVenta` AFTER INSERT ON `tventa`
+ FOR EACH ROW INSERT INTO tauditorias (tipoProceso, descAudit, empleado,fechaAudit)
+  VALUES ('INSERT', 'Se realizó una consulta INSERT en la tabla tVenta', USER(), NOW())

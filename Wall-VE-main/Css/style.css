@@ -1,0 +1,120 @@
+
+
+/*@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+/* Divide la pantalla a la mitad */
+.division {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Controla la parte izquierda */
+  .left {
+    left: 0;
+    background-color: #2E2F2F;
+  }
+  
+  /* Controla la parte derecha */
+  .right {
+    right: 0;
+    background-color: #2E2F2F;
+  }
+  
+  /*Esto centra el contenido tanto vertical como horizontalmente */
+  .centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Aqui se puede estilizar la imagen */
+  .centered img {
+    
+  }
+
+
+
+.logo{
+    padding-left: 2rem;
+    padding-top: 2rem;
+    max-width: 106px;
+    max-height: 36px;
+}
+
+  h1{
+    color:#E3E3E3;
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+
+    /*Esto es para centrarlo*/
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+  }
+#nombrelbl{
+    padding-right: 27rem;
+    color:#E3E3E3FF;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+#passwordlbl{
+    padding-right: 25.2rem;
+    color:#E3E3E3FF;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+/*Esto es el espacio entre inicio sesion- usuario y contraseña*/
+.tbox{
+    padding-top: 0.3rem;
+}
+/*Esto es el el tamaño de la cajita donde ingresas datos*/
+.tbox input{
+    
+    /*width: 502px;*/
+    width: 31.375rem;
+    height: 4.25rem;
+    outline: none;
+    border: none;
+    border-radius: 0.6rem;
+    padding-left: 5px;   
+}
+::placeholder{
+    padding-left: 0.4rem;
+    color: #BCC1CA;
+}
+
+.btn{
+    margin-top: 3rem;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #0C6A6F;
+    color: #FFFFFF;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+}
+#errorMsj{
+  color:#C12126FF;
+  background: #F5C4C6FF;
+  font-family: "Manrope";
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 150px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
