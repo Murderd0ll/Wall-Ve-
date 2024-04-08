@@ -116,14 +116,14 @@
                     </a>
                 </li>
 
-                <li class="activo">
+                <li >
                     <a href="Empleado_Ventas.html">
                         <i class="fa-solid fa-dollar-sign"></i>
                         <span>Ventas</span>
                     </a>
                 </li>            
                 
-                <li>
+                <li class="activo">
                     <a href="Empleado_Reportes.html">
                         <i class="fa-regular fa-file-lines"></i>
                         <span>Reportes</span>
