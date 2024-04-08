@@ -57,7 +57,9 @@
             $id = $_SESSION['idloginEmp'];
             // Ahora $idloginEmp está disponible para su uso en este script
         } else {
-            echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
+
+            header('location:Login.php');
+            //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
         }
 
 
