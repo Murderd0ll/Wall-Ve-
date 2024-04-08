@@ -8,10 +8,14 @@
 @media (min-width: 1300px) {
     .container {
     max-width: 94%;
-}
+    }
+    
     .container#reporteAudit{
         margin-left:240px;
-        max-width: 90%!important;
+        max-width: 87%!important;
+        
+        max-height: 800px!important;
+        overflow-y: scroll!important;
     }
     #descripcion{
         width: 500px;
@@ -82,3 +86,5 @@ table { overflow: visible !important; }
 thead { display: table-header-group }
 tfoot { display: table-row-group }
 tr { page-break-inside: avoid }
+.container{
+}
