@@ -13,6 +13,9 @@ body{
     background: #2E2F2F;
 }
 
+
+
+
 /*!Esto es para el nav*/
 nav{
     height: 80px;
@@ -73,7 +76,7 @@ nav #perfil{
     height: 100%;
     float:right;
     margin-top: -10px;
-    margin-right:20px;
+    margin-right:50px;
     color:#0c6a6f;
     font-family: 'Manrope';
     

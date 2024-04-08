@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
+    
+    <link rel="stylesheet" href="./Css/drop-down.css" />
     <link rel="stylesheet" href="./Css/menu.css" />
     
 </head>
@@ -84,13 +86,13 @@
             <li id="nav-link">
             <ul class="drop-down">
                 <li>
-                    <a href="#">
+                    <a href="#" id="aPerfil">
                         <i class="fa-regular fa-id-card"> Perfil</i>
                         
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="logout.php" id="aLogout">
                     <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
                         
                     </a>
@@ -243,20 +245,20 @@
     <script>
         function mostrarPersonalizacion(){
             document.getElementById("perfil").addEventListener("click", function() {
-    var element = document.getElementById("nav-link");
-    if (element.style.display === "none") {
-        element.style.display = "inline-block"; // Mostrar el elemento si está oculto
-        
-        var boton = document.getElementById("perfil");
-        
-        boton.textContent= `${nombreUsuario} ▲`
-        
-    } else {
-        element.style.display = "none"; // Ocultar el elemento si está visible
-        var boton = document.getElementById("perfil");
-        boton.textContent= `${nombreUsuario} ▼`
+        var element = document.getElementById("nav-link");
+        if (element.style.display === "none") {
+            element.style.display = "inline-block"; // Mostrar el elemento si está oculto
+            
+            var boton = document.getElementById("perfil");
+            
+            boton.textContent= `${nombreUsuario} ▲`
+            
+        } else {
+            element.style.display = "none"; // Ocultar el elemento si está visible
+            var boton = document.getElementById("perfil");
+            boton.textContent= `${nombreUsuario} ▼`
 
-    }
+        }
 });
     }
     </script>
