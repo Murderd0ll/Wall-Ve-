@@ -117,12 +117,18 @@ if(empty($_SESSION['user'])){
             $sql="insert into tusuario(nombreEmp,apellidoPEmp,apellidoMEmp,fechaNacEmp,telEmp,generoEmp,ciudadEmp,direccionEmp,emailEmp,
             turnoEmp,rolEmp,idloginEmp,passEmp, fIngreso) values ('".$nombreEmp."','".$apellidoPEmp."','".$apellidoMEmp."','".$fechaNacEmp."'
             ,'".$telEmp."','".$generoEmp."','".$ciudadEmp."','".$direccionEmp."','".$emailEmp."','".$turnoEmp."','".$rolEmp."'
-            ,'".$idloginEmp."','".$passEmp."',NOW())";
+            ,'".$idloginEmp."','".$passEmp."',NOW());
+            
+            CREATE USER '".$idloginEmp."'@'localhost' IDENTIFIED BY '".$passEmp."';
+            GRANT ALL PRIVILEGES ON *.* TO '".$idloginEmp."'@'localhost' WITH GRANT OPTION;
+            ";
 
-            $resultado = mysqli_query($conexion, $sql);
+            $resultado = mysqli_multi_query($conexion, $sql);
 
-            if($resultado){
-                echo" <script language ='JavaScript'>
+            
+
+         if($resultado){
+              echo" <script language ='JavaScript'>
                 alert('Se ha agregado un nuevo usuario a la BDD.');
                 location.assign('Admin_Usuarios.php');
                 </script>";
@@ -134,6 +140,9 @@ if(empty($_SESSION['user'])){
                 </script>";
 
             }
+
+           
+
             mysqli_close($conexion);
         }
         else{
