@@ -14,7 +14,7 @@
 
    
 
-<link rel="stylesheet" href="css/estilos.css"/>  
+<link rel="stylesheet" href="css/estilosAntiguo.css"/>  
 
     <title>Gestión de reportes | Wall-VE</title>
 </head>
