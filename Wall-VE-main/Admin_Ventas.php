@@ -6,12 +6,12 @@
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="css/estilos.css"/>
-    <title>Venta de energía | Wall-VE</title>
+    <title>Venta de energía | Wall-VE </title>
 </head>
 <body>
     <header>
         <ul class="navig">
-            <li><a>Ventas Electrolinera</a></li>            
+            <li><a>Ventaas Electrolinera</a></li>            
         </ul>
     </header>
    
