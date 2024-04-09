@@ -228,7 +228,7 @@ if(empty($_SESSION['user'])){
 
     <div class="DContra">
         <label>Contraseña </label>
-        <input type="text" name ="passEmp" placeholder="Contraseña"><br>
+        <input type="password" name ="passEmp" placeholder="Contraseña"><br>
     </div>
 
     

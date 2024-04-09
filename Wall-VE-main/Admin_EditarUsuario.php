@@ -241,7 +241,7 @@ include("connection/conexion.php");
 
     <div class="DContra">
     <label>Contraseña </label>
-    <input type="text" name="passEmp" value="<?php echo $passEmp; ?>"> <br>
+    <input type="password" name="passEmp" value="<?php echo $passEmp; ?>"> <br>
     </div>
 
     <input type="hidden" name ="idEmp" value ="<?php echo $idEmp; ?>">
