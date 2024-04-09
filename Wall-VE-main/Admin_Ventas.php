@@ -16,7 +16,7 @@
     </header>
    
     <div id="subtitulo">
-        <p>Seleccione una oopción para comenzar.</p>
+        <p>Seleccione una opción para comenzar.</p>
     </div>
 
 
