@@ -148,6 +148,7 @@ if (isset($_GET['busqueda']))
 <br>
         </form>
 
+        <div class="tabla-wrapper">
   <table>
                
             <thead>    
@@ -211,6 +212,8 @@ while($fila=mysqli_fetch_array($dato)){
 
 </tbody>
 </table>
+
+</div>
 
 </div>
     

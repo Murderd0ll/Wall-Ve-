@@ -10,3 +10,13 @@ button#btnBuscarr{
     padding: 10px 15px !important;
     cursor:pointer;
 }
+table{
+    max-height: 50px!important;
+}
+
+.tabla-wrapper{
+    width: 100%; 
+    max-height: 300px;
+    overflow-y: scroll; 
+    height: calc(100vh - 200px); /* Adjust height based on viewport and other elements */
+}
