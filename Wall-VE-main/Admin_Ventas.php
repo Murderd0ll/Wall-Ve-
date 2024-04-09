@@ -11,7 +11,7 @@
 <body>
     <header>
         <ul class="navig">
-            <li><a>Ventaas Electrolinera</a></li>            
+            <li><a>Ventas Electrolinera</a></li>            
         </ul>
     </header>
    
