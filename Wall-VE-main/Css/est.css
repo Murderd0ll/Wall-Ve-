@@ -1,0 +1,12 @@
+
+#act{
+    border: none !important;
+    color:white!important;
+    background: none!important;
+}
+button#btnBuscarr{
+    margin-left:20px;
+    margin-top:-70px;
+    padding: 10px 15px !important;
+    cursor:pointer;
+}

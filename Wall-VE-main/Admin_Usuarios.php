@@ -21,6 +21,8 @@ if(empty($_SESSION['user'])){
 
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   
+   <link rel="stylesheet" href="css/est.css"/>
    <link rel="stylesheet" href="css/estilos.css"/>
     <title>Gestión de Usuarios | Wall-VE</title>
 </head>
@@ -118,7 +120,7 @@ if(empty($_SESSION['user'])){
         <form action="" method="GET">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input class="form-control me-2" type="search" placeholder="Buscar" name="busqueda">
-        <button class="btnbuscar" type="submit" name="enviar"> <b>Buscar </b> </button> 
+        <button class="btnbuscar" type="submit" name="enviar" id="btnBuscarr"> <b>Buscar </b> </button> 
         </form>
 </div>
         </div>
