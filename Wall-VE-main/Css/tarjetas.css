@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+/*!Acomodar mediaqueries de esto*/
+@media (max-width:1400px) {
+    
+}
+
+
+
+#completa.card-text{
+    text-transform: capitalize;
+    padding:50px;
+}
+.card-text{
+    font-size: 48px;
+    font-weight: bold;
+    display:table;
+    
+
+}
+.pWatt{
+    font-size: 14px;
+    color:#030303FF;
+    font-weight: normal;
+    margin-bottom: 20px;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+
+.card-body.border{
+    max-width: 800px;
+    height: auto;
+    margin-left:20%;
+    padding: 90px;
+    font-family: 'Lexend';
+
+    background-color: #F8F9FA;
+}
+.card-title{
+   text-transform: uppercase;
+   text-align: center;
+   
+}
+.card-body.border.border-primary {
+    border-color: #0C6A6FFF!important;
+    border-width: 2px!important;
+    border-style:solid!important;
+    border-radius: 8px!important;
+}
+#completa{
+    padding-top:6px;
+    padding-bottom: 95px;
+}
+#cCompleta{ 
+    margin-top:96px;
+    margin-bottom: 106px;
+    
+}
+.btn.btn-primary{
+    background-color:white;
+    color:#0C6A6FFF;
+    border-color: #0C6A6FFF!important;
+    border-width: 2px!important;
+    border-radius: 8px!important;
+}

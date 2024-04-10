@@ -39,7 +39,7 @@
 
             <ul>
                 <li><a href="./adminMenu.php"  >Home</a></li>
-                <li><a href="./Admin_Ventas.html"  >Ventas</a></li>
+                <li><a href="./Admin_Ventas.php"  >Ventas</a></li>
                 <li><a href="./Admin_Precios.html"  >Precios</a></li>
                 <li><a href="./Admin_Usuarios.php"  >Usuarios</a></li>
                 <li><a href="./Admin_Reportes.html"  >Reportes</a></li>
@@ -147,7 +147,7 @@
 
 
                 <!--? Caja ventas -->
-                    <a class="box ventas-box" id="cajaVentas" href="./Admin_Ventas.html">
+                    <a class="box ventas-box" id="cajaVentas" href="./Admin_Ventas.php">
                         
                         
                       
