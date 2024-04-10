@@ -87,29 +87,29 @@ if(empty($_SESSION['user'])){
 
                 <li >
                     <a href="Empleado_Ventas.html">
-                        <i class="fa-solid fa-dollar-sign"></i>
-                        <span>Ventas</span>
+                        <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
+                        <span title="Ir a la sección de ventas.">Ventas </span>
                     </a>
                 </li>            
                 
                 <li class="activo">
                     <a href="Empleado_Reportes.html">
-                        <i class="fa-regular fa-file-lines"></i>
-                        <span>Reportes</span>
+                        <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets."></i>
+                        <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets.">Reportes</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="Empleado_Perfil.html">
-                        <i class="fa-regular fa-id-card"></i>
-                        <span>Perfil</span>
+                        <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información."></i>
+                        <span title="Ir a su perfil. Encontrará lo necesario para modificar su información.">Perfil</span>
                     </a>
                 </li>
 
                 <button class="regresar">
                     <a href="./usuarioMenu.php">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        <span>Regresar</span>
+                        <i class="fa-solid fa-arrow-left" title="Regresar al menú principal."></i>
+                        <span title="Regresar al menú principal.">Regresar</span>
                     </a>
 
             </ul>
