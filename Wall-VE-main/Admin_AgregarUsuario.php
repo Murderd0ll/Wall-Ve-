@@ -242,18 +242,23 @@ if(empty($_SESSION['user'])){
             <label>Contraseña </label>
             <div class="DContra">
                 <input type="password" name="passEmp" placeholder="Contraseña" id="password">
-                <img src="img/eyeOpen.png" id="eyeicon">                
+                <img src="img/eyeOpen.png" id="eyeicon" > 
+               
             </div>
 
             <script>
-                let eyeicon = document.getElementsById("eyeicon");
+                    
+
+
+
+                let eyeicon = document.getElementById("eyeicon");
                 let password = document.getElementById("password");
                 
                 eyeicon.onclick = function(){
                     if(password.type == "password"){
-                        password.type == "text";
+                        password.type = "text";
                     }else{
-                        password.type == "password";
+                        password.type = "password";
                     }
                 }
             </script>

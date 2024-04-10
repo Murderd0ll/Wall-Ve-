@@ -3,6 +3,11 @@
 /*!Acomodar mediaqueries de esto*/
 @media (max-width:1400px) {
     
+    .card-body.border.border-primary{
+        max-width: 500px!important;
+    }
+
+
 }
 
 
