@@ -306,6 +306,12 @@ label{
     top: 20rem;
     left: 30rem;
     flex-direction: column;
+    align-items: center;
+}
+
+.DContra img{
+    width: 30px;
+    cursor: pointer;
 }
 .BotonCan{
     display: flex;
@@ -377,7 +383,6 @@ label{
     top: 2rem;
     left: 48rem;
     background: #effcfd;
-    
     width: 19%;
 }
 .btnagregar :active{

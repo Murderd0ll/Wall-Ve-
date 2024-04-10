@@ -103,6 +103,7 @@ if(empty($_SESSION['user'])){
                     <i class="fa-solid fa-arrow-left" title="Regresar al menú principal."></i>
                     <span title="Regresar al menú principal.">Regresar</span>
                 </a>
+            </button>
         </ul>
     </div>
 
@@ -124,13 +125,13 @@ if(empty($_SESSION['user'])){
             </a>
         </button>
         <div class="buscarBtn">
-<form class="d-flex">
-        <form action="" method="GET">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input class="form-control me-2" type="search" placeholder="Buscar" name="busqueda">
-        <button class="btnbuscar" type="submit" name="enviar" id="btnBuscarr"> <b>Buscar </b> </button> 
+        <form class="d-flex">
+         <form action="" method="GET">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="form-control me-2" type="search" placeholder="Buscar" name="busqueda">
+            <button class="btnbuscar" type="submit" name="enviar" id="btnBuscarr"> <b>Buscar </b> </button> 
         </form>
-</div>
+        </div>
         </div>
 
 

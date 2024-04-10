@@ -91,6 +91,8 @@ include("connection/conexion.php");
                         <i class="fa-solid fa-arrow-left" title="Regresar al menú principal."></i>
                         <span title="Regresar al menú principal.">Regresar</span>
                     </a>
+            </button>
+
             </ul>
     </div>
     <?php

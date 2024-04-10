@@ -98,6 +98,8 @@ if(empty($_SESSION['user'])){
                     <i class="fa-solid fa-arrow-left" title="Regresar al menú principal."></i>
                     <span title="Regresar al menú principal.">Regresar</span>
                 </a>
+            </button>
+
         </ul>
     </div>
 
@@ -237,10 +239,24 @@ if(empty($_SESSION['user'])){
             </div>
 
 
+            <label>Contraseña </label>
             <div class="DContra">
-                <label>Contraseña </label>
-                <input type="password" name="passEmp" placeholder="Contraseña"><br>
+                <input type="password" name="passEmp" placeholder="Contraseña" id="password">
+                <img src="img/eyeOpen.png" id="eyeicon">                
             </div>
+
+            <script>
+                let eyeicon = document.getElementsById("eyeicon");
+                let password = document.getElementById("password");
+                
+                eyeicon.onclick = function(){
+                    if(password.type == "password"){
+                        password.type == "text";
+                    }else{
+                        password.type == "password";
+                    }
+                }
+            </script>
 
 
             <div class="BotonCan">
@@ -251,15 +267,13 @@ if(empty($_SESSION['user'])){
             <div class="BotonAgg">
                 <input type="submit" id="botAgg" name="agregarUsuario" value="Crear">
             </div>
-
-
         </form>
     </div>
-
 
     <?php
             }
     ?>
+
 
 </body>
 

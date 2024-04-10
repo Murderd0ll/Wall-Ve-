@@ -78,8 +78,7 @@
                     <i class="fa-solid fa-download"
                         title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
 
-                    <span
-                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
+                    <span title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
                         de seguridad</span>
                 </a>
             </li>
@@ -98,6 +97,8 @@
                     <i class="fa-solid fa-arrow-left" title="Regresar al menú principal."></i>
                     <span title="Regresar al menú principal.">Regresar</span>
                 </a>
+            </button>
+
         </ul>
     </div>
 
