@@ -220,6 +220,12 @@ if(empty($_SESSION['user'])){
 
             <div class="DTurno">
                 <label>Turno </label>
+                <input list="turnos">
+
+                <datalist id="turnos">
+                    <option value="Matutino">
+                    <option value="Vespertino">
+                </datalist>
             </div>
 
             <div class="DTurnoInputs">
@@ -239,23 +245,24 @@ if(empty($_SESSION['user'])){
             </div>
 
 
-            <label>Contraseña </label>
+
             <div class="DContra">
+                <label>Contraseña </label>
                 <input type="password" name="passEmp" placeholder="Contraseña" id="password">
-                <img src="img/eyeOpen.png" id="eyeicon">                
+                <img src="img/eyeOpen.png" id="eyeicon">
             </div>
 
             <script>
-                let eyeicon = document.getElementsById("eyeicon");
-                let password = document.getElementById("password");
-                
-                eyeicon.onclick = function(){
-                    if(password.type == "password"){
-                        password.type == "text";
-                    }else{
-                        password.type == "password";
-                    }
+            let eyeicon = document.getElementById("eyeicon");
+            let password = document.getElementById("password");
+
+            eyeicon.onclick = function() {
+                if (password.type == "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
                 }
+            }
             </script>
 
 
