@@ -20,3 +20,8 @@ table{
     overflow-y: scroll; 
     height: calc(100vh - 200px); /* Adjust height based on viewport and other elements */
 }
+/*Login.php OJITO DEL PASSWORD*/
+.tbox img{
+    width: 20px;
+    cursor: pointer;
+}

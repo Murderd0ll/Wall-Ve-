@@ -175,6 +175,7 @@ label{
     
 }
 
+/*Inputs de Admin_EditarUsuario.php y Admin_AgregarUsuario.php*/
 .TAgregar{
     display: flex;
     position:relative;
@@ -240,15 +241,7 @@ label{
     position: absolute;
     top: 6rem;
     left: 42rem;
-    flex-direction:row;
-}
-.DGeneroInputs{
-    display: flex;
-    position: absolute;
-    
-    top: 7.5rem;
-    left: 42rem;
-    flex-direction:row;
+    flex-direction:column;
 }
 .Dciudad{
     display: flex;
@@ -276,16 +269,8 @@ label{
     position: absolute;
     top: 14rem;
     left: 18rem;
-    flex-direction:row;
+    flex-direction:column;
 }
-.DTurnoInputs{
-    display: flex;
-    position: absolute;
-    top: 15.5rem;
-    left: 18rem;
-    flex-direction:row;
-}
-
 .DRol{
     display: flex;
     position: absolute;
@@ -306,14 +291,81 @@ label{
     top: 20rem;
     left: 30rem;
     flex-direction: column;
+}
+.DContraINPUT{
+    display: flex;
     align-items: center;
 }
-
 .DContra img{
-    width: 30px;
+    width: 20px;
     cursor: pointer;
 }
+
+/*Botones de Cancelar y Agregar de Admin_AgregarUsuario*/
+.botones a span{
+    overflow: hidden;
+    color: #0C6A6F;
+}
+.botones a i{
+    font-size: 1.2rem;
+    color: #0C6A6F;
+}
+.botones .BotonCan a{
+    right: 4rem;
+    align-items:  center;
+
+}
+
 .BotonCan{
+    display: flex;
+    padding: .5rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;    
+    top: 25rem;
+    left: 50rem;
+    background: #effcfd;
+    
+    width: 6rem;
+}
+.BotonCan a{
+    text-decoration: none;
+}
+.BotonCan :active{
+    color: #a30000;
+}
+.BotonAgg{
+    display: flex;
+    padding: .5rem;
+    margin: 0% 0;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;    
+    top: 25rem;
+    left: 58rem;
+    background: #0C6A6F;
+    color: #0a0c0c;
+    width: 6rem;
+}.BotonAgg a span{
+    text-decoration: none;
+    color:#effcfd;
+    
+}.BotonAgg a i{
+    color: #effcfd;
+    
+}
+button.BotonAgg a :active{
+    color: #00a313;
+}
+button.BotonAgg i :active{
+    color: #00a313;
+}
+
+
+/*Botones de regresar y actualizar*/
+
+.BotonRegresar{
     display: flex;
     padding: .5rem;
     margin: 0% 0;
@@ -326,15 +378,14 @@ label{
     
     width: 7rem;
 }
-.BotonCan a{
+.BotonRegresar a{
     text-decoration: none;
     color: #0C6A6F;
 }
-.BotonCan :active{
+.BotonRegresar :active{
     color: #a30000;
 }
-.BotonAgg{
-    
+.BotonActualizar{
     display: flex;
     padding: .5rem;
     margin: 0% 0;
@@ -344,33 +395,31 @@ label{
     top: 25rem;
     left: 59rem;
     background: #0C6A6F;
-    color: #effcfd;
+    color: #050808;
     width: 7rem;
-
 }
-.BotonAgg a{
-    text-decoration: none;
-    color: #0C6A6F;
+.BotonActualizar a span{
+    color: #effcfd;
+    cursor: pointer;
 }
-.BotonAgg :active{
+.BotonActualizar a i{
+    color: #effcfd;
+    cursor: pointer;
+}
+button.BotonActualizar a :active{
+    color: #00a313;
+}
+button.BotonActualizar i :active{
     color: #00a313;
 }
 
+/*Botones de Admin_Usuarios.php ("Agregar nuevo usuario" y "Buscar")*/
 .botones a{
-    color: #DEE1E6;
     font-size: 14px;
     text-decoration: none;
     display:flex;
     align-items: center;
     gap: 7px;
-}
-.botones a span{
-    overflow: hidden;
-    color: #0C6A6F;
-}
-.botones a i{
-    font-size: 1.2rem;
-    color: #0C6A6F;
 }
 .btnagregar{
     padding: 1rem;
@@ -388,6 +437,7 @@ label{
 .btnagregar :active{
     color: #34ef41;
 }
+
 
 
 /* <div class="DNombre">

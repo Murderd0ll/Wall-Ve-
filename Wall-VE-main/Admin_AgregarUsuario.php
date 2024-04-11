@@ -1,8 +1,8 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
-if(empty($_SESSION['user'])){
+if (empty($_SESSION['user'])) {
     header('location:Login.php');
 }
 ?>
@@ -57,39 +57,31 @@ if(empty($_SESSION['user'])){
 
             <li class="activo">
                 <a href="Admin_Usuarios.php">
-                    <i class="fa-solid fa-user-group"
-                        title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios."></i>
-                    <span
-                        title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios.">Usuarios</span>
+                    <i class="fa-solid fa-user-group" title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios."></i>
+                    <span title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios.">Usuarios</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_Reportes.html">
-                    <i class="fa-regular fa-file-lines"
-                        title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
-                    <span
-                        title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias.">Reportes</span>
+                    <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
+                    <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias.">Reportes</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_CopiasSeg.html">
-                    <i class="fa-solid fa-download"
-                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
+                    <i class="fa-solid fa-download" title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
 
-                    <span
-                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
+                    <span title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
                         de seguridad</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_Perfil.html">
-                    <i class="fa-regular fa-id-card"
-                        title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
-                    <span
-                        title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
+                    <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
+                    <span title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
                 </a>
             </li>
 
@@ -103,184 +95,189 @@ if(empty($_SESSION['user'])){
         </ul>
     </div>
 
-    <?php 
-        if(isset($_POST['agregarUsuario'])){
-            
-            $generoEmp = "";
-            $nombreEmp = $_POST['nombreEmp'];
-            $apellidoPEmp = $_POST['apellidoPEmp'];
-            $apellidoMEmp = $_POST['apellidoMEmp'];
-            $fechaNacEmp = $_POST['fechaNacEmp'];
-            $telEmp = $_POST['telEmp'];
+    <?php
+    if (isset($_POST['agregarUsuario'])) {
+
+        $generoEmp = "";
+        $nombreEmp = $_POST['nombreEmp'];
+        $apellidoPEmp = $_POST['apellidoPEmp'];
+        $apellidoMEmp = $_POST['apellidoMEmp'];
+        $fechaNacEmp = $_POST['fechaNacEmp'];
+        $telEmp = $_POST['telEmp'];
+        $generoEmp = $_POST['generoEmp'];
+        $ciudadEmp = $_POST['ciudadEmp'];
+        $direccionEmp = $_POST['direccionEmp'];
+        $emailEmp = $_POST['emailEmp'];
+        $turnoEmp = $_POST['turnoEmp'];
+        $rolEmp = $_POST['rolEmp'];
+        $idloginEmp = $_POST['idloginEmp'];
+        $passEmp = $_POST['passEmp'];
+        if (isset($_POST['generoEmp'])) {
             $generoEmp = $_POST['generoEmp'];
-            $ciudadEmp = $_POST['ciudadEmp'];
-            $direccionEmp = $_POST['direccionEmp'];
-            $emailEmp = $_POST['emailEmp'];
-            $turnoEmp = $_POST['turnoEmp'];
-            $rolEmp = $_POST['rolEmp'];            
-            $idloginEmp = $_POST['idloginEmp'];
-            $passEmp = $_POST['passEmp'];
-            if(isset($_POST['generoEmp'])){
-                $generoEmp = $_POST['generoEmp'];
-            }else{
-                $generoEmp = "";
-            }
+        } else {
+            $generoEmp = "";
+        }
 
-            include("connection/conexion.php");
+        include("connection/conexion.php");
 
-            $sql="insert into tusuario(nombreEmp,apellidoPEmp,apellidoMEmp,fechaNacEmp,telEmp,generoEmp,ciudadEmp,direccionEmp,emailEmp,
-            turnoEmp,rolEmp,idloginEmp,passEmp, fIngreso) values ('".$nombreEmp."','".$apellidoPEmp."','".$apellidoMEmp."','".$fechaNacEmp."'
-            ,'".$telEmp."','".$generoEmp."','".$ciudadEmp."','".$direccionEmp."','".$emailEmp."','".$turnoEmp."','".$rolEmp."'
-            ,'".$idloginEmp."','".$passEmp."',NOW());
+        $sql = "insert into tusuario(nombreEmp,apellidoPEmp,apellidoMEmp,fechaNacEmp,telEmp,generoEmp,ciudadEmp,direccionEmp,emailEmp,
+            turnoEmp,rolEmp,idloginEmp,passEmp, fIngreso) values ('" . $nombreEmp . "','" . $apellidoPEmp . "','" . $apellidoMEmp . "','" . $fechaNacEmp . "'
+            ,'" . $telEmp . "','" . $generoEmp . "','" . $ciudadEmp . "','" . $direccionEmp . "','" . $emailEmp . "','" . $turnoEmp . "','" . $rolEmp . "'
+            ,'" . $idloginEmp . "','" . $passEmp . "',NOW());
             
-            CREATE USER '".$idloginEmp."'@'localhost' IDENTIFIED BY '".$passEmp."';
-            GRANT ALL PRIVILEGES ON *.* TO '".$idloginEmp."'@'localhost' WITH GRANT OPTION;
+            CREATE USER '" . $idloginEmp . "'@'localhost' IDENTIFIED BY '" . $passEmp . "';
+            GRANT ALL PRIVILEGES ON *.* TO '" . $idloginEmp . "'@'localhost' WITH GRANT OPTION;
             ";
 
-            $resultado = mysqli_multi_query($conexion, $sql);
+        $resultado = mysqli_multi_query($conexion, $sql);
 
-            
-
-         if($resultado){
-              echo" <script language ='JavaScript'>
+        if ($resultado) {
+            echo " <script language ='JavaScript'>
                 alert('Se ha agregado un nuevo usuario a la BDD.');
                 location.assign('Admin_Usuarios.php');
                 </script>";
-
-            }else{
-                echo"<script language ='JavaScript'>
+        } else {
+            echo "<script language ='JavaScript'>
                 alert('Error, NO se ha agregado un nuevo usuario a la BDD.');
                 location.assign('Admin_Usuarios.php');
                 </script>";
-
-            }
-
-           
-
-            mysqli_close($conexion);
         }
-        else{
+
+        mysqli_close($conexion);
+    } else {
     ?>
-    <div class="TAgregar">
+        <div class="TAgregar">
 
-        <form action="<?=$_SERVER['PHP_SELF']?>" autocomplete="off" method="post">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="post">
 
-            <div class="DNombre">
-                <label>Nombre </label>
-                <input type="text" name="nombreEmp" placeholder="Nombres Completos"><br>
-            </div>
-
-            <div class="DPAT">
-                <label>Apellido paterno </label>
-                <input type="text" name="apellidoPEmp" placeholder="Apellido Paterno"><br>
-            </div>
-
-            <div class="DMAT">
-                <label>Apellido materno </label>
-                <input type="text" name="apellidoMEmp" placeholder="Apellido Materno"><br>
-            </div>
-
-            <div class="DFecha">
-                <label>Fecha de nacimiento </label>
-                <input type="date" name="fechaNacEmp"><br>
-            </div>
-
-            <div class="DTel">
-                <label>Teléfono </label>
-                <input type="text" name="telEmp" placeholder="Teléfono"><br>
-            </div>
-
-            <div class="DgeneroLab">
-                <label>Género </label>
-            </div>
-            <div class="DGeneroInputs">
-                <input list="generoEmp" name="generoEmp">
-                <datalist id="generoEmp" name="generoEmp">
-                    <option value="Masculino">
-                    <option value="Femenino">
-                </datalist>
-            </div>
+                <div class="DNombre">
+                    <label>Nombre </label>
+                    <input type="text" name="nombreEmp" placeholder="Nombres Completos"><br>
+                </div>
 
 
-            <div class="Dciudad">
-                <label>Ciudad </label>
-                <input type="text" name="ciudadEmp" placeholder="Ciudad"><br>
-            </div>
+                <div class="DPAT">
+                    <label>Apellido paterno </label>
+                    <input type="text" name="apellidoPEmp" placeholder="Apellido Paterno"><br>
+                </div>
 
 
-            <div class="DDire">
-                <label>Dirección </label>
-                <input type="text" name="direccionEmp" placeholder="Dirección"><br>
-            </div>
+                <div class="DMAT">
+                    <label>Apellido materno </label>
+                    <input type="text" name="apellidoMEmp" placeholder="Apellido Materno"><br>
+                </div>
 
 
-            <div class="DEmail">
-                <label>E-Mail </label>
-                <input type="text" name="emailEmp" placeholder="E-Mail"><br>
-            </div>
+                <div class="DFecha">
+                    <label>Fecha de nacimiento </label>
+                    <input type="date" name="fechaNacEmp"><br>
+                </div>
 
 
-            <div class="DTurno">
-                <label>Turno </label>
-            </div>
-            <div class="DTurnoInputs">
-                <input list="turnoEmp" name="turnoEmp">
-                <datalist id="turnoEmp" name="turnoEmp">
-                    <option value="Matutino">
-                    <option value="Vespertino">
-                </datalist>
-            </div>
-
-            <div class="DRol">
-                <label>Rol </label>
-                <input list="rolEmp" name="rolEmp">
-                <datalist id="rolEmp" name="rolEmp">
-                    <option value="Administrador">
-                    <option value="Usuario">
-                </datalist>
-            </div>
+                <div class="DTel">
+                    <label>Teléfono </label>
+                    <input type="text" name="telEmp" placeholder="Teléfono"><br>
+                </div>
 
 
-            <div class="DLogin">
-                <label>Nombre de usuario </label>
-                <input type="text" name="idloginEmp" placeholder="Nombre de usuario"><br>
-            </div>
+                <div class="DgeneroLab">
+                    <label>Género </label>
+                    <input list="generoEmp" name="generoEmp">
+                    <datalist id="generoEmp" name="generoEmp">
+                        <option value="Masculino">
+                        <option value="Femenino">
+                    </datalist>
+                </div>
 
 
-
-            <div class="DContra">
-                <label>Contraseña </label>
-                <input type="password" name="passEmp" placeholder="Contraseña" id="password">
-                <img src="img/eyeOpen.png" id="eyeicon">
-            </div>
-
-            <script>
-            let eyeicon = document.getElementById("eyeicon");
-            let password = document.getElementById("password");
-
-            eyeicon.onclick = function() {
-                if (password.type == "password") {
-                    password.type = "text";
-                } else {
-                    password.type = "password";
-                }
-            }
-            </script>
+                <div class="Dciudad">
+                    <label>Ciudad </label>
+                    <input type="text" name="ciudadEmp" placeholder="Ciudad"><br>
+                </div>
 
 
-            <div class="BotonCan">
-                <a href="Admin_Usuarios.php">Cancelar</a>
+                <div class="DDire">
+                    <label>Dirección </label>
+                    <input type="text" name="direccionEmp" placeholder="Dirección"><br>
+                </div>
 
-            </div>
 
-            <div class="BotonAgg">
-                <input type="submit" id="botAgg" name="agregarUsuario" value="Crear">
-            </div>
-        </form>
-    </div>
+                <div class="DEmail">
+                    <label>E-Mail </label>
+                    <input type="text" name="emailEmp" placeholder="E-Mail"><br>
+                </div>
+
+
+                <div class="DTurno">
+                    <label>Turno </label>
+                    <input list="turnoEmp" name="turnoEmp">
+                    <datalist id="turnoEmp" name="turnoEmp">
+                        <option value="Matutino">
+                        <option value="Vespertino">
+                    </datalist>
+                </div>
+
+
+                <div class="DRol">
+                    <label>Rol </label>
+                    <input list="rolEmp" name="rolEmp">
+                    <datalist id="rolEmp" name="rolEmp">
+                        <option value="Administrador">
+                        <option value="Usuario">
+                    </datalist>
+                </div>
+
+
+                <div class="DLogin">
+                    <label>Nombre de usuario </label>
+                    <input type="text" name="idloginEmp" placeholder="Nombre de usuario"><br>
+                </div>
+
+
+                <div class="DContra">
+                    <label>Contraseña </label>
+                    <div class="DContraINPUT">
+                        <input type="password" name="passEmp" placeholder="Contraseña" id="password">
+                        <img src="img/eyeClosed.png" id="eyeicon">
+                    </div>
+                </div>
+
+                <script>
+                    let eyeicon = document.getElementById("eyeicon");
+                    let password = document.getElementById("password");
+
+                    eyeicon.onclick = function() {
+                        if (password.type == "password") {
+                            password.type = "text";
+                            eyeicon.src = "img/eyeOpen.png"
+                        } else {
+                            password.type = "password";
+                            eyeicon.src = "img/eyeClosed.png"
+                        }
+                    }
+                </script>
+
+
+                <div class="botones">                    
+                    <div class="BotonCan">
+                    <a href="Admin_Usuarios.php">
+                    <span>Cancelar</span>
+                    </a>                    
+                    </div>
+                    
+                    <button class="BotonAgg" type="submit" name="agregarUsuario" value="Crear">
+                        <a>
+                            <span class="crear">Crear</span>                            
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>     
+                    </button>                   
+                </div>
+
+            </form>
+        </div>
 
     <?php
-            }
+    }
     ?>
 
 
