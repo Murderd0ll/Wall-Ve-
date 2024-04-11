@@ -163,7 +163,7 @@ if(empty($_SESSION['user'])){
     ?>
     <div class="TAgregar">
 
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+        <form action="<?=$_SERVER['PHP_SELF']?>" autocomplete="off" method="post">
 
             <div class="DNombre">
                 <label>Nombre </label>
@@ -194,9 +194,11 @@ if(empty($_SESSION['user'])){
                 <label>Género </label>
             </div>
             <div class="DGeneroInputs">
-                <input type="radio" name="generoEmp" value="Masculino">Masculino
-
-                <input type="radio" name="generoEmp" value="Femenino">Femenino
+                <input list="generoEmp" name="generoEmp">
+                <datalist id="generoEmp" name="generoEmp">
+                    <option value="Masculino">
+                    <option value="Femenino">
+                </datalist>
             </div>
 
 
@@ -220,22 +222,22 @@ if(empty($_SESSION['user'])){
 
             <div class="DTurno">
                 <label>Turno </label>
-                <input list="turnos">
-
-                <datalist id="turnos">
+            </div>
+            <div class="DTurnoInputs">
+                <input list="turnoEmp" name="turnoEmp">
+                <datalist id="turnoEmp" name="turnoEmp">
                     <option value="Matutino">
                     <option value="Vespertino">
                 </datalist>
             </div>
 
-            <div class="DTurnoInputs">
-                <input type="radio" name="turnoEmp" value="Matutino  ">Matutino
-                <input type="radio" name="turnoEmp" value="Vespertino">Vespertino
-            </div>
-
             <div class="DRol">
                 <label>Rol </label>
-                <input type="text" name="rolEmp" placeholder="Rol"><br>
+                <input list="rolEmp" name="rolEmp">
+                <datalist id="rolEmp" name="rolEmp">
+                    <option value="Administrador">
+                    <option value="Usuario">
+                </datalist>
             </div>
 
 
