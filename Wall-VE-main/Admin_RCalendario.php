@@ -135,7 +135,7 @@ if(empty($_SESSION['user'])){
                 </a>
             </li>
 
-            <li class="activo">
+            <li>
                 <a href="Admin_Usuarios.php">
                     <i class="fa-solid fa-user-group"
                         title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios."></i>
