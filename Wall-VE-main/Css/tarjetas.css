@@ -2,12 +2,49 @@
 
 /*!Acomodar mediaqueries de esto*/
 @media (max-width:1400px) {
+  
+#completa.card-text{
+    text-transform: capitalize;
+    padding:10px;
+}
+.card-text{
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
     
-    .card-body.border.border-primary{
-        max-width: 500px!important;
-    }
+    font-size: 48px;
+    font-weight: bold;
+    display:table;
+    
+
+}
+.pWatt{
+    font-size: 14px;
+    color:#030303FF;
+    font-weight: normal;
+    margin-bottom: 10px;
+    display: table-cell;
+    vertical-align:middle;
+}
 
 
+.card-body.border{
+    max-width: 400px;
+    height: auto;
+    margin-left:199px!important;
+    padding:10px!important;
+    font-family: 'Lexend';
+
+    background-color: #F8F9FA;
+}
+#completa{
+    padding-bottom: 40px;
+}
+#cCompleta{ 
+    padding-top:0px!important;
+    margin-top:0px!important;
+    margin-bottom: 120px!important;
+    
+}
 }
 
 

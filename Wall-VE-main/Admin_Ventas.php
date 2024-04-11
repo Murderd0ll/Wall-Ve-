@@ -113,7 +113,7 @@ if(empty($_SESSION['user'])){
 
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm ">
             
             <div class="card-body border border-primary" >
                 <h5 class="card-title ">Cantidad en watts</h5>
@@ -136,6 +136,7 @@ if(empty($_SESSION['user'])){
             <div class="col-sm">
             
             <div class="card-body border border-primary" id="completa" >
+            <h5 class="card-title"></h5>
                 <h5 class="card-title" id="cCompleta">Carga completa</h5>
                 
                 <a href="#" class="btn btn-primary">Seleccionar</a>
