@@ -16,6 +16,9 @@ if(empty($_SESSION['user'])){
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+   <!-- Google icons -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 
    <link rel="stylesheet" href="css/estilos.css"/>
    <link rel="stylesheet" href="css/tarjetas.css">
@@ -141,13 +144,18 @@ if(empty($_SESSION['user'])){
                 
                 <a href="#" class="btn btn-primary">Seleccionar</a>
 
+
             </div>
 
         </div>
     </div>
 </div>
-
-
+<span class="material-symbols-outlined">
+radio_button_checked
+</span>
+<span class="material-symbols-outlined">
+radio_button_unchecked
+</span>
 
 
 
