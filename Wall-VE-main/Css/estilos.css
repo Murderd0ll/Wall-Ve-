@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
-
-
+    
 #seleccione {
-    font-size: 50px!important;
+    font-size: 20px!important;
     font-family: 'Manrope';
     padding:50px;
     margin-left:100px;
-    color:#6F7787FF
+    color:#6F7787FF;
 }
 
 *{
