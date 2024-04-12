@@ -73,9 +73,10 @@
     font-weight: bold;
 }
 
-/*Esto es el espacio entre inicio sesion- usuario y contraseña*/
+/*Esto es el espacio entre inicio sesionc- usuario y contraseña*/
 .tbox{
     padding-top: 0.3rem;
+    
 }
 /*Esto es el el tamaño de la cajita donde ingresas datos*/
 .tbox input{
@@ -83,19 +84,28 @@
     /*width: 502px;*/
     width: 31.375rem;
     height: 4.25rem;
+    
     outline: none;
     border: none;
     border-radius: 0.6rem;
     padding-left: 5px;   
+    
 }
 /*Login.php OJITO DEL PASSWORD*/
+ .tboxpass{
+  display:absolute;
+  padding-left: 2rem;
+}
 .tboxInput{
   display: flex;
+  flex-direction: row;
   align-items: center;
+  
 }
 .tbox img{
   width: 30px;
   cursor: pointer;
+  
 }
 
 ::placeholder{
@@ -113,6 +123,7 @@
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     border-radius: 0.6rem;
+    cursor: pointer;
 }
 #errorMsj{
   color:#C12126FF;
