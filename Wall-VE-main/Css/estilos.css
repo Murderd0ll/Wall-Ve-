@@ -437,6 +437,17 @@ button.BotonActualizar i :active{
     color: #34ef41;
 }
 
+.Aperfil {
+    position: absolute;
+    top: 34px;
+    left: 49px;
+    font-family: Lexend;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 800;
+    color: #EFB034FF;
+    }
+
 
 
 /* <div class="DNombre">
