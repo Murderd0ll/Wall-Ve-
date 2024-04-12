@@ -108,8 +108,9 @@
 }
 
 .material-symbols-outlined {
-    color: red!important;
-}
-.material-symbols-outlined{
-    color:red!important;
+    color: #0C6A6F!important;
+   }
+
+.rbP{
+    font-size:20px;
 }

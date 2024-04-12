@@ -150,14 +150,27 @@ if(empty($_SESSION['user'])){
         </div>
     </div>
 </div>
-<span class="material-symbols-outlined">
-radio_button_checked
-</span>
-<span class="material-symbols-outlined">
-radio_button_unchecked
-</span>
 
 
+    <li class="material-symbols-outlined" id="active" id="rb1">
+            radio_button_checked <p class="rbP">Selección de carga</p>
+    </li> 
+    <li class="material-symbols-outlined" id="rb2">
+    radio_button_unchecked <p class="rbP">Detalles de pago</p>
+    </li>
+    <li class="material-symbols-outlined" id="rb3">
+    radio_button_unchecked <p class="rbP">Proceso de carga</p>
+    </li>
+
+
+
+      <hr>
+
+
+
+
+
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
