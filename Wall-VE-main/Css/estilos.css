@@ -447,14 +447,14 @@ button.BotonActualizar i :active{
     font-weight: 800;
     color: #EFB034FF;
     }
-    
+
 /* Container 115 */
 #containerPerfilAd {
     position: absolute;
-    top: 108px;
+    top: 160px;
     left: 55px;
-    width: 1070px;
-    height: 751px;
+    width: 900px;
+    height: 700px;
     background: #FFFFFFFF;
     border-radius: 0px;
     border-width: 1px;
