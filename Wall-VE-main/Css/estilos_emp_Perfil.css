@@ -1,0 +1,50 @@
+#Bienvenido {
+    position: absolute;
+    top: 85px;
+    left: 270px;
+    width: 727px;
+    height: 84px;
+    font-family: Lexend;
+    font-size: 55px;
+    line-height: 84px;
+    font-weight: 700;
+    color: #323743;
+}
+#usuario{
+    position: absolute;
+    top: 85px;
+    left: 580px;
+    width: 727px;
+    height: 84px;
+    font-family: Lexend;
+    font-size: 55px;
+    line-height: 84px;
+    font-weight: 700;
+    color: #EFB034;
+}
+
+#signo{
+    position: absolute;
+    top: 85px;
+    left: 725px;
+    width: 727px;
+    height: 84px;
+    font-family: Lexend;
+    font-size: 55px;
+    line-height: 84px;
+    font-weight: 700;
+    color: #323743;
+}
+
+#MarcoPerEmpl{
+position: absolute;
+top: 180px;
+left: 313px;
+width: 1070px;
+height: 420px;
+background: #FFFFFFFF;
+border-radius: 0px;
+border-width: 1px;
+border-color: #F3F4F6FF;
+border-style: solid;
+}
