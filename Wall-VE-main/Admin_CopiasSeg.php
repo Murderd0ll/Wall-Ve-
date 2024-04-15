@@ -76,7 +76,7 @@
             </li>
 
             <li>
-                <a href="Admin_Reportes.php">
+                <a href="Admin_Reportes.html">
                     <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
                     <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias.">Reportes</span>
                 </a>

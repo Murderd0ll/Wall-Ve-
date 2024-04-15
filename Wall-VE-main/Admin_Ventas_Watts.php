@@ -1,4 +1,11 @@
-
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+if(empty($_SESSION['user'])){
+    header('location:Login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +37,6 @@
         </ul>
     </header>
    
-    <div id="subtitulo">
-        <p id="seleccione">Rellene los datos para continuar</p>
-    </div>
-
 
     <div class="barralateral">
         <div class="logo"></div>
@@ -111,39 +114,88 @@
 
 
 <div class="formCarga">
-        <form class="row g-3">
+    <h2 class="ventaPor">Venta por cantidad de Watts.</h2>
+        <form class="row g-3" autocomplete="off"  action="./Admin_Ventas_Cargando.php" method="post">
 
         <div class="col-md-6">
             <label for="inputCarga" class="form-label">Cantidad de carga en Watts</label>
-            <input type="float" class="form-control" id="inputCarga">
+            <input type="float" class="form-control" id="inputCarga" name="carga" onkeyup="calculo()">
         </div>
         
         <div class="col-md-6">
+
+            <?php 
+
+            
+    
+         include("connection/conexion.php");
+
+         
+            $idEs="";
+             if (isset($_SESSION['estacion'])) {
+                $idEs = $_SESSION['estacion'];
+            } 
+            
+            $usuario = $_SESSION['user'];
+            
+            $sql = "SELECT CONCAT(nombreEmp,' ',apellidoPEmp,' ',apellidoMEmp) AS nombre_Completo
+             from tusuario where idloginEmp='$usuario'";
+
+            $resultado = mysqli_query($conexion, $sql);
+            $nombre="";
+            while ($consulta = mysqli_fetch_array($resultado) ) {
+                $nombre= $consulta['nombre_Completo'];
+            }
+
+
+            
+            $sql = "SELECT precioProd from tproducto where idEstacion='$idEs'";
+
+
+            $resultado = mysqli_query($conexion, $sql);
+
+            $precio="";
+
+            while ($consulta = mysqli_fetch_array($resultado) ) {
+                $precio= $consulta['precioProd'];
+            }
+
+            ?>
             <label for="inputEstacion" class="form-label">IDEstación</label>
-            <input type="number" class="form-control" id="inputEstacion">
+            <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>
         </div>
 
         <div class="col-md-6">
             <label for="inputEmpleado" class="form-label">Empleado a cargo</label>
-            <input type="text" class="form-control" id="inputEmpleado" readonly>
+            <input type="text" class="form-control" id="inputEmpleado" name="empleado" value="<?php echo $nombre;?>" readonly>
         </div>
 
         <div class="col-md-6">
             <label for="inputTiempoAprox" class="form-label">Tiempo aproximado</label>
-            <input type="text" class="form-control" id="inputTiempoAprox" readonly>
+            <input type="text" class="form-control" id="inputTiempoAprox" name="tiempo" readonly>
         </div>
 
 
 
         <div class="col-md-6">
             <label for="inputFecha" class="form-label">Fecha</label>
-            <input type="date" class="form-control" id="inputFecha" readonly>
+            <input type="date" class="form-control" id="inputFecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
+ 
+
+        </div>
+        <div class="col-md-6">
+            <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
+            <input type="text" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCambio" class="form-label">Cambio(MXN)</label>
+            <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()">
         </div>
 
 
         <div class="col-md-6">
-            <label for="inputCity" class="form-label">Total a pagar</label>
-            <input type="text" class="form-control" id="inputCity">
+            <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
+            <input type="text" class="form-control" name="total" id="inputTotal">
         </div>
 
         <div class="col-12">
@@ -155,80 +207,60 @@
 </div>
 
 
-    <!--  
-    <div class="TAgregar">
-
-<form action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="post">
-
-            <div class="DNombre">
-                <label>Cantidad de carga en Watts </label>
-                <input type="text" name="nombreEmp" placeholder="Nombres Completos"><br>
-            </div>
-
-
-
-            <div class="DTel">
-                <label>Teléfono </label>
-                <input type="text" name="telEmp" placeholder="Teléfono"><br>
-            </div>
-
-
-            <div class="DgeneroLab">
-                <label>Género </label>
-                <input list="generoEmp" name="generoEmp">
-                <datalist id="generoEmp" name="generoEmp">
-                    <option value="Masculino">
-                    <option value="Femenino">
-                </datalist>
-            </div>
-
-
-            <div class="Dciudad">
-                <label>Ciudad </label>
-                <input type="text" name="ciudadEmp" placeholder="Ciudad"><br>
-            </div>
-
-
-            <div class="DDire">
-                <label>Dirección </label>
-                <input type="text" name="direccionEmp" placeholder="Dirección"><br>
-            </div>
-
-
-            <div class="DEmail">
-                <label>E-Mail </label>
-                <input type="text" name="emailEmp" placeholder="E-Mail"><br>
-            </div>
-
-
-
-
-            <div class="botones">                    
-                <div class="BotonCan">
-                <a href="Admin_Usuarios.php">
-                <span>Cancelar</span>
-                </a>                    
-                </div>
-        
-        <button class="BotonAgg" type="submit" name="agregarUsuario" value="Crear">
-            <a>
-                <span class="crear">Crear</span>                            
-                <i class="fa-solid fa-user-plus"></i>
-            </a>     
-        </button>                   
-    </div>
-
-</form>
-</div>
-
-
-
-    -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
+    <script>
+
+        function dinero(){
+            var totalDinero = 0;
+            efectivo = document.getElementById('inputEfectivo').value;
+            cambioo = document.getElementById('inputCambio').value;
+            pago = document.getElementById('inputTotal').value;
+            cambioTotal = parseFloat(efectivo)-parseFloat(pago);
+            console.log(cambioTotal);
+            inputCambio.value = cambioTotal;
+            
+
+        }
+    function calculo(){
+
+
+    var totalValor = 0;	
+    
+    var valorWatt = <?php echo $precio; ?>;
+    
+    
+    carga = document.getElementById('inputCarga').value;
+    totalValor = parseFloat(valorWatt)*parseFloat(carga);
+	//Cambio el valor total
+    inputTotal.value = totalValor;
+ 
+    tiempo = document.getElementById('inputTiempoAprox').value;
+
+
+     // Convertir del cargador, watts a kilovatios (kW)
+     var potenciaDeCargador = 5000;
+     var potenciaEnKW = potenciaDeCargador / 1000;
+
+    // Calcular el tiempo de carga en horas
+    var tiempoEnHoras = carga / potenciaEnKW;
+
+    // Calcular minutos y segundos
+    var tiempoTotalEnMinutos = tiempoEnHoras * 60;
+    var horas = Math.floor(tiempoTotalEnMinutos / 60);
+    var minutos = Math.floor(tiempoTotalEnMinutos % 60);
+    var segundos = Math.floor((tiempoTotalEnMinutos * 60) % 60);
+    
+    var tTotal = `Aproximadamente ${horas} hrs, ${minutos} min, ${segundos} seg`;
+
+    inputTiempoAprox.value = tTotal;
+        
+    
+    }
+</script>
 
 </body>
 </html>

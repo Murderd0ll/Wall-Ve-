@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+@media (max-width: 1400px) {
+   .progress{
+    background-color: gray;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+    margin-left:565px
+}
+    .progress-done{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: repeating-linear-gradient(to left, #0546e0,#1172f9,#489f29);
+        box-shadow: 0 5px 5px -6px #0546e0,0 3px 7px #1172f9;
+        border-radius: 20px;
+        color:#fff;
+        height: 100%;
+        width: 0;
+        transition: 1s ease 0.3s;
+
+
+}
+#porcentaje{
+    margin-left:94px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Epilogue';
+}
+
+#btnCancelar{
+    margin-left: 100px!important;
+    margin-top: 80px!important;
+}
+
+}
+@media (min-width:1401px) {
+    
+.progress{
+    background-color: gray;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+    margin-left:855px
+}
+    .progress-done{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: repeating-linear-gradient(to left, #0546e0,#1172f9,#489f29);
+        box-shadow: 0 5px 5px -6px #0546e0,0 3px 7px #1172f9;
+        border-radius: 20px;
+        color:#fff;
+        height: 100%;
+        width: 0;
+        transition: 1s ease 0.3s;
+
+
+}
+#porcentaje{
+    margin-left:94px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Epilogue';
+}
+
+#btnCancelar{
+    margin-left: 100px!important;
+    margin-top: 80px!important;
+}
+    
+}
+@media print {
+    #removeFooter {
+        display: none!important;
+    }
+}
+
+@media screen {
+    #printSection {
+        display: none;
+    }
+  }
+
+  @media print {
+    body * {
+      visibility:hidden;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    #printSection {
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  }

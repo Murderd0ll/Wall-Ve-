@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+#ticketCompraModal{
+    color: orange!important;
+  font-size: 30px!important;
+  font-family: 'Epilogue' !important;
+  justify-content: center!important;
+  margin-left: 120px!important;
+  }
+#estacionModal{
+
+}
+
+#gracias{
+    margin-right: 40px;
+}
+#ticketImpri{
+
+    margin-right: 120px;
+}
