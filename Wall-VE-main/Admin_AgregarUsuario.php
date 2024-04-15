@@ -70,7 +70,7 @@ if (empty($_SESSION['user'])) {
             </li>
 
             <li>
-                <a href="Admin_CopiasSeg.html">
+                <a href="Admin_CopiasSeg.php">
                     <i class="fa-solid fa-download" title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
 
                     <span title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia

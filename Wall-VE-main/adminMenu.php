@@ -43,7 +43,7 @@
                 <li><a href="./Admin_Precios.html"  >Precios</a></li>
                 <li><a href="./Admin_Usuarios.php"  >Usuarios</a></li>
                 <li><a href="./Admin_Reportes.html"  >Reportes</a></li>
-                <li><a href="./Admin_CopiasSeg.html"  >Copias de seguridad</a></li>
+                <li><a href="./Admin_CopiasSeg.php"  >Copias de seguridad</a></li>
                 <li><a href="./Admin_Perfil.html"  >Perfil</a></li>
            </ul>
 
@@ -205,7 +205,7 @@
                         </a>
 
                 <!--? Caja backup -->
-                    <a class="box backup-box" id="cajaBackup" href="./Admin_CopiasSeg.html">
+                    <a class="box backup-box" id="cajaBackup" href="./Admin_CopiasSeg.php">
 
                         <i class="fa fa-question-circle-o fa-2x" id="preguntaBackups" aria-hidden="true" title="En este menú, podrá encontrar opciones que lo ayuden a gestionar sus copias de seguridad y restauraciones."></i>
 
