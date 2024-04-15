@@ -1,0 +1,769 @@
+#Aperfil {
+    position: absolute;
+    top: 34px;
+    left: 49px;
+    font-family: Lexend;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 800;
+    color: #EFB034FF;
+    }
+
+/* Container 115 */
+#containerPerfilAd {
+    position: absolute;
+    top: 110px;
+    left: 300px;
+    width: 1200px;
+    height: 600px;
+    background: #FFFFFFFF;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: #F3F4F6FF;
+    border-style: solid;
+    }
+
+/* Textbox 14 */
+
+#NombreAP{
+    position: absolute;
+    top: 125px;
+    left: 320px;
+    color: Neutral 650;
+}
+#textboxNomA {
+    position: absolute;
+    top: 150px;
+    left: 320px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+    }
+#ApellidoPAP{
+    position: absolute;
+    top: 125px;
+    left: 700px;
+    color: Neutral 650;
+}
+#textboxAP {
+    position: absolute;
+    top: 150px;
+    left: 700px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+    }
+
+#ApellidoMAP{
+    position: absolute;
+    top: 125px;
+    left: 1100px;
+    color: Neutral 650;
+}
+#textboxAM {
+    position: absolute;
+    top: 150px;
+    left: 1100px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+    }
+
+#TelefonoPer{
+    position: absolute;
+    top: 210px;
+    left: 700px;
+    color: Neutral 650;
+    }
+#textboxTelPer{
+    position: absolute;
+    top: 235px;
+    left: 700px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-family: Manrope;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        background: #F3F4F6FF;
+        border-radius: 4px;
+        border-width: 0px;
+        outline: none;
+        }
+        .textbox .label {
+        font-family: Manrope;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
+        }
+        /* hover */
+        .textbox input:hover {
+        color: #BDC1CAFF;
+        background: #F3F4F6FF;
+        }
+        /* focused */
+        .textbox input:focused {
+        color: #BDC1CAFF;
+        background: #FFFFFFFF;
+        }
+        /* disabled */
+        .textbox input:disabled {
+        color: #BDC1CAFF;
+        background: #F3F4F6FF;
+        }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+
+#CuidadPer{
+    position: absolute;
+    top: 295px;
+    left: 320px;
+    color: Neutral 650;
+}
+#textboxCiudad{
+    position: absolute;
+    top: 320px;
+    left: 320px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#DireccionPer{
+    position: absolute;
+    top: 295px;
+    left: 700px;
+    color: Neutral 650;
+}
+#textboxDir{
+    position: absolute;
+    top: 320px;
+    left: 700px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#EmailPer{
+    position: absolute;
+    top: 295px;
+    left: 1100px;
+    color: Neutral 650;
+}
+#textboxEmail{
+    position: absolute;
+    top: 320px;
+    left: 1100px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#FechaNacPer{
+    position: absolute;
+    top: 210px;
+    left: 320px;
+    color: Neutral 650;
+}
+/* Textbox 15 */
+#textboxFechaN {
+    position: absolute;
+    top: 235px;
+    left: 320px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 34px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox svg {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    fill: #171A1FFF;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+    }
+    
+    #GeneroPer{
+        position: absolute;
+        top: 210px;
+        left: 1100px;
+        color: Neutral 650;
+    }
+
+
+#TurnoPer{
+    position: absolute;
+    top: 380px;
+    left: 320px;
+    color: Neutral 650;
+}
+#textboxTurnoP{
+    position: absolute;
+    top: 405px;
+    left: 320px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 34px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox svg {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    fill: #171A1FFF;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#NombreUsuPer{
+    position: absolute;
+    top: 500px;
+    left: 320px;
+    color: Neutral 650;
+}
+#textboxNusu{
+    position: absolute;
+    top: 525px;
+    left: 320px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 34px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox svg {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    fill: #171A1FFF;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#ContraPer{
+    position: absolute;
+    top: 500px;
+    left: 700px;
+    color: Neutral 650;
+}
+#textboxContra{
+    position: absolute;
+    top: 525px;
+    left: 700px;
+    opacity: 1;
+    }
+    .textbox input {
+    width: 319px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    border-radius: 4px;
+    border-width: 0px;
+    outline: none;
+    }
+    .textbox .label {
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    }
+    /* hover */
+    .textbox input:hover {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+    /* focused */
+    .textbox input:focused {
+    color: #BDC1CAFF;
+    background: #FFFFFFFF;
+    }
+    /* disabled */
+    .textbox input:disabled {
+    color: #BDC1CAFF;
+    background: #F3F4F6FF;
+    }
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF;
+}
+
+#LogotipoPer{
+    position: absolute;
+    top: 370px;
+    left: 1200px;
+    font-family: Manrope;
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 800;
+    color: #0C6A6FFF;
+    }
+
+
+/* Button 95 */
+#ExaminarPerfilAdmin {
+    position: absolute;
+    top: 562px;
+    left: 1235px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #FFFFFFFF;
+    background: #0C6A6FFF;
+    opacity: 1;
+    border: none;
+    border-radius: 4px;
+    gap: 6px;
+    }
+    .button .icon {
+    width: 16px;
+    height: 16px;
+    fill: #FFFFFFFF;
+    }
+    /* Hover */
+    .button:hover {
+    color: #FFFFFFFF;
+    background: #09494DFF;
+    }
+    /* Pressed */
+    .button:hover:active {
+    color: #FFFFFFFF;
+    background: #062F32FF;
+    }
+    /* Disabled */
+    .button:disabled {
+    opacity: 0.4;
+    }
+
+    /* Line 9 */
+#LineaAbajoPerAd {
+    position: absolute;
+    top: 625px;
+    left: 300px;
+    width: 1200px;
+    height: 0px;
+    border-width: 1px;
+    border-color: #F3F4F6FF;
+    border-style: solid;
+    transform: rotate(0deg);
+    }
+
+#MensajeInferiorPA {
+    position: absolute;
+    top: 650px;
+    left: 330px;
+    text-align: left
+    }
+
+/* Button 94 */
+#BtnCancelarPA {
+    position: absolute;
+    top: 650px;
+    left: 1260px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #0C6A6FFF;
+    background: #EFFCFDFF;
+    opacity: 1;
+    border: none;
+    border-radius: 4px;
+    }
+    /* Hover */
+    .button:hover {
+    color: #0C6A6FFF;
+    background: #E9FCFDFF;
+    }
+    /* Pressed */
+    .button:hover:active {
+    color: #0C6A6FFF;
+    background: #D9F9FBFF;
+    }
+    /* Disabled */
+    .button:disabled {
+    opacity: 0.4;
+    }
+
+/* Button 93 */
+#BtnGuardarPA {
+    position: absolute;
+    top: 650px;
+    left: 1370px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #FFFFFFFF;
+    background: #0C6A6FFF;
+    opacity: 1;
+    border: none;
+    border-radius: 4px;
+    gap: 6px;
+    }
+    .button .icon {
+    width: 16px;
+    height: 16px;
+    fill: #FFFFFFFF;
+    }
+    /* Hover */
+    .button:hover {
+    color: #FFFFFFFF;
+    background: #09494DFF;
+    }
+    /* Pressed */
+    .button:hover:active {
+    color: #FFFFFFFF;
+    background: #062F32FF;
+    }
+    /* Disabled */
+    .button:disabled {
+    opacity: 0.4;
+    }
