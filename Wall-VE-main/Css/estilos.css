@@ -437,7 +437,7 @@ button.BotonActualizar i :active{
     color: #34ef41;
 }
 
-.Aperfil {
+#Aperfil {
     position: absolute;
     top: 34px;
     left: 49px;
@@ -447,7 +447,20 @@ button.BotonActualizar i :active{
     font-weight: 800;
     color: #EFB034FF;
     }
-
+    
+/* Container 115 */
+#containerPerfilAd {
+    position: absolute;
+    top: 108px;
+    left: 55px;
+    width: 1070px;
+    height: 751px;
+    background: #FFFFFFFF;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: #F3F4F6FF;
+    border-style: solid;
+    }
 
 
 /* <div class="DNombre">
