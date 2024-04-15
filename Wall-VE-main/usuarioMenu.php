@@ -141,7 +141,7 @@
 
 
                 <!--? Caja ventas -->
-                    <a class="box ventas-box" id="cajaVentas" href="./Empleado_Ventas.html">
+                    <a class="box ventas-box" id="cajaVentas" href="./Empleado_Ventas.php">
                         
                         
                       

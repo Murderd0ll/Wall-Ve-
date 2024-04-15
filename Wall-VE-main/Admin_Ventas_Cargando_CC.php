@@ -14,8 +14,9 @@ if(empty($_SESSION['user'])){
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+   <link rel="stylesheet" href="css/estilosmodal.css">
+   <link rel="stylesheet" href="css/progress.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    <!-- Google icons -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
@@ -36,9 +37,8 @@ if(empty($_SESSION['user'])){
     </header>
    
     <div id="subtitulo">
-        <p id="seleccione">Seleccione una opción para comenzar.</p>
+        <p id="seleccione">Obteniendo información</p>
     </div>
-
 
     <div class="barralateral">
         <div class="logo"></div>
@@ -113,103 +113,79 @@ if(empty($_SESSION['user'])){
         </ul>
     </div>
 
-    <?php 
+
     
+
+
+
+        <p id="porcentaje"></p>
+
+        <div class="progress">
+            <div class="progress-done"></div>
+        </div>
+
+
+
+
+
+
+    <script >
+
+
+
+
+        const progress = document.querySelector(".progress-done");
+const texto = document.querySelector("#porcentaje");
+
+let finalValue = 0;
+let max = 100;
+let intervalId = null; // Esto es para quitar el intervalo
+
+function changeWidth() {
+  // Clamp finalValue to the range between 0 and max
+  finalValue = Math.max(0, Math.min(finalValue, max)); //Revisa si está dentro de los limites
+
+  progress.style.width = `${(finalValue / max) * 100}%`;
+  texto.innerText  = `${Math.ceil((finalValue / max) * 100)}%`;
+  //progress.innerText = `${Math.ceil((finalValue / max) * 100)}%`;
+}
+
+function sumarUno() {
+  if (finalValue < max) { // Revisa si es menor al maximo para evitar overflow
+    const numeroAleatorio = Math.floor(Math.random() * 10); 
+    finalValue += numeroAleatorio;
+    changeWidth();
+    console.log(finalValue);
     
-    include("connection/conexion.php");
-    
-    //! Cambiar idEs aquí en caso de que sea otra idEstacion
-    $idEs=1;
+  } else { //Si llegó al máximo
+    clearInterval(intervalId); // Lo detiene el intervalo
 
-    //? Con esto el idEstacion podrá usarse más adelante
-    $_SESSION['estacion'] = $idEs;
-       
-
-    $sql = "SELECT precioProd from tproducto where idEstacion='$idEs'";
-
-
-    $resultado = mysqli_query($conexion, $sql);
-
-    $valor="";
-
-    while ($consulta = mysqli_fetch_array($resultado) ) {
-        $valor= $consulta['precioProd'];
-    }
+    //!AQUI DEBE DE MANDAR A LA BASE DE DATOS Y HACER QUE APAREZCA EL MODAL AUTOMATICAMENTE
+    /*const modal = document.getElementById('exampleModal')
+    const modalInstance = bootstrap.Modal.getOrCreateInstance(modal)
+    modalInstance.show()
+    */
+   
+    window.location.href = "./Admin_Ventas_CC.php";
 
 
-    ?>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm ">
-            
-            <div class="card-body border border-primary" >
-                <h5 class="card-title ">Cantidad en watts</h5>
-                <p class="card-text ">
-                    
-                $<?php echo $valor ?>
-                
-                <span class="pWatt">MXN/Watt</span></p>
-                <a href="./Admin_Ventas_Watts.php" class="btn btn-primary">Seleccionar</a>
-
-            </div>
-
-        </div>
-        <div class="col-sm">
-            
-            <div class="card-body border border-primary" >
-                <h5 class="card-title">Cantidad en moneda</h5>
-                <p class="card-text ">
-                    
-                    $<?php echo $valor ?>
-                    
-                    <span class="pWatt">MXN/Watt</span></p>
-                     <a href="./Admin_Ventas_Moneda.php" class="btn btn-primary">Seleccionar</a>
-
-            </div>
-
-        </div>
-            <div class="col-sm">
-            
-            <div class="card-body border border-primary" id="completa" >
-            <h5 class="card-title"></h5>
-                <h5 class="card-title" id="cCompleta">Carga completa</h5>
-                
-                <a href="./Admin_Ventas_Cargando_CC.php" class="btn btn-primary">Seleccionar</a>
+  }
+}
 
 
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!--
-    !
-
- <li class="material-symbols-outlined" id="active" id="rb1">
-            radio_button_checked <p class="rbP">Selección de carga</p>
-    </li> 
-    <li class="material-symbols-outlined" id="rb2">
-    radio_button_unchecked <p class="rbP">Detalles de pago</p>
-    </li>
-    <li class="material-symbols-outlined" id="rb3">
-    radio_button_unchecked <p class="rbP">Proceso de carga</p>
-    </li>
-
-
-
-      <hr>
-
-  -->
+function cancelar(){
+    clearInterval(intervalId);
+    alert("Se ha detenido la carga del vehículo.");
    
 
+}
+
+changeWidth();
+intervalId = setInterval(sumarUno, 1000);
 
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
