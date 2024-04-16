@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
 
 /*!Acomodar mediaqueries de esto*/
-@media (max-width:1400px) {
+@media (max-width:1300px) {
   
 #completa.card-text{
     text-transform: capitalize;
