@@ -1,0 +1,42 @@
+
+@media (min-width:1782px) {
+
+    #nav-link{
+        width: 40%!important;
+        
+        margin-top:70px!important;
+        margin-right:-180px!important;
+      }
+  
+  
+    
+  }
+
+@media (min-width:1712px) {
+    .drop-down li{
+      
+        margin-left: 50px;
+        margin-right: 50px !important;
+    
+    }
+    
+  }
+
+@media (min-width:1652px) {
+    .drop-down li{
+      
+      
+      margin-right:50px!important;
+    }
+    
+  }
+  
+  @media (max-width:1400px) {
+    #nav-link{
+    width: 40%;
+   /* margin-top: 10px !important;
+    margin-right: -10px !important;
+    */  }
+    
+  }
+  

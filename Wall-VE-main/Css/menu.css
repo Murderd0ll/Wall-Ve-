@@ -62,13 +62,32 @@ nav #perfil{
     cursor:pointer;
 
 }
+
 #nav-link{
     display: none;
+    
 }
 
+@media (max-width:1600px) {
+  
+
+  #nav-link, .drop-down li{
+   
+
+
+    list-style: none;
+    height: 100%;
+    float:right;
+    margin-top: -10px;
+    margin-right:50px;
+    color:red;
+    font-family: 'Manrope';
+    
+}
+}
 
 /*!Personalizacion*/
-#nav-link, .drop-down li{
+ .drop-down li{
    
 
 
