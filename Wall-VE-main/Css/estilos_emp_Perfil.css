@@ -38,13 +38,748 @@
 
 #MarcoPerEmpl{
 position: absolute;
-top: 180px;
-left: 313px;
-width: 1070px;
-height: 420px;
+top: 170px;
+left: 290px;
+width: 1000px;
+height: 430px;
 background: #FFFFFFFF;
 border-radius: 0px;
 border-width: 1px;
 border-color: #F3F4F6FF;
 border-style: solid;
 }
+#NombreEmp{
+    position: absolute;
+    top: 190px;
+    left: 310px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+    
+}
+#textboxNombreEmp {
+position: absolute;
+top: 210px;
+left: 300px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#ApellidoPEmp{
+    position: absolute;
+    top: 190px;
+    left: 640px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxAP {
+position: absolute;
+top: 210px;
+left: 630px;    
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#ApellidoMEmp{
+    position: absolute;
+    top: 190px;
+    left: 970px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxAM {
+position: absolute;
+top: 210px;
+left: 960px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+
+
+#FechaNacEmp{
+    position: absolute;
+    top: 270px;
+    left: 310px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxFechaNacEmp {
+position: absolute;
+top: 290px;
+left: 300px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#TelefonoEmp{
+    position: absolute;
+    top: 270px;
+    left: 640px;
+    color: #565D6D;
+    font-family: Manrope;
+}
+#textboxTelefonoEmp {
+position: absolute;
+top: 290px;
+left: 630px;    
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#GeneroEmp{
+    position: absolute;
+    top: 270px;
+    left: 970px;
+    color: #565D6D;
+    font-family: Manrope;
+}
+#textboxGeneroEmp{
+position: absolute;
+top: 290px;
+left: 960px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+
+
+#CiudadEmp{
+    position: absolute;
+    top: 350px;
+    left: 310px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxCiudad{
+position: absolute;
+top: 370px;
+left: 300px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#DireccionEmp{
+    position: absolute;
+    top: 350px;
+    left: 640px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxDireccion{
+position: absolute;
+top: 370px;
+left: 630px;    
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#EmailEmp{
+    position: absolute;
+    top: 350px;
+    left: 970px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxEmail{
+position: absolute;
+top: 370px;
+left: 960px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+
+#RolEmp{
+    position: absolute;
+    top: 430px;
+    left: 640px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxRol{
+position: absolute;
+top: 450px;
+left: 630px;    
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#TurnoEmp{
+    position: absolute;
+    top: 430px;
+    left: 310px;
+    color: #BDC1CAFF;
+    font-family: Manrope;
+}
+#textboxTurno{
+position: absolute;
+top: 450px;
+left: 300px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+
+#NUsuarioEmp{
+    position: absolute;
+    top: 520px;
+    left: 310px;
+    color: #565D6D;
+    font-family: Manrope;
+}
+#textboxNusuario{
+position: absolute;
+top: 540px;
+left: 300px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#AContraEmp{
+    position: absolute;
+    top: 520px;
+    left: 640px;
+    color: #565D6D;
+    font-family: Manrope;
+}
+#textboxAContra{
+position: absolute;
+top: 540px;
+left: 630px;    
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
+#NContraEmp{
+    position: absolute;
+    top: 520px;
+    left: 970px;
+    color: #565D6D;
+    font-family: Manrope;
+}
+#textboxNContra{
+position: absolute;
+top: 540px;
+left: 960px;
+opacity: 0.4;
+}
+.textbox input {
+width: 319px;
+height: 36px;
+padding-left: 12px;
+padding-right: 12px;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+background: #F3F4F6FF;
+border-radius: 4px;
+border-width: 0px;
+outline: none;
+}
+.textbox .label {
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 700;
+}
+/* hover */
+.textbox input:hover {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+/* focused */
+.textbox input:focused {
+color: #BDC1CAFF;
+background: #FFFFFFFF;
+}
+/* disabled */
+.textbox input:disabled {
+color: #BDC1CAFF;
+background: #F3F4F6FF;
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+fill: #171A1FFF;
+}
+
