@@ -41,13 +41,26 @@ position: absolute;
 top: 170px;
 left: 290px;
 width: 1000px;
-height: 430px;
+height: 515px;
 background: #FFFFFFFF;
 border-radius: 0px;
 border-width: 1px;
 border-color: #F3F4F6FF;
 border-style: solid;
 }
+
+#LineaAbajo{
+    position: absolute;
+    top: 600px;
+    left: 290px;
+    width: 1000px;
+    height: 0px;
+    border-width: 1px;
+    border-color: #F3F4F6FF;
+    border-style: solid;
+    transform: rotate(0deg);
+    }
+
 #NombreEmp{
     position: absolute;
     top: 190px;
@@ -782,4 +795,93 @@ background: #F3F4F6FF;
 .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
 fill: #171A1FFF;
 }
+
+#BtnCancelarPE{
+    position: absolute;
+    top: 625px;
+    left: 1000px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #0C6A6FFF;
+    background: #EFFCFDFF;
+    opacity: 1;
+    border: none;
+    border-radius: 4px;
+    }
+    /* Hover */
+    .button:hover {
+    color: #0C6A6FFF;
+    background: #E9FCFDFF;
+    }
+    /* Pressed */
+    .button:hover:active {
+    color: #0C6A6FFF;
+    background: #D9F9FBFF;
+    }
+    /* Disabled */
+    .button:disabled {
+    opacity: 0.4;
+}
+
+#GuardarCamEP{
+position: absolute;
+top: 625px; 
+left: 1110px;
+height: 36px;
+padding: 0 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: Manrope;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+color: #FFFFFFFF;
+background: #0C6A6FFF;
+opacity: 1;
+border: none;
+border-radius: 4px;
+gap: 6px;
+}
+.button .icon {
+width: 16px;
+height: 16px;
+fill: #FFFFFFFF;
+}
+/* Hover */
+.button:hover {
+color: #FFFFFFFF;
+background: #09494DFF;
+}
+/* Pressed */
+.button:hover:active {
+color: #FFFFFFFF;
+background: #062F32FF;
+}
+/* Disabled */
+.button:disabled {
+opacity: 0.4;
+}
+
+#MensajeInferior{
+    position: absolute;
+    top: 625px;
+    left: 320px;
+    width: 529px;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #6F7787FF;
+    text-align: left;
+    }
+
+
 
