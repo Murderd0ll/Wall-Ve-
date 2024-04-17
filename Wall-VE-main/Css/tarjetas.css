@@ -89,6 +89,9 @@
     border-width: 2px!important;
     border-style:solid!important;
     border-radius: 8px!important;
+    left: 5.6rem;
+  position: inherit;
+  bottom: 3.3rem;
 }
 #completa{
     padding-top:6px;
