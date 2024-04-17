@@ -79,6 +79,7 @@ if (isset($_POST['agregarVenta'])) {
 
 
    <link rel="stylesheet" href="css/estilos_emp.css"/>
+    <link rel="stylesheet" href="css/tarjetaoverflow.css">
 
   
 

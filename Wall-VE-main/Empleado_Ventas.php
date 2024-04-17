@@ -22,7 +22,7 @@ if(empty($_SESSION['user'])){
 
 <link rel="stylesheet" href="css/estilos_emp.css"/>
 
-   <link rel="stylesheet" href="css/tarjetas.css">
+   <link rel="stylesheet" href="css/tarjetasEmpleado.css">
 
   
 

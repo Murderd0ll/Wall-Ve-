@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+#seleccione{
+    padding-bottom: 30px!important;
+  margin-bottom: 50px!important;
+}
+
+/*!Acomodar mediaqueries de esto*/
+@media (max-width:1300px) {
+  
+#completa.card-text{
+    text-transform: capitalize;
+    padding:10px;
+}
+.card-text{
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+    
+    font-size: 48px;
+    font-weight: bold;
+    display:table;
+    
+
+}
+.pWatt{
+    font-size: 14px;
+    color:#030303FF;
+    font-weight: normal;
+    margin-bottom: 10px;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+
+.card-body.border{
+    max-width: 400px;
+    height: auto;
+    margin-left:199px!important;
+    padding:10px!important;
+    font-family: 'Lexend';
+
+    background-color: #F8F9FA;
+}
+#completa{
+    padding-bottom: 40px;
+}
+#cCompleta{ 
+    padding-top:0px!important;
+    margin-top:0px!important;
+    margin-bottom: 120px!important;
+    
+}
+}
+
+
+
+#completa.card-text{
+    text-transform: capitalize;
+    padding:50px;
+}
+.card-text{
+    font-size: 48px;
+    font-weight: bold;
+    display:table;
+    
+
+}
+.pWatt{
+    font-size: 14px;
+    color:#030303FF;
+    font-weight: normal;
+    margin-bottom: 20px;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+
+.card-body.border{
+    max-width: 800px;
+    height: auto;
+    margin-left:20%;
+    padding: 90px;
+    font-family: 'Lexend';
+
+    background-color: #F8F9FA;
+}
+.card-title{
+   text-transform: uppercase;
+   text-align: center;
+   
+}
+.card-body.border.border-primary {
+    border-color: #0C6A6FFF!important;
+    border-width: 2px!important;
+    border-style:solid!important;
+    border-radius: 8px!important;
+    left: 5.6rem;
+  position: inherit;
+  bottom: 3.3rem;
+}
+#completa{
+    padding-top:6px;
+    padding-bottom: 95px;
+}
+#cCompleta{ 
+    margin-top:96px;
+    margin-bottom: 106px;
+    
+}
+.btn.btn-primary{
+    background-color:white;
+    color:#0C6A6FFF;
+    border-color: #0C6A6FFF!important;
+    border-width: 2px!important;
+    border-radius: 8px!important;
+}
+
+.material-symbols-outlined {
+    color: #0C6A6F!important;
+   }
+
+.rbP{
+    font-size:20px;
+}
