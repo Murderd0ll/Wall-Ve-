@@ -141,15 +141,15 @@ if(empty($_SESSION['user'])){
    
   <?php
   //Aquí se obtienen los datos del form
-  $carga = $_POST['carga'];
-  $empleado = $_POST['empleado'];
-  $tiempo = $_POST['tiempo'];
-  $fecha = $_POST['fecha'];
-  $efectivo = $_POST['efectivo'];
-  $cambio = $_POST['cambio'];
-  $total = $_POST['total'];
+  $carga = $_SESSION['carga'];
+  $empleado = $_SESSION['empleado'];
+  $fecha = date('Y-m-d H:i:s');
+  //$fecha = $_SESSION['fecha'];
+  $efectivo = $_SESSION['efectivo'];
+  $cambio = $_SESSION['cambio'];
+  $total = $_SESSION['total'];
   $estacion = $_SESSION['estacion'];
-  $folio = rand(1, 1000);
+  $folio = $_SESSION['folio'];
 
 
   //Y si aquí pongo la consulta SQL y en el botón solo la mando a llamar?

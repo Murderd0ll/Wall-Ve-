@@ -1,9 +1,64 @@
 <?php
+// Iniciar la sesión si no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
-if(empty($_SESSION['user'])){
-    header('location:Login.php');
+
+// Verificar si el usuario está autenticado
+if (empty($_SESSION['user'])) {
+    header('location: Login.php'); // Redirigir al usuario a la página de inicio de sesión
+    exit; // Asegurarse de que el script se detenga después de la redirección
+}
+
+// Procesar el formulario cuando se envía
+if (isset($_POST['agregarVenta'])) {
+    // Obtener los datos del formulario
+    $carga = $_POST['carga'];
+    $empleado = $_POST['empleado'];
+    $estacion = $_SESSION['estacion'];
+    $folio = rand(1, 1000);
+    $_SESSION['folio'] = $folio;
+    $efectivo = $_POST['efectivo'];
+    $cambio = $_POST['cambio'];
+    $total = $_POST['total'];
+
+    // Obtener el ID del empleado actual
+    $idEmpleado = $_SESSION['user'];
+    include("connection/conexion.php");
+
+    // Consultar el ID del empleado en la base de datos
+    $sql = "SELECT idEmp FROM `tusuario` WHERE idLoginEmp= '$idEmpleado'";
+    $result = mysqli_query($conexion, $sql);
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $idEmpleado = $row['idEmp'];
+
+        // Realizar la inserción en la tabla tventa
+        $sql2 = "INSERT INTO tventa (folioVenta, idProd, idEstacion, idEmp, fechaVenta, cantWatts, efectivoVenta, cambioVenta, totalVenta) 
+                 VALUES ('$folio', '1', '$estacion', '$idEmpleado', NOW(), '$carga', '$efectivo', '$cambio', '$total')";
+        $resultado = mysqli_query($conexion, $sql2);
+
+        if ($resultado) {
+            // Establecer las variables de sesión para los datos de la venta
+            $_SESSION['carga'] = $carga;
+            $_SESSION['empleado'] = $empleado;
+            $_SESSION['fecha'] = date('Y-m-d H:i:s');
+            $_SESSION['efectivo'] = $efectivo;
+            $_SESSION['cambio'] = $cambio;
+            $_SESSION['total'] = $total;
+
+            // Redirigir a la página de carga exitosa
+            header('location: ./Empleado_Ventas_Cargando.php');
+            exit; // Asegurarse de que el script se detenga después de la redirección
+        } else {
+            echo "Error al insertar en la tabla tventa: " . mysqli_error($conexion);
+        }
+    } else {
+        echo "Error al obtener el ID del empleado: " . mysqli_error($conexion);
+    }
+
+    mysqli_close($conexion);
 }
 ?>
 <!DOCTYPE html>
@@ -53,7 +108,7 @@ if(empty($_SESSION['user'])){
                 </li>
 
                 <li >
-                    <a href="Empleado_Ventas.html">
+                    <a href="Empleado_Ventas.php">
                         <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
                         <span title="Ir a la sección de ventas.">Ventas </span>
                     </a>
@@ -87,7 +142,7 @@ if(empty($_SESSION['user'])){
 
 <div class="formCarga">
     <h2 class="ventaPor">Venta por cantidad de Watts.</h2>
-        <form class="row g-3" autocomplete="off"  action="./Empleado_Ventas_Cargando.php" method="post">
+        <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
         <div class="col-md-6">
             <label for="inputCarga" class="form-label">Cantidad de carga en Watts</label>
@@ -171,7 +226,7 @@ if(empty($_SESSION['user'])){
         </div>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Autorizar carga</button>
+            <button type="submit" class="btn btn-primary" name="agregarVenta">Autorizar carga</button>
         </div>
         </form>
 
