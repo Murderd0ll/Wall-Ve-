@@ -85,6 +85,20 @@ if (isset($_POST['agregarVenta'])) {
 
 
     <title>Venta de energía | Wall-VE </title>
+    
+    <script>
+            function validarFormulario() {
+                var carga = document.getElementsByName("moneda")[0].value.trim();
+                var efectivo = document.getElementsByName("efectivo")[0].value.trim();
+
+                if (carga === "" || efectivo === "" ) {
+                    alert("Por favor complete todos los campos obligatorios.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
 </head>
 <body>
     <header>
@@ -214,61 +228,61 @@ include("connection/conexion.php");
 
 <div class="formCarga">
     <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
-    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" onsubmit="return validarFormulario()" method="post">
 
-<div class="col-md-6">
-    <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
-    <input type="float" class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
-</div>
+        <div class="col-md-6">
+        <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
+        <input type="number"   class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
+        </div>
 
-<div class="col-md-6">
+        <div class="col-md-6">
 
-    <label for="inputEstacion" class="form-label">IDEstación</label>
-    <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>
-</div>
+        <label for="inputEstacion" class="form-label">IDEstación</label>
+        <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>
+        </div>
 
-<div class="col-md-6">
-    <label for="inputEmpleado" class="form-label">Empleado a cargo</label>
-    <input type="text" class="form-control" id="inputEmpleado" name="empleado" value="<?php echo $nombre;?>" readonly>
-</div>
+        <div class="col-md-6">
+        <label for="inputEmpleado" class="form-label">Empleado a cargo</label>
+        <input type="text" class="form-control" id="inputEmpleado" name="empleado" value="<?php echo $nombre;?>" readonly>
+        </div>
 
-<div class="col-md-6">
-    <label for="inputWatts" class="form-label">Cantidad de Watts</label>
-    <input type="text" class="form-control" id="inputWatts" name="carga" readonly>
-</div>
+        <div class="col-md-6">
+        <label for="inputWatts" class="form-label">Cantidad de Watts</label>
+        <input type="text" class="form-control" id="inputWatts" name="carga" readonly>
+        </div>
 
-<div class="col-md-6">
-    <label for="inputTiempoAprox" class="form-label">Tiempo aproximado</label>
-    <input type="text" class="form-control" id="inputTiempoAprox" name="tiempo" readonly>
-</div>
-
-
-
-<div class="col-md-6">
-    <label for="inputFecha" class="form-label">Fecha</label>
-    <input type="date" class="form-control" id="inputFecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
+        <div class="col-md-6">
+        <label for="inputTiempoAprox" class="form-label">Tiempo aproximado</label>
+        <input type="text" class="form-control" id="inputTiempoAprox" name="tiempo" readonly>
+        </div>
 
 
-</div>
-<div class="col-md-6">
-    <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
-    <input type="text" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
-</div>
-<div class="col-md-6">
-    <label for="inputCambio" class="form-label">Cambio(MXN)</label>
-    <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()">
-</div>
+
+        <div class="col-md-6">
+        <label for="inputFecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="inputFecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
 
 
-<div class="col-md-6">
-    <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
-    <input type="text" class="form-control" name="total" id="inputTotal">
-</div>
+        </div>
+        <div class="col-md-6">
+        <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
+        <input type="number"  class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
+        </div>
+        <div class="col-md-6">
+        <label for="inputCambio" class="form-label">Cambio(MXN)</label>
+        <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()" readonly>
+        </div>
 
-<div class="col-12">
-    <button type="submit" class="btn btn-primary" name="agregarVenta">Autorizar carga</button>
-</div>
-</form>
+
+        <div class="col-md-6">
+        <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
+        <input type="text" class="form-control" name="total" id="inputTotal" readonly>
+        </div>
+
+        <div class="col-12">
+        <button type="submit" class="btn btn-primary" name="agregarVenta">Autorizar carga</button>
+        </div>
+        </form>
 
 
 </div>

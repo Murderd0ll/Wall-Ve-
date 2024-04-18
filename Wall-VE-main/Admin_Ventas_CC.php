@@ -86,6 +86,18 @@ if (isset($_POST['agregarVenta'])) {
 
 
     <title>Venta de energía | Wall-VE </title>
+    <script>
+            function validarFormulario() {
+                var carga = document.getElementsByName("cargaMax")[0].value.trim();
+                var efectivo = document.getElementsByName("efectivo")[0].value.trim();
+
+                if (carga === "" || efectivo === "" ) {
+                    alert("Por favor complete todos los campos obligatorios.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
 </head>
 <body>
     <header>
@@ -178,16 +190,16 @@ if (isset($_POST['agregarVenta'])) {
 
 <div class="formCarga">
     <h2 class="ventaPor">Venta por carga completa.</h2>
-    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" onsubmit="return validarFormulario()" method="post">
 
 
 <div class="col-md-6">
     <label for="inputCarga" class="form-label">Carga actual en el automovil</label>
-    <input type="float" class="form-control" id="inputCarga" name="cargaActual" value="<?php echo $cargaCompleta = rand(1, 1000);?>">
+    <input type="number" class="form-control" id="inputCarga" name="cargaActual" value="<?php echo $cargaCompleta = rand(1, 1000);?>">
 </div>
 <div class="col-md-6">
     <label for="inputCargaMax" class="form-label">Carga máxima en el automovil</label>
-    <input type="float" class="form-control" id="inputCargaMax" name="cargaMax" onkeyup="calculo()">
+    <input type="number" class="form-control" id="inputCargaMax" name="cargaMax" onkeyup="calculo()">
 </div>
 
 
@@ -241,7 +253,7 @@ if (isset($_POST['agregarVenta'])) {
 
 <div class="col-md-6">
     <label for="inputWatts" class="form-label">Cantidad de Watts</label>
-    <input type="text" class="form-control" id="inputWatts" name="carga" readonly>
+    <input type="number" class="form-control" id="inputWatts" name="carga" readonly>
 </div>
 
 <div class="col-md-6">
@@ -259,17 +271,17 @@ if (isset($_POST['agregarVenta'])) {
 </div>
 <div class="col-md-6">
     <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
-    <input type="text" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
+    <input type="number" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
 </div>
 <div class="col-md-6">
     <label for="inputCambio" class="form-label">Cambio(MXN)</label>
-    <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()">
+    <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()" readonly>
 </div>
 
 
 <div class="col-md-6">
     <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
-    <input type="text" class="form-control" name="total" id="inputTotal">
+    <input type="text" class="form-control" name="total" id="inputTotal" readonly>
 </div>
 
 <div class="col-12">
