@@ -17,6 +17,7 @@ if (isset($_POST['agregarVenta'])) {
     $empleado = $_POST['empleado'];
     $estacion = $_SESSION['estacion'];
     $folio = rand(1, 1000);
+    echo $folio;
     $_SESSION['folio'] = $folio;
     $efectivo = $_POST['efectivo'];
     $cambio = $_POST['cambio'];
@@ -49,7 +50,7 @@ if (isset($_POST['agregarVenta'])) {
             $_SESSION['total'] = $total;
 
             // Redirigir a la página de carga exitosa
-            header('location: ./Empleado_Ventas_Cargando.php');
+            header('location: Empleado_Ventas_Cargando.php');
             exit; // Asegurarse de que el script se detenga después de la redirección
         } else {
             echo "Error al insertar en la tabla tventa: " . mysqli_error($conexion);
@@ -61,6 +62,7 @@ if (isset($_POST['agregarVenta'])) {
     mysqli_close($conexion);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,8 +80,13 @@ if (isset($_POST['agregarVenta'])) {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
 
 
-   <link rel="stylesheet" href="css/estilos_emp.css"/>
+   <link rel="stylesheet" href="css/estilos.css"/>
     <link rel="stylesheet" href="css/tarjetaoverflow.css">
+  
+
+
+    <title>Venta de energía | Wall-VE </title>
+    
 
     <script>
             function validarFormulario() {
@@ -99,10 +106,6 @@ if (isset($_POST['agregarVenta'])) {
                 return true;
             }
         </script>
-  
-
-
-    <title>Venta de energía | Wall-VE </title>
 </head>
 <body>
     <header>
@@ -118,7 +121,6 @@ if (isset($_POST['agregarVenta'])) {
 
     -->
 
-    
     <div class="barralateral">
         <div class="logo"></div>
 
@@ -162,100 +164,103 @@ if (isset($_POST['agregarVenta'])) {
             </ul>
     </div>
 
-<div class="formCarga">
-    <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
-    <form class="row g-3" autocomplete="off"  action="./Empleado_Ventas_Cargando.php" method="post" onsubmit="return validarFormulario()">
-
-<div class="col-md-6">
-    <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
-    <input type="number" class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
-</div>
-
-<div class="col-md-6">
 
     <?php 
 
+            
     
-
- include("connection/conexion.php");
-
- 
-    $idEs="";
-     if (isset($_SESSION['estacion'])) {
-        $idEs = $_SESSION['estacion'];
-    } 
-    
-    $usuario = $_SESSION['user'];
-    
-    $sql = "SELECT CONCAT(nombreEmp,' ',apellidoPEmp,' ',apellidoMEmp) AS nombre_Completo
-     from tusuario where idloginEmp='$usuario'";
-
-    $resultado = mysqli_query($conexion, $sql);
-    $nombre="";
-    while ($consulta = mysqli_fetch_array($resultado) ) {
-        $nombre= $consulta['nombre_Completo'];
-    }
+include("connection/conexion.php");
 
 
-    
-    $sql = "SELECT precioProd from tproducto where idEstacion='$idEs'";
+   $idEs="";
+    if (isset($_SESSION['estacion'])) {
+       $idEs = $_SESSION['estacion'];
+   } 
+   
+   $usuario = $_SESSION['user'];
+   
+   $sql = "SELECT CONCAT(nombreEmp,' ',apellidoPEmp,' ',apellidoMEmp) AS nombre_Completo
+    from tusuario where idloginEmp='$usuario'";
+
+   $resultado = mysqli_query($conexion, $sql);
+   $nombre="";
+   while ($consulta = mysqli_fetch_array($resultado) ) {
+       $nombre= $consulta['nombre_Completo'];
+   }
 
 
-    $resultado = mysqli_query($conexion, $sql);
-
-    $precio="";
-
-    while ($consulta = mysqli_fetch_array($resultado) ) {
-        $precio= $consulta['precioProd'];
-    }
-
-    ?>
-    <label for="inputEstacion" class="form-label">IDEstación</label>
-    <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>
-</div>
-
-<div class="col-md-6">
-    <label for="inputEmpleado" class="form-label">Empleado a cargo</label>
-    <input type="text" class="form-control" id="inputEmpleado" name="empleado" value="<?php echo $nombre;?>" readonly>
-</div>
-
-<div class="col-md-6">
-    <label for="inputWatts" class="form-label">Cantidad de Watts</label>
-    <input type="text" class="form-control" id="inputWatts" name="carga" readonly>
-</div>
-
-<div class="col-md-6">
-    <label for="inputTiempoAprox" class="form-label">Tiempo aproximado</label>
-    <input type="text" class="form-control" id="inputTiempoAprox" name="tiempo" readonly>
-</div>
+   
+   $sql = "SELECT precioProd from tproducto where idEstacion='$idEs'";
 
 
+   $resultado = mysqli_query($conexion, $sql);
 
-<div class="col-md-6">
-    <label for="inputFecha" class="form-label">Fecha</label>
-    <input type="date" class="form-control" id="inputFecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
+   $precio="";
 
+   while ($consulta = mysqli_fetch_array($resultado) ) {
+       $precio= $consulta['precioProd'];
+   }
 
-</div>
-<div class="col-md-6">
-    <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
-    <input type="number" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()" >
-</div>
-<div class="col-md-6">
-    <label for="inputCambio" class="form-label">Cambio(MXN)</label>
-    <input type="number" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()" readonly>
-</div>
+   ?>   
 
 
-<div class="col-md-6">
-    <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
-    <input type="number" class="form-control" name="total" id="inputTotal" readonly>
-</div>
+<div class="formCarga">
+    <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
+    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" onsubmit="return validarFormulario()" method="post">
 
-<div class="col-12">
-    <button type="submit" class="btn btn-primary" name="agregarVenta">Autorizar carga</button>
-</div>
-</form>
+        <div class="col-md-6">
+        <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
+        <input type="number"   class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
+        </div>
+
+        <div class="col-md-6">
+
+        <label for="inputEstacion" class="form-label">IDEstación</label>
+        <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>
+        </div>
+
+        <div class="col-md-6">
+        <label for="inputEmpleado" class="form-label">Empleado a cargo</label>
+        <input type="text" class="form-control" id="inputEmpleado" name="empleado" value="<?php echo $nombre;?>" readonly>
+        </div>
+
+        <div class="col-md-6">
+        <label for="inputWatts" class="form-label">Cantidad de Watts</label>
+        <input type="text" class="form-control" id="inputWatts" name="carga" readonly>
+        </div>
+
+        <div class="col-md-6">
+        <label for="inputTiempoAprox" class="form-label">Tiempo aproximado</label>
+        <input type="text" class="form-control" id="inputTiempoAprox" name="tiempo" readonly>
+        </div>
+
+
+
+        <div class="col-md-6">
+        <label for="inputFecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="inputFecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" readonly>
+
+
+        </div>
+        <div class="col-md-6">
+        <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
+        <input type="number"  class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
+        </div>
+        <div class="col-md-6">
+        <label for="inputCambio" class="form-label">Cambio(MXN)</label>
+        <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()" readonly>
+        </div>
+
+
+        <div class="col-md-6">
+        <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
+        <input type="text" class="form-control" name="total" id="inputTotal" readonly>
+        </div>
+
+        <div class="col-12">
+        <button type="submit" class="btn btn-primary" name="agregarVenta">Autorizar carga</button>
+        </div>
+        </form>
 
 
 </div>
