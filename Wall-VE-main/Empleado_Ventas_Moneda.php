@@ -133,14 +133,14 @@ if (isset($_POST['agregarVenta'])) {
                     </a>
                 </li>
 
-                <li >
+                <li class="activo">
                     <a href="Empleado_Ventas.php">
                         <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
                         <span title="Ir a la sección de ventas.">Ventas </span>
                     </a>
                 </li>            
                 
-                <li class="activo">
+                <li >
                     <a href="Empleado_Reportes.html">
                         <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets."></i>
                         <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets.">Reportes</span>
@@ -165,7 +165,19 @@ if (isset($_POST['agregarVenta'])) {
     </div>
 
 
-    <?php 
+
+<div class="formCarga">
+    <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
+    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" onsubmit="return validarFormulario()" method="post">
+
+        <div class="col-md-6">
+        <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
+        <input type="number"   class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
+        </div>
+
+        <div class="col-md-6">
+
+        <?php 
 
             
     
@@ -202,18 +214,6 @@ include("connection/conexion.php");
    }
 
    ?>   
-
-
-<div class="formCarga">
-    <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
-    <form class="row g-3" autocomplete="off"  action="<?= $_SERVER['PHP_SELF'] ?>" onsubmit="return validarFormulario()" method="post">
-
-        <div class="col-md-6">
-        <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
-        <input type="number"   class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
-        </div>
-
-        <div class="col-md-6">
 
         <label for="inputEstacion" class="form-label">IDEstación</label>
         <input type="text" class="form-control" id="inputEstacion" value="<?php echo $idEs; ?>" readonly>

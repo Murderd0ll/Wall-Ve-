@@ -76,14 +76,14 @@ if(empty($_SESSION['user'])){
                     </a>
                 </li>
 
-                <li >
+                <li class="activo">
                     <a href="Empleado_Ventas.php">
                         <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
                         <span title="Ir a la sección de ventas.">Ventas </span>
                     </a>
                 </li>            
                 
-                <li class="activo">
+                <li>
                     <a href="Empleado_Reportes.html">
                         <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets."></i>
                         <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas y tickets.">Reportes</span>
