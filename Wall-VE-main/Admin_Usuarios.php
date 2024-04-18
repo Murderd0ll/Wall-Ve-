@@ -29,7 +29,7 @@ if(empty($_SESSION['user'])){
 <body>
     <header>
         <ul class="navig">
-            <li><a>Usuarios</a></li>            
+            <li><a>Usuarioos</a></li>            
         </ul>
     </header>
    
