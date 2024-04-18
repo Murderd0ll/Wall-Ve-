@@ -69,10 +69,9 @@
     {
     ?>
 
-            <button id="perfil" onclick="mostrarPersonalizacion()">
             <?php echo $usu['nombreEmp'];
                     $nombreUser = $usu['nombreEmp'];
-                ?> ▼</button>
+                ?>
             <?php
     }
     ?>
@@ -80,7 +79,8 @@
     <?php
         mysqli_close($conexion);
         ?>
-
+            <a href="logout.php" id="aLogout">
+                        <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
              <li id="nav-link">
                 <ul class="drop-down">
                     <li>
@@ -90,20 +90,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="logout.php" id="aLogout">
-                        <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
+                        
                             
                         </a>
                     </li>   
                 </ul>
             </li>
-            
-
         </nav>
-
-
-
-        
 
 
     </div>
@@ -217,25 +210,5 @@ Haga click al recuadro de Reportes  para entrar."></i>
         var nombreUsuario = '<?php echo $nombreUser ?>';
     </script>
 
-<script>
-        function mostrarPersonalizacion(){
-            document.getElementById("perfil").addEventListener("click", function() {
-        var element = document.getElementById("nav-link");
-        if (element.style.display === "none") {
-            element.style.display = "inline-block"; // Mostrar el elemento si está oculto
-            
-            var boton = document.getElementById("perfil");
-            
-            boton.textContent= `${nombreUsuario} ▲`
-            
-        } else {
-            element.style.display = "none"; // Ocultar el elemento si está visible
-            var boton = document.getElementById("perfil");
-            boton.textContent= `${nombreUsuario} ▼`
-
-        }
-});
-    }
-    </script>
 </body>
 </html>

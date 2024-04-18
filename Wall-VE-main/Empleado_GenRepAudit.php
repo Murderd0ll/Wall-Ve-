@@ -87,7 +87,7 @@ if(empty($_SESSION['user'])){
                 </li>
 
                 <li >
-                    <a href="Empleado_Ventas.html">
+                    <a href="Empleado_Ventas.php">
                         <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
                         <span title="Ir a la sección de ventas.">Ventas </span>
                     </a>
