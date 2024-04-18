@@ -17,6 +17,7 @@ if (isset($_POST['agregarVenta'])) {
     $empleado = $_POST['empleado'];
     $estacion = $_SESSION['estacion'];
     $folio = rand(1, 1000);
+    echo $folio;
     $_SESSION['folio'] = $folio;
     $efectivo = $_POST['efectivo'];
     $cambio = $_POST['cambio'];
@@ -86,19 +87,25 @@ if (isset($_POST['agregarVenta'])) {
 
     <title>Venta de energía | Wall-VE </title>
     
+
     <script>
             function validarFormulario() {
-                var carga = document.getElementsByName("moneda")[0].value.trim();
+                var carga = document.getElementsByName("carga")[0].value.trim();
                 var efectivo = document.getElementsByName("efectivo")[0].value.trim();
+                var total = document.getElementsByName("total")[0].value.trim();
 
                 if (carga === "" || efectivo === "" ) {
-                    alert("Por favor complete todos los campos obligatorios.");
+                    alert("Por favor llene todos los campos.");
                     return false;
                 }
+                if(efectivo < total){
+                    alert("El pago es inferior al total a pagar, ingrese más dinero");
+                    return false;
+                }
+
                 return true;
             }
         </script>
-
 </head>
 <body>
     <header>

@@ -81,6 +81,24 @@ if (isset($_POST['agregarVenta'])) {
    <link rel="stylesheet" href="css/estilos_emp.css"/>
     <link rel="stylesheet" href="css/tarjetaoverflow.css">
 
+    <script>
+            function validarFormulario() {
+                var carga = document.getElementsByName("carga")[0].value.trim();
+                var efectivo = document.getElementsByName("efectivo")[0].value.trim();
+                var total = document.getElementsByName("total")[0].value.trim();
+
+                if (carga === "" || efectivo === "" ) {
+                    alert("Por favor llene todos los campos.");
+                    return false;
+                }
+                if(efectivo < total){
+                    alert("El pago es inferior al total a pagar, ingrese más dinero");
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
   
 
 
@@ -146,11 +164,11 @@ if (isset($_POST['agregarVenta'])) {
 
 <div class="formCarga">
     <h2 class="ventaPor">Venta por cantidad en moneda.</h2>
-    <form class="row g-3" autocomplete="off"  action="./Empleado_Ventas_Cargando.php" method="post">
+    <form class="row g-3" autocomplete="off"  action="./Empleado_Ventas_Cargando.php" method="post" onsubmit="return validarFormulario()">
 
 <div class="col-md-6">
     <label for="inputCarga" class="form-label">Cantidad de carga en Moneda</label>
-    <input type="float" class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
+    <input type="number" class="form-control" id="inputCarga" name="moneda" onkeyup="calculo()">
 </div>
 
 <div class="col-md-6">
@@ -221,17 +239,17 @@ if (isset($_POST['agregarVenta'])) {
 </div>
 <div class="col-md-6">
     <label for="inputEfectivo" class="form-label">Efectivo(MXN)</label>
-    <input type="text" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()">
+    <input type="number" class="form-control" name="efectivo" id="inputEfectivo" onkeyup="dinero()" >
 </div>
 <div class="col-md-6">
     <label for="inputCambio" class="form-label">Cambio(MXN)</label>
-    <input type="text" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()">
+    <input type="number" class="form-control" name="cambio" id="inputCambio" onkeyup="dinero()" readonly>
 </div>
 
 
 <div class="col-md-6">
     <label for="inputTotal" class="form-label">Total a pagar(MXN)</label>
-    <input type="text" class="form-control" name="total" id="inputTotal">
+    <input type="number" class="form-control" name="total" id="inputTotal" readonly>
 </div>
 
 <div class="col-12">
