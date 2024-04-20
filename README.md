@@ -5,6 +5,8 @@ Este es el chido
 * Perfil empleado y admin --- Jasiel 
 * Encriptar las contraseñas ---- Hasta el final.
 <br>
+
+
 * ventasMoneda se ve raro el nav
 * Ticket ponerlo cuando autorice la carga
 * Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
@@ -18,8 +20,11 @@ Este es el chido
 * Ticket general y ticket individual
 * Nombre - cerrar sesión 
 
+<br>
 
 LISTO.............
+
+<br>
 
 * Poner de que se pueda ver el mismo día (no deja ver cosas del mismo día a menos que busque se un día anterior)
 * Poner validación de que no puedan ser números negativos o inferiores al precio 
