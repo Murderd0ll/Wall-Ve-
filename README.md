@@ -4,7 +4,7 @@ Este es el chido
 * Modificar precios ---- Jasiel.
 * Perfil empleado y admin --- Jasiel 
 * Encriptar las contraseñas ---- Hasta el final.
-
+<br>
 * ventasMoneda se ve raro el nav
 * Ticket ponerlo cuando autorice la carga
 * Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
