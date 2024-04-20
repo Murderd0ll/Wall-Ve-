@@ -152,6 +152,9 @@ include("connection/conexion.php");
 $desdeFecha = $_GET["desdeFecha"];
 $hastaFecha = $_GET["hastaFecha"];
 
+$desdeFechaConHora = $desdeFecha. " 00:00:00";
+$hastaFechaConHora = $hastaFecha. " 23:59:59";
+
 
 
     $sql = "SELECT 
@@ -164,8 +167,8 @@ $hastaFecha = $_GET["hastaFecha"];
      FROM tVenta v
 
 
-    WHERE v.fechaVenta BETWEEN '$desdeFecha' 
-    AND '$hastaFecha'
+    WHERE v.fechaVenta BETWEEN '$desdeFechaConHora' 
+    AND '$hastaFechaConHora'
     GROUP BY DATE(v.fechaVenta)
     ORDER BY Fecha ASC;
 
@@ -176,6 +179,8 @@ $hastaFecha = $_GET["hastaFecha"];
 
     $resultado = mysqli_query($conexion, $sql);
   
+    $idEmpleado = $_SESSION['user'];
+
         while ($row = mysqli_fetch_assoc($resultado)) {
         ?>
           <tr>

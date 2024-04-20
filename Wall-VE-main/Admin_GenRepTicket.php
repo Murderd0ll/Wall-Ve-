@@ -189,6 +189,9 @@ include("connection/conexion.php");
 $desdeFecha = $_GET["desdeFecha"];
 $hastaFecha = $_GET["hastaFecha"];
 
+$desdeFechaConHora = $desdeFecha. " 00:00:00";
+$hastaFechaConHora = $hastaFecha. " 23:59:59";
+
 
 
     $sql = "SELECT 
@@ -204,8 +207,10 @@ $hastaFecha = $_GET["hastaFecha"];
      INNER JOIN 
     tusuario u ON v.idEmp = u.idEmp
 
-    WHERE v.fechaVenta BETWEEN '$desdeFecha' 
-    AND '$hastaFecha'";
+    WHERE v.fechaVenta BETWEEN '$desdeFechaConHora' 
+    AND '$hastaFechaConHora'
+    order by Fecha asc
+    ";
 
 
 

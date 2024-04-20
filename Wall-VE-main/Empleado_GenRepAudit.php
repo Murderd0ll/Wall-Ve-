@@ -156,6 +156,9 @@ include("connection/conexion.php");
 $desdeFecha = $_GET["desdeFecha"];
 $hastaFecha = $_GET["hastaFecha"];
 
+$desdeFechaConHora = $desdeFecha. " 00:00:00";
+$hastaFechaConHora = $hastaFecha. " 23:59:59";
+
 
 
     $sql = "SELECT 
@@ -169,7 +172,8 @@ $hastaFecha = $_GET["hastaFecha"];
 
 
     WHERE a.fechaAudit BETWEEN '$desdeFecha' 
-    AND '$hastaFecha'";
+    AND '$hastaFecha' 
+    ORDER BY a.fechaAudit ";
 
 
 

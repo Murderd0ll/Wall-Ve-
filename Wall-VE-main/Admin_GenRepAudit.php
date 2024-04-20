@@ -188,9 +188,13 @@ include("connection/conexion.php");
 $desdeFecha = $_GET["desdeFecha"];
 $hastaFecha = $_GET["hastaFecha"];
 
+$desdeFechaConHora = $desdeFecha. " 00:00:00";
+$hastaFechaConHora = $hastaFecha. " 23:59:59";
 
 
-    $sql = "SELECT 
+//Se hizo cambio, el anterior era:
+/*
+   $sql = "SELECT 
     a.idAudit AS 'Id',
     a.tipoProceso AS 'Tipo de proceso',
     a.descAudit AS 'Descripción',
@@ -200,8 +204,21 @@ $hastaFecha = $_GET["hastaFecha"];
      FROM tauditorias a
 
 
-    WHERE a.fechaAudit BETWEEN '$desdeFecha' 
-    AND '$hastaFecha'";
+    WHERE a.fechaAudit BETWEEN '$desdeFechaConHora' 
+    AND '$hastaFechaConHora'
+    ORDER BY a.fechaAudit asc";
+     */
+
+$sql = "SELECT
+  a.idAudit AS 'Id',
+  a.tipoProceso AS 'Tipo de proceso',
+  a.descAudit AS 'Descripción',
+  a.empleado AS 'Usuario',
+  DATE_FORMAT(a.fechaAudit, '%d/%m/%y %H:%i') AS 'Fecha y hora'
+FROM tauditorias a
+WHERE a.fechaAudit BETWEEN '$desdeFechaConHora' AND '$hastaFechaConHora'
+ORDER BY a.fechaAudit asc";
+
 
 
 
