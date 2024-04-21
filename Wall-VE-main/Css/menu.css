@@ -13,6 +13,12 @@ body{
     background: #2E2F2F;
 }
 
+#cerrarSesion{
+
+  font-family: 'Manrope'!important
+}
+
+
 @media (max-width:1400px) {
   #cerrarSesion{
 
