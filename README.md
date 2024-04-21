@@ -13,8 +13,9 @@ Este es el chido
 * Poner que cuando ponga watts mandé al efectivo
 * Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
-* Que no permita eliminar el usuario activo
-* Nombre - cerrar sesión 
+* Evitar eliminar el usuario activo (en uso)
+* Poner botón tipo dropdown para las opciones de eliminar/editar en la tabla de usuarios.
+
 
 <br>
 
@@ -29,6 +30,8 @@ LISTO.............
 * Poner de que se pueda ver el mismo día (no deja ver cosas del mismo día a menos que busque se un día anterior)
 * Poner validación de que no puedan ser números negativos o inferiores al precio 
 * ventas en empleado: redireccionamiento de la izq
+* Nombre - cerrar sesión 
+* Evita restaurar sin seleccionar un punto de restauración.
 
 * Hacerlo responsive TODO ---- Hasta el final.
 * Cambiar el tamaño de la tabla de usuarios. 
