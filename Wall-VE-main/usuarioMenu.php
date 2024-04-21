@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menú principal | WALL-VE</title>
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -19,7 +19,7 @@
     />
     <!-- Stylesheet -->
     
-    <link rel="stylesheet" href="./Css/drop-down.css" />
+    
     <link rel="stylesheet" href="./Css/menuUsuario.css" />
     
 </head>
@@ -64,42 +64,32 @@
     $sql = "select * from tusuario where idloginEmp='" .$id."'";
     $resultado = mysqli_query($conexion, $sql);
     ?>
-
+<div class="Cerrar">
+    <span>
     <?php while($usu = mysqli_fetch_assoc($resultado))
     {
     ?>
-
+    
             <?php echo $usu['nombreEmp'];
-                    $nombreUser = $usu['nombreEmp'];
                 ?>
             <?php
+            
     }
     ?>
 
     <?php
         mysqli_close($conexion);
         ?>
-            <a href="logout.php" id="aLogout">
+            <a href="logout.php" id="aLogout" class="logout">
                         <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
-             <li id="nav-link">
-                <ul class="drop-down">
-                    <li>
-                        <a href="#" id="aPerfil">
-                            <i class="fa-regular fa-id-card"> Perfil</i>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        
-                            
                         </a>
                     </li>   
                 </ul>
             </li>
+            </span>
+            </div>
         </nav>
 
-
-    </div>
     <?php
     include("connection/conexion.php");
     $sql = "select * from tusuario where idloginEmp='" .$id."'";
@@ -114,9 +104,8 @@
             <div class="header-content">
                 <h2 class="title">Bienvenido <span>
                     <?php echo $usu['nombreEmp'];
-                    $nombreUser = $usu['nombreEmp'];
-                ?></span>!</h2>
-            <p>Aquí encontrará todo lo necesario para realizar ventas, gestionar su(s) estacion(es) de carga, usuarios , reportes y copias de seguridad.</p>
+                    ?></span>!</h2>
+            <p>Aquí encontrará todo lo necesario para realizar ventas, gestionar su(s) estacion(es) de carga, usuarios, reportes y copias de seguridad.</p>
             </div>
     </header>
 <?php
@@ -141,7 +130,7 @@
                       
                         
                                 <i class="fa fa-question-circle-o fa-2x" id="preguntaVentas" aria-hidden="true" title="En este menú, podrá gestionar las ventas.
-Haga click al recuadro de Ventas  para entrar."> </i>
+Haga click al recuadro de Ventas para entrar."> </i>
                                
                         
                         <img src="./img/iconos/venta.png" alt="Simbolo de ventas">
@@ -155,7 +144,7 @@ Haga click al recuadro de Ventas  para entrar."> </i>
                         <a class="box reportes-box" id="cajaReportes" href="./Empleado_Reportes.html">
 
                 <i class="fa fa-question-circle-o fa-2x" id="preguntaReportes" aria-hidden="true" title="En este menú, podrá ver los reportes generados.
-Haga click al recuadro de Reportes  para entrar."></i>
+Haga click al recuadro de Reportes para entrar."></i>
 
 
                 <i class="reportes"></i>
@@ -170,7 +159,7 @@ Haga click al recuadro de Reportes  para entrar."></i>
                 <!--? Caja usuarios -->
                         <a class="box usuarios-box" id="cajaUsuarios" href="./Empleado_Perfil.html">
 
-                            <i class="fa fa-question-circle-o fa-2x" id="preguntaUsuarios" aria-hidden="true" title="En este menú, podrá ver  su perfil y hacer cambios en él, haga clic en Perfil  para entrar."></i>
+                            <i class="fa fa-question-circle-o fa-2x" id="preguntaUsuarios" aria-hidden="true" title="En este menú, podrá ver  su perfil y hacer cambios en él, haga clic en Perfil para entrar."></i>
     
 
                             <i class="usuarios"></i>
@@ -204,11 +193,7 @@ Haga click al recuadro de Reportes  para entrar."></i>
 
         <p class="copyright"> &copy 2024 WALL-VE </p>
     </footer>
-        
-    <script>
-        
-        var nombreUsuario = '<?php echo $nombreUser ?>';
-    </script>
+
 
 </body>
 </html>
