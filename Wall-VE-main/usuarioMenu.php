@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
+    <link rel="stylesheet" href="/Css/intentostyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
@@ -42,52 +43,56 @@
                 <li><a href="./Empleado_Ventas.php"  >Ventas</a></li>
                 <li><a href="./Empleado_Reportes.html"  >Reportes</a></li>
                 <li><a href="./Empleado_Perfil.html"  >Perfil</a></li>
-           </ul>
-
-           <!-- Poner que este div sea un a de usuario nomas y que  -->
+                <li>         <!-- Poner que este div sea un a de usuario nomas y que  -->
           
 
-           <?php
-           session_start();
+          <?php
+          session_start();
 
-           if (isset($_SESSION['idloginEmp'])) {
-            $id = $_SESSION['idloginEmp'];
-            // Ahora $idloginEmp está disponible para su uso en este script
-        } else {
-            header('location:Login.php');
-            //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
-        }
+          if (isset($_SESSION['idloginEmp'])) {
+           $id = $_SESSION['idloginEmp'];
+           // Ahora $idloginEmp está disponible para su uso en este script
+       } else {
+           header('location:Login.php');
+           //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
+       }
 
 
 
-    include("connection/conexion.php");
-    $sql = "select * from tusuario where idloginEmp='" .$id."'";
-    $resultado = mysqli_query($conexion, $sql);
-    ?>
+   include("connection/conexion.php");
+   $sql = "select * from tusuario where idloginEmp='" .$id."'";
+   $resultado = mysqli_query($conexion, $sql);
+   ?>
 <div class="Cerrar">
-    <span>
-    <?php while($usu = mysqli_fetch_assoc($resultado))
-    {
-    ?>
-    
-            <?php echo $usu['nombreEmp'];
-                ?>
-            <?php
-            
-    }
-    ?>
+   <span>
+   <?php while($usu = mysqli_fetch_assoc($resultado))
+   {
+   ?>
+   
+           <?php echo $usu['nombreEmp'];
+               ?>
+           <?php
+           
+   }
+   ?>
 
-    <?php
-        mysqli_close($conexion);
-        ?>
-            <a href="logout.php" id="aLogout" class="logout">
-                        <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
-                        </a>
-                    </li>   
-                </ul>
-            </li>
-            </span>
-            </div>
+   <?php
+       mysqli_close($conexion);
+       ?>
+           <a href="logout.php" id="aLogout" class="logout">
+           
+                       <i class="fa-solid fa-arrow-right-to-bracket"><p id="cerrarSesion">Cerrar Sesion</p></i>
+                       
+                       </a>
+                       
+                   </li>   
+               </ul>
+           </li>
+           </span>
+           </div></li>
+           </ul>
+
+  
         </nav>
 
     <?php

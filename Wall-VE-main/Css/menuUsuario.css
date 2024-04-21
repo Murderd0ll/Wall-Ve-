@@ -13,16 +13,33 @@ body{
     background: #2E2F2F;
 }
 
+#cerrarSesion{
+
+  font-family: 'Manrope'!important
+}
 
 
 
 /*!Esto es para el nav*/
 
+@media (max-width:1400px) {
+  #cerrarSesion{
+
+    display: none!important;
+  }
 .Cerrar{
   padding: 1.8rem;
-  padding-left: 64rem;
+  padding-left: 30rem!important;
   position: absolute;
-  
+  top:-14px;
+}
+}
+
+.Cerrar{
+  padding: 1.8rem;
+  padding-left: 60rem;
+  position: absolute;
+  top:-14px;
 }
 .Cerrar span{
   color: #171A1F;
@@ -30,7 +47,9 @@ body{
 #aLogout{
   font-family: 'Manrope'!important;
 }
-
+.logout i{
+  display: inline-flex!important;
+}
 .logout{
   font-family: 'Manrope';
   text-decoration: none;
@@ -47,6 +66,8 @@ body{
 .logout :active{
   color: #34ef41;
 }
+
+
 
 nav{
     height: 80px;

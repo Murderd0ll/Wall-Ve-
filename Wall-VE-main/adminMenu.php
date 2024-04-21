@@ -45,11 +45,7 @@
                 <li><a href="./Admin_Reportes.html"  >Reportes</a></li>
                 <li><a href="./Admin_CopiasSeg.php"  >Copias de seguridad</a></li>
                 <li><a href="./Admin_Perfil.html"  >Perfil</a></li>
-           </ul>
-
-           <!-- Poner que este div sea un a de usuario nomas y que  -->
-          
-
+                <li>
            <?php
            session_start();
 
@@ -64,46 +60,45 @@
 
 
 
-    include("connection/conexion.php");
-    $sql = "select * from tusuario where idloginEmp='" .$id."'";
-    $resultado = mysqli_query($conexion, $sql);
-    ?>
-
-    <?php while($usu = mysqli_fetch_assoc($resultado))
-    {
-    ?>
-
-            <button id="perfil" onclick="mostrarPersonalizacion()">
-            <?php echo $usu['nombreEmp'];
-                    $nombreUser = $usu['nombreEmp'];
-                ?> ▼</button>
-            <?php
-    }
-    ?>
-
-    <?php
-        mysqli_close($conexion);
+   
+        include("connection/conexion.php");
+        $sql = "select * from tusuario where idloginEmp='" .$id."'";
+        $resultado = mysqli_query($conexion, $sql);
         ?>
-
-            <li id="nav-link">
-            <ul class="drop-down">
-                <li>
-                    <a href="#" id="aPerfil">
-                        <i class="fa-regular fa-id-card"> Perfil</i>
-                        
-                    </a>
+    <div class="Cerrar">
+        <span>
+        <?php while($usu = mysqli_fetch_assoc($resultado))
+        {
+        ?>
+        
+                <?php echo $usu['nombreEmp'];
+                    ?>
+                <?php
+                
+        }
+        ?>
+    
+        <?php
+            mysqli_close($conexion);
+            ?>
+                <a href="logout.php" id="aLogout" class="logout">
+                
+                            <i class="fa-solid fa-arrow-right-to-bracket"><p id="cerrarSesion">Cerrar Sesion</p></i>
+                            
+                            </a>
+                            
+                        </li>   
+                    </ul>
                 </li>
-                <li>
-                    <a href="logout.php" id="aLogout">
-                    <i class="fa-solid fa-arrow-right-to-bracket"> Cerrar Sesion</i>
-                        
-                    </a>
-                </li>   
-            </ul>
-        </li>
-            
+                </span>
+                </div></li>
+           </ul>
 
-        </nav>
+           <!-- Poner que este div sea un a de usuario nomas y que  -->
+          
+
+            </nav>
+    
 
 
 
@@ -244,25 +239,5 @@
         var nombreUsuario = '<?php echo $nombreUser ?>';
     </script>
 
-    <script>
-        function mostrarPersonalizacion(){
-            document.getElementById("perfil").addEventListener("click", function() {
-        var element = document.getElementById("nav-link");
-        if (element.style.display === "none") {
-            element.style.display = "inline-block"; // Mostrar el elemento si está oculto
-            
-            var boton = document.getElementById("perfil");
-            
-            boton.textContent= `${nombreUsuario} ▲`
-            
-        } else {
-            element.style.display = "none"; // Ocultar el elemento si está visible
-            var boton = document.getElementById("perfil");
-            boton.textContent= `${nombreUsuario} ▼`
-
-        }
-});
-    }
-    </script>
 </body>
 </html>

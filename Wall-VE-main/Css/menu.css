@@ -13,6 +13,57 @@ body{
     background: #2E2F2F;
 }
 
+#cerrarSesion{
+
+  font-family: 'Manrope'!important
+}
+
+
+@media (max-width:1400px) {
+  #cerrarSesion{
+
+    display: none!important;
+  }
+.Cerrar{
+  padding: 1.8rem;
+  padding-left: 8rem!important;
+  position: absolute;
+  top:-14px;
+}
+}
+
+.Cerrar{
+  padding: 1.8rem;
+  padding-left: 33rem!important;
+  position: absolute;
+  top:-14px;
+}
+.Cerrar span{
+  color: #171A1F;
+}
+#aLogout{
+  font-family: 'Manrope'!important;
+}
+.logout i{
+  display: inline-flex!important;
+}
+.logout{
+  font-family: 'Manrope';
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin: 0% 0;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+  bottom: 0px;
+  left: 15px;
+  background: #0C6A6F;
+  width: 80%;
+}
+.logout :active{
+  color: #34ef41;
+}
+
 
 
 
