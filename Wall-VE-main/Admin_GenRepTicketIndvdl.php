@@ -30,18 +30,20 @@ if(empty($_SESSION['user'])){
         </ul>
     </header>
 
-
     <script>
-    function validarFormulario() {
-        var folioVenta = document.getElementsByName("folioVenta")[0].value.trim();
+                var folioVenta2 = document.getElementsByName('folioVenta')[0].value.trim();
 
+
+    function validarFormulario() {
+        var folioVenta = document.getElementsByName('folioVenta')[0].value.trim();
+        console.log(folioVenta);
         if (folioVenta === "") {
             alert("Por favor ingrese un folio.");
             return false;
         }
-
+        return true;
         // Llama a la función mandarFolio y retorna su resultado
-        return mandarFolio(folioVenta);
+      //  return mandarFolio(folioVenta);
     }
 
     function mandarFolio(folio) {
@@ -52,7 +54,6 @@ if(empty($_SESSION['user'])){
         return false; // Esta línea es opcional dependiendo de cómo quieras manejar el evento submit
     }
 </script>
-
 
 
     
@@ -130,13 +131,54 @@ if(empty($_SESSION['user'])){
 
         </ul>
     </div>
+    <?php 
+    if (isset($_POST['busqueda'])) {
+        
+        include("connection/conexion.php");
+
+        $valorABuscar = $_POST['folioVenta'];
+        $sql = "SELECT COUNT(*) FROM tventa WHERE folioVenta = '$valorABuscar'";
+       
+
+        // Ejecutar la consulta
+        $resultado = mysqli_query($conexion, $sql);
+
+
+        // Verificar si el valor existe
+        if ($resultado) { 
+            $row = mysqli_fetch_assoc($resultado);
+    
+            // Obtener el valor de count
+            $count = $row['COUNT(*)'];
+            if ($count > 0) {
+                
+                $_SESSION['folioV']= $valorABuscar;
+                echo "<script language ='JavaScript'>
+                location.assign('Admin_MostrarTicket.php');
+                    </script>";
+                
+            } else {
+                //echo "El valor '$valorABuscar' no existe en la tabla.";
+                
+                echo "<script language ='JavaScript'>
+                    alert('Error: El folio no existe, intente con otro folio por favor.');
+                    location.assign('Admin_GenRepTicketIndvdl.php');
+                    </script>";
+            }
+        } else {
+            echo "Error al ejecutar la consulta.";
+        }
+        
+    }
+    ?>
+
 
 
 
 
     <div class="formCarga">
     <h3 class="ventaPor">Ingrese el número de folio del ticket a buscar</h2>
-        <form class="row g-3" autocomplete="off" onsubmit="return validarFormulario()"  >
+        <form class="row g-3" autocomplete="off" onsubmit="return validarFormulario()" method = "post" >
             <div class="col-md-6">
                 <label for="inputFolioBusqueda" class="form-label">Folio</label>
                 <input type="number" class="form-control" id="inputFolioBusqueda" name="folioVenta" placeholder="Ingrese un folio aqui" >
@@ -151,8 +193,6 @@ if(empty($_SESSION['user'])){
 
 
 </div>
-
-
 
 
 

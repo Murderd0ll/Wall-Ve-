@@ -145,7 +145,7 @@ if(empty($_SESSION['user'])){
 
 include("connection/conexion.php");
 
-$folio = $_GET["folio"];
+$folio = $_SESSION["folioV"];
 
 
 

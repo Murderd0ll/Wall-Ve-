@@ -7,17 +7,13 @@ Este es el chido
 <br>
 
 
-* ventasMoneda se ve raro el nav
-* Ticket ponerlo cuando autorice la carga
+* Ticket ponerlo cuando dé click al boton de autorizar carga (Que se muestre al momento que esté cargando)
+* Poner el logo en el reporte
 * Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
 * Poner que cuando ponga watts mandé al efectivo
 * Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
-* Poner el logo en el reporte
-* Que no permita eliminiar el usuario activo
-* reimprimir ticket en reporte de tickets Con el folio de ticket,Imprimir el mismo diseño
-* El usuario solo puede reimprimir por número de ticket o por Búsqueda por fecha y hora y pueda reimprimir el ticket
-* Ticket general y ticket individual
+* Que no permita eliminar el usuario activo
 * Nombre - cerrar sesión 
 
 <br>
@@ -26,6 +22,10 @@ LISTO.............
 
 <br>
 
+* ventasMoneda se ve raro el nav
+* Ticket general y ticket individual
+* reimprimir ticket en reporte de tickets Con el folio de ticket,Imprimir el mismo diseño
+* El usuario solo puede reimprimir por número de ticket o por Búsqueda por fecha y hora y pueda reimprimir el ticket
 * Poner de que se pueda ver el mismo día (no deja ver cosas del mismo día a menos que busque se un día anterior)
 * Poner validación de que no puedan ser números negativos o inferiores al precio 
 * ventas en empleado: redireccionamiento de la izq

@@ -21,7 +21,7 @@ if(empty($_SESSION['user'])){
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 
-   <link rel="stylesheet" href="css/estilos.css"/>
+   <link rel="stylesheet" href="css/estilos_emp.css"/>
    <link rel="stylesheet" href="css/tarjetas.css">
 
   
