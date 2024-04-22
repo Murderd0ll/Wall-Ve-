@@ -1,43 +1,56 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
-if(empty($_SESSION['user'])){
+if (empty($_SESSION['user'])) {
     header('location:Login.php');
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script type="text/javascript">
-        function confirmar(){
+        function confirmar() {
             return confirm('¿Desea eliminar? No se podrán revertir los cambios.');
         }
-        </script>
+        function toggleOptions(button) {
+            var dropdownContent = button.nextElementSibling;
+            if (dropdownContent.style.display === "none") {
+                dropdownContent.style.display = "block";
+            } else {
+                dropdownContent.style.display = "none";
+            }
+        }
+    </script>
 
-           <!-- Fuentes  -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-   
-   <link rel="stylesheet" href="css/est.css"/>
-   <link rel="stylesheet" href="css/estilos.css"/>
+    <!-- Fuentes  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/est.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
     <title>Gestión de Usuarios | Wall-VE</title>
+
+
+    
 </head>
+
 <body>
     <header>
         <ul class="navig">
-            <li><a>Usuarioos</a></li>            
+            <li><a>Usuarios</a></li>
         </ul>
     </header>
-   
+
 
     <div class="barralateral">
         <div class="logo"></div>
 
-           <ul class="menu" id="dropdown">
+        <ul class="menu" id="dropdown">
 
             <li class="list_btn">
                 <a href="#">
@@ -62,39 +75,31 @@ if(empty($_SESSION['user'])){
 
             <li class="activo">
                 <a href="Admin_Usuarios.php">
-                    <i class="fa-solid fa-user-group"
-                        title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios."></i>
-                    <span
-                        title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios.">Usuarios</span>
+                    <i class="fa-solid fa-user-group" title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios."></i>
+                    <span title="Ir a la sección de usuarios. Encontrará toda la información necesaria para agregar, editar o eliminar usuarios.">Usuarios</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_Reportes.html">
-                    <i class="fa-regular fa-file-lines"
-                        title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
-                    <span
-                        title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias.">Reportes</span>
+                    <i class="fa-regular fa-file-lines" title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
+                    <span title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias.">Reportes</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_CopiasSeg.php">
-                    <i class="fa-solid fa-download"
-                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
+                    <i class="fa-solid fa-download" title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
 
-                    <span
-                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
+                    <span title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
                         de seguridad</span>
                 </a>
             </li>
 
             <li>
                 <a href="Admin_Perfil.html">
-                    <i class="fa-regular fa-id-card"
-                        title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
-                    <span
-                        title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
+                    <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
+                    <span title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
                 </a>
             </li>
 
@@ -108,123 +113,126 @@ if(empty($_SESSION['user'])){
     </div>
 
 
-    
-    <?php 
+
+    <?php
     include("Connection/conexion.php");
     $sql = "select * from tusuario";
     $resultado = mysqli_query($conexion, $sql);
     ?>
-    
+
 
     <div class="Usuarios">
         <div class="botones">
-        <button class="btnagregar">
-            <a href="Admin_AgregarUsuario.php">
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Agregar nuevo usuario</span>
-            </a>
-        </button>
-        <div class="buscarBtn">
-        <form class="d-flex">
-         <form action="" method="GET">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input class="form-control me-2" type="search" placeholder="Buscar" name="busqueda">
-            <button class="btnbuscar" type="submit" name="enviar" id="btnBuscarr"> <b>Buscar </b> </button> 
-        </form>
+            <button class="btnagregar">
+                <a href="Admin_AgregarUsuario.php">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Agregar nuevo usuario</span>
+                </a>
+            </button>
+            <div class="buscarBtn">
+                <form class="d-flex">
+                    <form action="" method="GET">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="form-control me-2" type="search" placeholder="Buscar" name="busqueda">
+                        <button class="btnbuscar" type="submit" name="enviar" id="btnBuscarr"> <b>Buscar </b> </button>
+                    </form>
+            </div>
         </div>
-        </div>
 
 
 
-<?php
-include("Connection/conexion.php");
-$where="";
+        <?php
+        include("Connection/conexion.php");
+        $where = "";
 
-if(isset($_GET['enviar'])){
-$busqueda = $_GET['busqueda'];
+        if (isset($_GET['enviar'])) {
+            $busqueda = $_GET['busqueda'];
 
 
-if (isset($_GET['busqueda']))
-{
-    
-    $where="WHERE idEmp LIKE'%".$busqueda."%' OR nombreEmp  LIKE'%".$busqueda."%' OR apellidoPEmp  LIKE'%".$busqueda."
-    %' OR emailEmp  LIKE'%".$busqueda."%' OR direccionEmp  LIKE'%".$busqueda."%'OR telEmp  LIKE'%".$busqueda."
-    %' OR fIngreso  LIKE'%".$busqueda."%' OR turnoEmp  LIKE'%".$busqueda."%' OR rolEmp  LIKE'%".$busqueda."%'";
-}
-}
+            if (isset($_GET['busqueda'])) {
 
-?>
-<br>
+                $where = "WHERE idEmp LIKE'%" . $busqueda . "%' OR nombreEmp  LIKE'%" . $busqueda . "%' OR apellidoPEmp  LIKE'%" . $busqueda . "
+    %' OR emailEmp  LIKE'%" . $busqueda . "%' OR direccionEmp  LIKE'%" . $busqueda . "%'OR telEmp  LIKE'%" . $busqueda . "
+    %' OR fIngreso  LIKE'%" . $busqueda . "%' OR turnoEmp  LIKE'%" . $busqueda . "%' OR rolEmp  LIKE'%" . $busqueda . "%'";
+            }
+        }
+
+        ?>
+        <br>
         </form>
 
         <div class="tabla-wrapper">
-  <table>
-               
-            <thead>    
-            <tr>
-            <th>ID</th>
-            <th>Nombre</th> 
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Domicilio</th>
-            <th>Telefono</th>              
-            <th>Fecha Ingreso</th>
-            <th>Turno</th>
-            <th>Rol</th>
-            <th>Opciones</th>
-            </tr>
-            </thead>
-                    
-            <tbody>
+            <table>
 
-            <?php
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Domicilio</th>
+                        <th>Telefono</th>
+                        <th>Fecha Ingreso</th>
+                        <th>Turno</th>
+                        <th>Rol</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
 
-include("Connection/conexion.php");              
-$SQL="SELECT idEmp, nombreEmp,apellidoPEmp, emailEmp,direccionEmp,telEmp,fIngreso,turnoEmp, rolEmp FROM tusuario $where";
-$dato = mysqli_query($conexion, $SQL);
+                <tbody>
 
-if($dato -> num_rows >0){
-while($fila=mysqli_fetch_array($dato)){
+                    <?php
 
-?>
-            <tr>
-            <td> <?php echo $fila['idEmp'] ?> </td>
-                <td> <?php echo $fila['nombreEmp'] ?> </td>
-                <td> <?php echo $fila['apellidoPEmp'] ?> </td>
-                <td> <?php echo $fila['emailEmp'] ?> </td>
-                <td> <?php echo $fila['direccionEmp'] ?> </td>
-                <td> <?php echo $fila['telEmp'] ?> </td>
-                <td> <?php echo $fila['fIngreso'] ?> </td>
-                <td> <?php echo $fila['turnoEmp'] ?> </td>
-                <td> <?php echo $fila['rolEmp'] ?> </td>
-            <td>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        <span>          </span>
-                    
-                    <?php echo "<a href='Admin_EditarUsuario.php?idEmp=".$fila['idEmp']. "'>Editar</a>"; ?>
-                     |
-                    <?php echo "<a href='Admin_EliminarUsuario.php?idEmp=".$fila['idEmp']. "' onclick='return confirmar()'>Eliminar</a>"; ?>
+                    include("Connection/conexion.php");
+                    $SQL = "SELECT idEmp, nombreEmp,apellidoPEmp, emailEmp,direccionEmp,telEmp,fIngreso,turnoEmp, rolEmp FROM tusuario $where";
+                    $dato = mysqli_query($conexion, $SQL);
 
-</td>
-</tr>
+                    if ($dato->num_rows > 0) {
+                        while ($fila = mysqli_fetch_array($dato)) {
 
-<?php
-}
-}else{
-?>
-<tr class="text-center">
-<td colspan="16">No existen registros</td>
-</tr>
-<?php
-}
-?>
+                    ?>
+                            <tr>
+                                <td> <?php echo $fila['idEmp'] ?> </td>
+                                <td> <?php echo $fila['nombreEmp'] ?> </td>
+                                <td> <?php echo $fila['apellidoPEmp'] ?> </td>
+                                <td> <?php echo $fila['emailEmp'] ?> </td>
+                                <td> <?php echo $fila['direccionEmp'] ?> </td>
+                                <td> <?php echo $fila['telEmp'] ?> </td>
+                                <td> <?php echo $fila['fIngreso'] ?> </td>
+                                <td> <?php echo $fila['turnoEmp'] ?> </td>
+                                <td> <?php echo $fila['rolEmp'] ?> </td>
+                                <td>
+                                <div class="dropdow">
+                                <button class="dropbtn" onclick="toggleOptions(this)">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <div class="dropdow-content" style="display: none;">
+                                
+                                    <a href='Admin_EditarUsuario.php?idEmp=<?php echo $fila['idEmp'] ?>'><i class="fa-solid fa-user-pen"></i></a>
+                                    <a class="elim" href='Admin_EliminarUsuario.php?idEmp=<?php echo $fila['idEmp'] ?>' onclick='return confirmar()'><i class="fa-solid fa-trash-can"></i></a>
+                                </div>
+                            </div>
+                                </td>
+                            </tr>
 
-</tbody>
-</table>
+                        <?php
+                        }
+                    } else {
+                        ?>
+                        <tr class="text-center">
+                            <td colspan="16">No existen registros</td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
 
-</div>
+                </tbody>
+            </table>
 
-</div>
-    
+        </div>
+
+    </div>
+
 </body>
+
 </html>

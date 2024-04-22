@@ -421,7 +421,7 @@ button.BotonActualizar i :active{
     gap: 7px;
 }
 .btnagregar{
-    padding: 1rem;
+    padding: 0.8rem;
     margin: 0% 0;
     border-radius: 8px;
     border-width: 4px;
@@ -447,3 +447,29 @@ button.BotonActualizar i :active{
     #effcfd
     
     </div>*/
+
+    /*Opciones en dropdown para editar y eliminar en Admin_Usuarios.php*/
+    .dropdow-content a :active{
+        color: #0C6A6F;
+    }
+    .dropdow-content a:hover{
+        color: #EFB03495;
+
+    }
+    .dropdow-content .elim :active{
+        color: #0C6A6F;
+    }
+    .dropdow-content .elim:hover{
+        color: #a30000;
+    }
+    .dropdow-content a{
+        padding-right:9px;
+    }
+    .dropbtn{
+        cursor: pointer;
+        font-size: x-large;
+        background: none;
+    }
+    .dropbtn :hover{
+        color: #0C6A6F;
+    }

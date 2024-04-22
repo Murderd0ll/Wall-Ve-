@@ -279,7 +279,7 @@ include("connection/conexion.php");
                     <button class="BotonActualizar" type="submit" name="editarUsuario" value="Actualizar">
                         <a>
                             <span class="crear">Actualizar</span>                            
-                            <i class="fa-solid fa-user-plus"></i>
+                            <i class="fa-solid fa-user-pen"></i>
                         </a>                        
                 </div>
 
