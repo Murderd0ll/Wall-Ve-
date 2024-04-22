@@ -14,7 +14,7 @@ Este es el chido
 * Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
 * Evitar eliminar el usuario activo (en uso)
-* Poner botón tipo dropdown para las opciones de eliminar/editar en la tabla de usuarios.
+
 
 
 <br>
@@ -32,6 +32,7 @@ LISTO.............
 * ventas en empleado: redireccionamiento de la izq
 * Nombre - cerrar sesión 
 * Evita restaurar sin seleccionar un punto de restauración.
+* Poner botón tipo dropdown para las opciones de eliminar/editar en la tabla de usuarios.
 
 * Hacerlo responsive TODO ---- Hasta el final.
 * Cambiar el tamaño de la tabla de usuarios. 
