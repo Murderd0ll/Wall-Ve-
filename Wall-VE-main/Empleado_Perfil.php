@@ -32,7 +32,7 @@ if (isset($_SESSION['idEmp'])) {
     $emailEmp = $empleado['emailEmp'];
     $turnoEmp = $empleado['turnoEmp'];
     $rolEmp = $empleado['rolEmp'];
-    $nusuarioEmp = $empleado['idloginEmp'];
+    $idloginEmp = $empleado['idloginEmp'];
   }
 }
 ?>
