@@ -157,12 +157,12 @@ Haga click al recuadro de Reportes para entrar."></i>
                 <h3>Reportes</h3>
                 <p>Visualizar reportes.</p>
 
-                </a>
+                </a> 
 
 
 
                 <!--? Caja usuarios -->
-                        <a class="box usuarios-box" id="cajaUsuarios" href="./Empleado_Perfil.html">
+                        <a class="box usuarios-box" id="cajaUsuarios" href="./Empleado_Perfil.php">
 
                             <i class="fa fa-question-circle-o fa-2x" id="preguntaUsuarios" aria-hidden="true" title="En este menú, podrá ver  su perfil y hacer cambios en él, haga clic en Perfil para entrar."></i>
     
