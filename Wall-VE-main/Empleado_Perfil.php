@@ -5,13 +5,14 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
+include 'Conectar.php'; // Incluye el archivo de conexión
 
 // Verificar si el empleado ha iniciado sesión y tiene un ID de empleado en la sesión
 if (isset($_SESSION['idEmp'])) {
   $idEmp = $_SESSION['idEmp'];
 
   // Consulta SQL para obtener los datos del empleado
-  $sql = "SELECT * FROM nombre_de_tu_tabla WHERE idEmp = $idEmp"; // Cambia 'nombre_de_tu_tabla' según el nombre real de tu tabla
+  $sql = "SELECT * FROM tusuario WHERE idEmp = $idEmp";
 
   $resultado = $conexion->query($sql);
 
@@ -24,20 +25,15 @@ if (isset($_SESSION['idEmp'])) {
     $apellidoPEmp = $empleado['apellidoPEmp'];
     $apellidoMEmp = $empleado['apellidoMEmp'];
     $fechaNacEmp = $empleado['fechaNacEmp'];
-    $telefonoEmp = $empleado['telefonoEmp'];
+    $telefonoEmp = $empleado['telEmp'];
     $generoEmp = $empleado['generoEmp'];
     $ciudadEmp = $empleado['ciudadEmp'];
     $direccionEmp = $empleado['direccionEmp'];
     $emailEmp = $empleado['emailEmp'];
     $turnoEmp = $empleado['turnoEmp'];
     $rolEmp = $empleado['rolEmp'];
-    $nusuarioEmp = $empleado['nusuarioEmp']; // Asumiendo que el campo en la base de datos es 'nusuarioEmp'
-    // No se asigna las contraseñas porque no deben mostrarse en el formulario
+    $nusuarioEmp = $empleado['idloginEmp'];
   }
-} else {
-  // Redirigir al empleado a la página de inicio de sesión si no ha iniciado sesión
-  header("Location: login.php");
-  exit(); // Terminar la ejecución del script después de redirigir
 }
 ?>
 
@@ -133,7 +129,7 @@ if (isset($_SESSION['idEmp'])) {
         <p id="FechaNacEmp">Fecha Nacimiento</p>
         
         <div class="textbox" id="textboxTelefonoEmp">
-            <input type="text" placeholder="<?php echo $telefonoEmp; ?>">
+            <input type="text" placeholder="<?php echo $telEmp; ?>">
         </div>
         <p id="TelefonoEmp">Telefono</p>
         
@@ -168,7 +164,7 @@ if (isset($_SESSION['idEmp'])) {
         <p id="RolEmp">Rol</p>
         
         <div class="textbox" id="textboxNusuario">
-            <input type="text" placeholder="<?php echo $nusuarioEmp; ?>">
+            <input type="text" placeholder="<?php echo $idlogEmp; ?>">
         </div>
         <p id="NUsuarioEmp">Nombre de Usuario</p>
         
