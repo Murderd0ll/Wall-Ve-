@@ -9,7 +9,6 @@ Este es el chido
 
 * Ticket ponerlo cuando dé click al boton de autorizar carga (Que se muestre al momento que esté cargando)
 * Poner el logo en el reporte
-* Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
 * Poner que cuando ponga watts mandé al efectivo
 * Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
@@ -23,6 +22,7 @@ LISTO.............
 
 <br>
 
+* Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
 * Evitar eliminar el usuario activo (en uso)
 * ventasMoneda se ve raro el nav
 * Ticket general y ticket individual
