@@ -22,6 +22,7 @@ Este es el chido
 LISTO.............
 
 <br>
+
 * Evitar eliminar el usuario activo (en uso)
 * ventasMoneda se ve raro el nav
 * Ticket general y ticket individual
