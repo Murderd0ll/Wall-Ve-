@@ -13,7 +13,7 @@ Este es el chido
 * Poner que cuando ponga watts mandé al efectivo
 * Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
-* Evitar eliminar el usuario activo (en uso)
+
 
 
 
@@ -22,7 +22,7 @@ Este es el chido
 LISTO.............
 
 <br>
-
+* Evitar eliminar el usuario activo (en uso)
 * ventasMoneda se ve raro el nav
 * Ticket general y ticket individual
 * reimprimir ticket en reporte de tickets Con el folio de ticket,Imprimir el mismo diseño
