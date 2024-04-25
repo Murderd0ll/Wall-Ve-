@@ -165,6 +165,7 @@ if(empty($_SESSION['user'])){
             <div class="progress-done"></div>
         </div>
 
+        <p id="redirigiendo"></p>
 
 
 
@@ -174,10 +175,10 @@ if(empty($_SESSION['user'])){
 
             <!-- Button trigger modal -->
          
-                <button type="buttun" id="btnCancelar" onClick="cancelar()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <!--  <button type="buttun" id="btnCancelar" onClick="cancelar()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Finalizar
                 </button>
-    
+    -->  
             
             
             <!-- Modal -->
@@ -210,6 +211,7 @@ if(empty($_SESSION['user'])){
                     <div class="footerModal">
                         <h2 id="gracias">¡Gracias por su compra!</h2>
                         <button class="btn btn-success" onClick="imprimirTicket(container)" id="ticketImpri">Imprimir ticket de compra</button>
+                        <button class="btn btn-success" onClick="redireccion()" id="ticketImpri">Volver a ventas</button>
                     </div>
 
                     </div>
@@ -229,7 +231,7 @@ if(empty($_SESSION['user'])){
 
 
         const progress = document.querySelector(".progress-done");
-const texto = document.querySelector("#porcentaje");
+        const texto = document.querySelector("#porcentaje");
 
 let finalValue = 0;
 let max = 100;
@@ -253,7 +255,10 @@ function sumarUno() {
     
   } else { //Si llegó al máximo
     clearInterval(intervalId); // Lo detiene el intervalo
+    
+    redireccion(texto);
 
+    
     //!AQUI DEBE DE MANDAR A LA BASE DE DATOS Y HACER QUE APAREZCA EL MODAL AUTOMATICAMENTE
     /*const modal = document.getElementById('exampleModal')
     const modalInstance = bootstrap.Modal.getOrCreateInstance(modal)
@@ -278,5 +283,42 @@ intervalId = setInterval(sumarUno, 1000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Mostrar el modal al cargar la página
+        $('#exampleModal').modal('show');
+    });
+</script>
+
+<script>
+    function redireccion(valor){
+        valor.innerHTML="Carga completada";
+        
+        var redir = document.querySelector("#redirigiendo");
+
+
+        actualizarContador(5);
+        function actualizarContador(segundos) {
+        if (segundos > 0) {
+            console.log(segundos);
+            redir.innerHTML = `Redirigiendo a ventas en ${segundos}`;
+            setTimeout(() => {
+                actualizarContador(segundos - 1);
+            }, 1000); // Esperar 1 segundo antes de actualizar de nuevo
+        } else {
+            // Cuando el contador llega a 0, redirigir
+            redir.innerHTML = "Redirigiendo a ventas en 0";
+            setTimeout(() => {
+             location.href = 'Admin_Ventas.php';
+            }, 1000); // Esperar 1 segundo antes de redirigir
+        }
+
+
+    }
+}
+    
+</script>
 </body>
 </html>
