@@ -5,35 +5,37 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
-include 'Conectar.php'; // Incluye el archivo de conexión
+include("connection/conexion.php");
 
 // Verificar si el empleado ha iniciado sesión y tiene un ID de empleado en la sesión
-if (isset($_SESSION['idEmp'])) {
-  $idEmp = $_SESSION['idEmp'];
+if (isset($_SESSION['idloginEmp'])) {
+    $idEmp = $_SESSION['idloginEmp'];
 
-  // Consulta SQL para obtener los datos del empleado
-  $sql = "SELECT * FROM tusuario WHERE idEmp = $idEmp";
+    // Consulta SQL para obtener los datos del empleado
+    $sql = "SELECT * FROM tusuario WHERE idloginEmp = '$idEmp'";
 
-  $resultado = $conexion->query($sql);
+    $resultado = mysqli_query($conexion,$sql);
 
-  if ($resultado->num_rows > 0) {
-    // Obtener los datos del empleado
-    $empleado = $resultado->fetch_assoc();
+    if ($resultado) { // Verificar si la consulta se ejecutó correctamente
+        if (mysqli_num_rows($resultado) > 0) {
+        // Obtener los datos del empleado
+        $empleado = mysqli_fetch_assoc($resultado);
 
-    // Asignar los valores a variables para cada campo del formulario
-    $nombreEmp = $empleado['nombreEmp'];
-    $apellidoPEmp = $empleado['apellidoPEmp'];
-    $apellidoMEmp = $empleado['apellidoMEmp'];
-    $fechaNacEmp = $empleado['fechaNacEmp'];
-    $telefonoEmp = $empleado['telEmp'];
-    $generoEmp = $empleado['generoEmp'];
-    $ciudadEmp = $empleado['ciudadEmp'];
-    $direccionEmp = $empleado['direccionEmp'];
-    $emailEmp = $empleado['emailEmp'];
-    $turnoEmp = $empleado['turnoEmp'];
-    $rolEmp = $empleado['rolEmp'];
-    $idloginEmp = $empleado['idloginEmp'];
-  }
+        // Asignar los valores a variables para cada campo del  formulario
+        $nombreEmp = $empleado['nombreEmp'];
+        $apellidoPEmp = $empleado['apellidoPEmp'];
+        $apellidoMEmp = $empleado['apellidoMEmp'];
+        $fechaNacEmp = $empleado['fechaNacEmp'];
+        $telEmp = $empleado['telEmp'];
+        $generoEmp = $empleado['generoEmp'];
+        $ciudadEmp = $empleado['ciudadEmp'];
+        $direccionEmp = $empleado['direccionEmp'];
+        $emailEmp = $empleado['emailEmp'];
+        $turnoEmp = $empleado['turnoEmp'];
+        $rolEmp = $empleado['rolEmp'];
+        $idloginEmp = $empleado['idloginEmp'];
+        }
+    }
 }
 ?>
 
@@ -109,7 +111,7 @@ if (isset($_SESSION['idEmp'])) {
         <p id="LineaAbajo"></p>
 
         <div class="textbox" id="textboxNombreEmp">
-            <input type="text" placeholder="<?php echo $nombreEmpleado; ?>" readonly>
+            <input type="text" placeholder="<?php echo $nombreEmp; ?>" readonly>
         </div>
         <p id="NombreEmp">Nombre</p>
         
@@ -164,7 +166,7 @@ if (isset($_SESSION['idEmp'])) {
         <p id="RolEmp">Rol</p>
         
         <div class="textbox" id="textboxNusuario">
-            <input type="text" placeholder="<?php echo $idlogEmp; ?>">
+            <input type="text" placeholder="<?php echo $idloginEmp ?>">
         </div>
         <p id="NUsuarioEmp">Nombre de Usuario</p>
         
