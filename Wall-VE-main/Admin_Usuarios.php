@@ -26,6 +26,14 @@ if (empty($_SESSION['user'])) {
                 dropdownContent.style.display = "none";
             }
         }
+        function redireccionar(editLink, esUsuarioPropio) {
+            if (esUsuarioPropio) {
+                // Mostrar mensaje de aviso solo si es el propio usuario
+                alert("Estás intentando editar tu propio perfil. Serás redirigido a tu perfil.");
+            }
+            // Redirigir inmediatamente sin esperar si es el propio usuario o no
+            window.location.href = editLink;
+        }
     </script>
 
     <!-- Fuentes  -->
@@ -153,7 +161,7 @@ if (empty($_SESSION['user'])) {
 
                 $where = "WHERE idEmp LIKE'%" . $busqueda . "%' OR nombreEmp  LIKE'%" . $busqueda . "%' OR apellidoPEmp  LIKE'%" . $busqueda . "
     %' OR emailEmp  LIKE'%" . $busqueda . "%' OR direccionEmp  LIKE'%" . $busqueda . "%'OR telEmp  LIKE'%" . $busqueda . "
-    %' OR fIngreso  LIKE'%" . $busqueda . "%' OR turnoEmp  LIKE'%" . $busqueda . "%' OR rolEmp  LIKE'%" . $busqueda . "%'";
+    %' OR fIngreso  LIKE'%" . $busqueda . "%' OR turnoEmp  LIKE'%" . $busqueda . "%' OR rolEmp  LIKE'%" . $busqueda . "%'"%' OR idloginEmp  LIKE'%" . $busqueda . ";
             }
         }
 
@@ -175,6 +183,7 @@ if (empty($_SESSION['user'])) {
                         <th>Fecha Ingreso</th>
                         <th>Turno</th>
                         <th>Rol</th>
+                        <th>xd</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -184,11 +193,22 @@ if (empty($_SESSION['user'])) {
                     <?php
 
                     include("Connection/conexion.php");
-                    $SQL = "SELECT idEmp, nombreEmp,apellidoPEmp, emailEmp,direccionEmp,telEmp,fIngreso,turnoEmp, rolEmp FROM tusuario $where";
+                    $SQL = "SELECT idEmp, nombreEmp,apellidoPEmp, emailEmp,direccionEmp,telEmp,fIngreso,turnoEmp, rolEmp, idloginEmp FROM tusuario $where";
                     $dato = mysqli_query($conexion, $SQL);
 
                     if ($dato->num_rows > 0) {
                         while ($fila = mysqli_fetch_array($dato)) {
+                            
+                            // Comprobamos si el ID del usuario actual coincide con el ID del usuario en esta fila
+                            $idUsuarioActual = $_SESSION['user']; // User es igual al idloginEmp en la bdd (es decir, el nombre de usuario)
+                            $idUsuarioFila = $fila['idloginEmp'];
+
+                        
+                            $esUsuarioPropio = ($idUsuarioActual == $idUsuarioFila);
+
+                            // Si es el propio usuario, redirigir a Admin_Perfil.php
+                            // Si no lo es, redirigir a Admin_EditarUsuario.php
+                            $editLink = $esUsuarioPropio ? 'Admin_Perfil.php' : 'Admin_EditarUsuario.php';
 
                     ?>
                             <tr>
@@ -201,6 +221,7 @@ if (empty($_SESSION['user'])) {
                                 <td> <?php echo $fila['fIngreso'] ?> </td>
                                 <td> <?php echo $fila['turnoEmp'] ?> </td>
                                 <td> <?php echo $fila['rolEmp'] ?> </td>
+                                <td> <?php echo $fila['idloginEmp'] ?> </td>
                                 <td>
                                 <div class="dropdow">
                                 <button class="dropbtn" onclick="toggleOptions(this)">
@@ -208,8 +229,7 @@ if (empty($_SESSION['user'])) {
                                 </button>
                                 <div class="dropdow-content" style="display: none;">
                                 
-                                    <a href='Admin_EditarUsuario.php?idEmp=<?php echo $fila['idEmp'] ?>'><i class="fa-solid fa-user-pen"></i></a>
-                                    <a class="elim" href='Admin_EliminarUsuario.php?idEmp=<?php echo $fila['idEmp'] ?>' onclick='return confirmar()'><i class="fa-solid fa-trash-can"></i></a>
+                                <a href='#' onclick="redireccionar('<?php echo $editLink ?>?idEmp=<?php echo $fila['idEmp'] ?>', <?php echo $esUsuarioPropio ? 'true' : 'false'; ?>)"><i class="fa-solid fa-user-pen"></i></a>                                    <a class="elim" href='Admin_EliminarUsuario.php?idEmp=<?php echo $fila['idEmp'] ?>' onclick='return confirmar()'><i class="fa-solid fa-trash-can"></i></a>
                                 </div>
                             </div>
                                 </td>
