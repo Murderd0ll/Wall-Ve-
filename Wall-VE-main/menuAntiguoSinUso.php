@@ -42,7 +42,7 @@
                 <li><a href="Admin_Usuarios.html"  >Usuarios</a></li>
                 <li><a href="Admin_Reportes.html"  >Reportes</a></li>
                 <li><a href="Admin_CopiasSeg.html"  >Copias de seguridad</a></li>
-                <li><a href="Admin_Perfil.html"  >Perfil</a></li>
+                <li><a href="Admin_Perfil.php"  >Perfil</a></li>
            </ul>
 
            <!-- Poner que este div sea un a de usuario nomas y que  -->
@@ -73,7 +73,7 @@
             <li id="nav-link">
             <ul class="drop-down">
                 <li>
-                    <a href="Admin_Perfil.html">
+                    <a href="Admin_Perfil.php">
                         <i class="fa-regular fa-id-card"> Perfil</i>
                         
                     </a>

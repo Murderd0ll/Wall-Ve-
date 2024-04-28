@@ -11,7 +11,7 @@ $db = "wallve";
 
 if (isset($_SESSION['user']) && isset($_SESSION['pass'])) {
     $user = $_SESSION['user'];
-    $pass = $_SESSION['pass'];
+    $pass = "";
 
 }
 $conexion = new mysqli($server, $user, $pass, $db);

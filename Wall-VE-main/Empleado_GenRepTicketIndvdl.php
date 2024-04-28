@@ -86,7 +86,7 @@ if(empty($_SESSION['user'])){
                 </li>
 
                 <li>
-                    <a href="Empleado_Perfil.html">
+                    <a href="Empleado_Perfil.php">
                         <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información."></i>
                         <span title="Ir a su perfil. Encontrará lo necesario para modificar su información.">Perfil</span>
                     </a>

@@ -1,11 +1,3 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-if(empty($_SESSION['user'])){
-    header('location:Login.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,37 +5,22 @@ if(empty($_SESSION['user'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-   <link rel="stylesheet" href="css/estilosmodal.css">
-   <link rel="stylesheet" href="css/progress.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   <!-- Google icons -->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-
    <link rel="stylesheet" href="css/estilos.css"/>
-   <link rel="stylesheet" href="css/tarjetas.css">
-
-  
-
-
-    <title>Venta de energía | Wall-VE </title>
+   <link rel="stylesheet" href="css/estilosPerfilAdmin.css"/>
+    <title>Perfil | Wall-VE</title>
 </head>
 <body>
     <header>
         <ul class="navig">
-            <li><a>Ventas Electrolinera</a></li>            
+            <li><a>Perfil</a></li>            
         </ul>
     </header>
    
-    <div id="subtitulo">
-        <p id="seleccione">Obteniendo información</p>
-    </div>
 
     <div class="barralateral">
         <div class="logo"></div>
 
-            <ul class="menu" id="dropdown">
+        <ul class="menu" id="dropdown">
 
             <li class="list_btn">
                 <a href="#">
@@ -52,7 +29,7 @@ if(empty($_SESSION['user'])){
                 </a>
             </li>
 
-            <li class="activo">
+            <li>
                 <a href="Admin_Ventas.php">
                     <i class="fa-solid fa-dollar-sign" title="Ir a la sección de ventas."></i>
                     <span title="Ir a la sección de ventas.">Ventas</span>
@@ -89,12 +66,13 @@ if(empty($_SESSION['user'])){
                     <i class="fa-solid fa-download"
                         title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad."></i>
 
-                    <span title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
+                    <span
+                        title="Ir a la sección de copias de seguridad. Encontrará lo necesario para generar y subir copias de seguridad.">Copia
                         de seguridad</span>
                 </a>
             </li>
 
-            <li>
+            <li class="activo">
                 <a href="Admin_Perfil.php">
                     <i class="fa-regular fa-id-card"
                         title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
@@ -113,79 +91,74 @@ if(empty($_SESSION['user'])){
         </ul>
     </div>
 
+    <div>
+        <span id="containerPerfilAd"></span>
+    </div>
+    <div class="textbox" id="textboxNomA">
+        <input type="Nombre" placeholder="Nombres Completos">
+    </div>
+    <span id="NombreAP">Nombre</span>
+    <div class="textbox" id="textboxAP">
+        <input type="Nombre" placeholder="Apellido Paterno">
+    </div>
+    <span id="ApellidoPAP">Apellido Paterno</span>
+    <div class="textbox" id="textboxAM">
+        <input type="Nombre" placeholder="Apellido Materno">
+    </div>
+    <span id="ApellidoMAP">Apellido Materno</span>
 
+    <div class="textbox" id="textboxTelPer">
+        <input type="Nombre" placeholder="Telefono">
+    </div>
+    <span id="TelefonoPer">Telefono</span>
+
+
+    <div class="textbox" id="textboxCiudad">
+        <input type="Nombre" placeholder="Ciudad">
+    </div>
+    <span id="CuidadPer">Cuidad</span>
+    <div class="textbox" id="textboxDir">
+        <input type="Nombre" placeholder="Direccion">
+    </div>
+    <span id="DireccionPer">Direccion</span>
+    <div class="textbox" id="textboxEmail">
+        <input type="Nombre" placeholder="Email">
+    </div>
+    <span id="EmailPer">Email</span>
+
+    <span id="FechaNacPer">Fecha Nacimiento</span>
+    <div class="textbox" id="textboxFechaN">
+        <input type="Nombre" placeholder="Agus 26">
+    </div>
+
+    <span id="GeneroPer">Genero</span>
+
+
+    <span id="TurnoPer">Turno</span>
+    <div class="textbox" id="textboxTurnoP">
+        <input type="Nombre" placeholder="Turno">
+    </div>
+
+    <span id="NombreUsuPer">Nombre de Usuario</span>
+    <div class="textbox" id="textboxNusu">
+        <input type="Nombre" placeholder="Turno">
+    </div>
+    <span id="ContraPer">Contraseña</span>
+    <div class="textbox" id="textboxContra">
+        <input type="Nombre" placeholder="***********">
+    </div>
+
+    <span id="LogotipoPer">Logotipo</span>
+
+    <span id="ExaminarPerfilAdmin">Examinar</span>
+
+    <span id="LineaAbajoPerAd"></span>
     
-
-
-
-        <p id="porcentaje"></p>
-
-        <div class="progress">
-            <div class="progress-done"></div>
-        </div>
-
-
-
-
-
-
-    <script >
-
-
-
-
-        const progress = document.querySelector(".progress-done");
-const texto = document.querySelector("#porcentaje");
-
-let finalValue = 0;
-let max = 100;
-let intervalId = null; // Esto es para quitar el intervalo
-
-function changeWidth() {
-  // Clamp finalValue to the range between 0 and max
-  finalValue = Math.max(0, Math.min(finalValue, max)); //Revisa si está dentro de los limites
-
-  progress.style.width = `${(finalValue / max) * 100}%`;
-  texto.innerText  = `${Math.ceil((finalValue / max) * 100)}%`;
-  //progress.innerText = `${Math.ceil((finalValue / max) * 100)}%`;
-}
-
-function sumarUno() {
-  if (finalValue < max) { // Revisa si es menor al maximo para evitar overflow
-    const numeroAleatorio = Math.floor(Math.random() * 10); 
-    finalValue += numeroAleatorio;
-    changeWidth();
-    console.log(finalValue);
+    <p id="MensajeInferiorPA">Al presionar "Cancelar" se descartaran todos los cambios que no han sido<br>
+        previamente guardados</p>
     
-  } else { //Si llegó al máximo
-    clearInterval(intervalId); // Lo detiene el intervalo
-
-    //!AQUI DEBE DE MANDAR A LA BASE DE DATOS Y HACER QUE APAREZCA EL MODAL AUTOMATICAMENTE
-    /*const modal = document.getElementById('exampleModal')
-    const modalInstance = bootstrap.Modal.getOrCreateInstance(modal)
-    modalInstance.show()
-    */
-   
-    window.location.href = "./Admin_Ventas_CC.php";
-
-
-  }
-}
-
-
-function cancelar(){
-    clearInterval(intervalId);
-    alert("Se ha detenido la carga del vehículo.");
-   
-
-}
-
-changeWidth();
-intervalId = setInterval(sumarUno, 1000);
-
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <p id="BtnCancelarPA">Cancelar</p>
+    <p id="BtnGuardarPA">Guardar</p>
 
 </body>
 </html>

@@ -42,7 +42,7 @@
                 <li><a href="#"  >Home</a></li>
                 <li><a href="./Empleado_Ventas.php"  >Ventas</a></li>
                 <li><a href="./Empleado_Reportes.html"  >Reportes</a></li>
-                <li><a href="./Empleado_Perfil.html"  >Perfil</a></li>
+                <li><a href="./Empleado_Perfil.php"  >Perfil</a></li>
                 <li>         <!-- Poner que este div sea un a de usuario nomas y que  -->
           
 

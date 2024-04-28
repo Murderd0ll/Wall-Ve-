@@ -44,7 +44,7 @@
                 <li><a href="./Admin_Usuarios.php"  >Usuarios</a></li>
                 <li><a href="./Admin_Reportes.html"  >Reportes</a></li>
                 <li><a href="./Admin_CopiasSeg.php"  >Copias de seguridad</a></li>
-                <li><a href="./Admin_Perfil.html"  >Perfil</a></li>
+                <li><a href="./Admin_Perfil.php"  >Perfil</a></li>
                 <li>
            <?php
            session_start();

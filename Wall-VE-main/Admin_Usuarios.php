@@ -97,7 +97,7 @@ if (empty($_SESSION['user'])) {
             </li>
 
             <li>
-                <a href="Admin_Perfil.html">
+                <a href="Admin_Perfil.php">
                     <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                     <span title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
                 </a>

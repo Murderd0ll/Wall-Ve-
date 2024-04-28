@@ -107,7 +107,7 @@
                 </li>
 
                 <li>
-                    <a href="Admin_Perfil.html">
+                    <a href="Admin_Perfil.php">
                         <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                         <span title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa.">Perfil</span>
                     </a>
@@ -153,8 +153,8 @@
                 ,'" . $telEmp . "','" . $generoEmp . "','" . $ciudadEmp . "','" . $direccionEmp . "','" . $emailEmp . "','" . $turnoEmp . "','" . $rolEmp . "'
                 ,'" . $idloginEmp . "','" . $passEmp . "',NOW());
                 
-                CREATE USER '" . $idloginEmp . "'@'localhost' IDENTIFIED BY '" . $passEmp . "';
-                GRANT ALL PRIVILEGES ON *.* TO '" . $idloginEmp . "'@'localhost' WITH GRANT OPTION;
+                CREATE USER '" . $idloginEmp . "'@'%' IDENTIFIED BY '';
+                GRANT ALL PRIVILEGES ON *.* TO '" . $idloginEmp . "'@'%' WITH GRANT OPTION;
                 ";
 
             $resultado = mysqli_multi_query($conexion, $sql);

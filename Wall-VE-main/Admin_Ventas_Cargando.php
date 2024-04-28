@@ -14,6 +14,7 @@ if(empty($_SESSION['user'])){
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+   <link rel="stylesheet" href="css/ticket.css">
    <link rel="stylesheet" href="css/estilosmodal.css">
    <link rel="stylesheet" href="css/progress.css">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -117,7 +118,7 @@ if(empty($_SESSION['user'])){
             </li>
 
             <li>
-                <a href="Admin_Perfil.html">
+                <a href="Admin_Perfil.php">
                     <i class="fa-regular fa-id-card"
                         title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                     <span
@@ -188,6 +189,7 @@ if(empty($_SESSION['user'])){
                     <div class="modal-header">
                         <div class="headerCaja">
                             
+                        <img id="logoImagenTicket" src="./img/logoo.svg" alt="" srcset="">
                         <h5 id="ticketCompraModal">Ticket de compra</h5>
                         <h5 id="estacionModal">Estación: # <?php echo $estacion; ?>
                     
@@ -208,10 +210,14 @@ if(empty($_SESSION['user'])){
                     </div>
                     <div class="modal-footer" id="removeFooter">
                         
+                     
                     <div class="footerModal">
                         <h2 id="gracias">¡Gracias por su compra!</h2>
-                        <button class="btn btn-success" onClick="imprimirTicket(container)" id="ticketImpri">Imprimir ticket de compra</button>
-                        <button class="btn btn-success" onClick="redireccion()" id="ticketImpri">Volver a ventas</button>
+                        
+                        <div class="botonesModal">
+                        <button class="btn btn-success" onClick="imprimirTicket(exampleModal)" id="ticketImpri">Imprimir ticket de compra</button>
+                        <button class="btn btn-success" onClick="redireccion()" id="ticketImpri">Buscar otro ticket</button>
+                        </div>
                     </div>
 
                     </div>

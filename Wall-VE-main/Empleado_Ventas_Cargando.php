@@ -14,6 +14,7 @@ if(empty($_SESSION['user'])){
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+   <link rel="stylesheet" href="css/ticket.css">
    <link rel="stylesheet" href="css/estilosmodal.css">
    <link rel="stylesheet" href="css/progress.css">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -91,7 +92,7 @@ if(empty($_SESSION['user'])){
                 </li>
 
                 <li>
-                    <a href="Empleado_Perfil.html">
+                    <a href="Empleado_Perfil.php">
                         <i class="fa-regular fa-id-card" title="Ir a su perfil. Encontrará lo necesario para modificar su información."></i>
                         <span title="Ir a su perfil. Encontrará lo necesario para modificar su información.">Perfil</span>
                     </a>
@@ -154,7 +155,8 @@ if(empty($_SESSION['user'])){
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="headerCaja">
-                            
+                        
+                        <img id="logoImagenTicket" src="./img/logoo.svg" alt="" srcset="">
                         <h5 id="ticketCompraModal">Ticket de compra</h5>
                         <h5 id="estacionModal">Estación: # <?php echo $estacion; ?>
                     

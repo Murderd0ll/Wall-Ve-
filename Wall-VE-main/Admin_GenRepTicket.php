@@ -13,6 +13,7 @@ if(empty($_SESSION['user'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- Fuentes  -->
         
+           <link rel="stylesheet" href="css/genRepLogo.css">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
 
@@ -20,6 +21,7 @@ if(empty($_SESSION['user'])){
 <link rel="stylesheet" href="css/estilosAntiguo.css"/>  
 
 <script src="./scripts/jspdf.debug.js"></script>
+<script src="jspdf.plugin.autotable.min.js"></script>
 
     <title>Gestión de reportes | Wall-VE</title>
 </head>
@@ -34,23 +36,54 @@ if(empty($_SESSION['user'])){
 
     <script>
     
+  function crear() {
+    const contenedor = document.getElementById('reporte');
+    const elementoTabla = document.getElementById('tablita');
+
+    const imagen = document.createElement('img');
+    imagen.id = 'logoImagenTicket';
+    imagen.src = './img/logoo.png';
+    imagen.style.display="inline";
+
+    // Agregar evento de carga para la imagen
+    imagen.onload = function() {
+        imprimirReporte();
+    };
+
+    contenedor.insertBefore(imagen, elementoTabla);
+    }
+
+
 
     function imprimirReporte() {
-        
+
         var contenido = document.getElementById("reporte").innerHTML;
+        
+
         var contenidoOriginal = document.body.innerHTML;
     
         document.body.innerHTML = contenido;
     
         window.print();
-    
+        
         document.body.innerHTML = contenidoOriginal;
+        
+        const elementoAEliminar = document.getElementById('logoImagenTicket');
+        elementoAEliminar.remove();
+       /*  var imagenLogo = document.getElementById('logoImagenTicket');
+        imagenLogo.style.display="none";*/
+
     }
     
  // Definir la función generarPDF()
  function generarPDF() {
 
-            var contenido = document.getElementById("reporte").innerHTML;
+
+        var contenido = document.getElementById("reporte").innerHTML;
+
+        var img = new Image()
+        img.src= "./img/logoo.png"
+
 
         var doc = new jsPDF({
         orientation: 'landscape', // Ajusta la orientación si es necesario
@@ -58,12 +91,16 @@ if(empty($_SESSION['user'])){
         format: [1000, 600], // Establece el tamaño de la página en puntos (en este caso, ancho: 1000pt, alto: 600pt)
         
     });
+    doc.addImage(img,'PNG' ,830, 10, 160, 53)   
+
+        
     
 
     doc.fromHTML(contenido, 15, 15); // No es necesario especificar el ancho
 
     doc.setFontSize(9);
-    doc.save('reporte.pdf');
+
+  doc.save('reporte.pdf');
     
     }
         
@@ -131,7 +168,7 @@ if(empty($_SESSION['user'])){
             </li>
 
             <li>
-                <a href="Admin_Perfil.html">
+                <a href="Admin_Perfil.php">
                     <i class="fa-regular fa-id-card"
                         title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                     <span
@@ -151,11 +188,13 @@ if(empty($_SESSION['user'])){
 
 <!-- 
     De aquí hasta lo indicado es todo lo que tiene que ver con la tabla
+    ! TIENE QUE VER CON LO DE REPORTE
  -->
 
 
 <div id="toditito">
     <div class="container" id="reporte">
+        
         <?php
         if (isset($_GET["msg"])) {
         $msg = $_GET["msg"];
@@ -235,6 +274,7 @@ $hastaFechaConHora = $hastaFecha. " 23:59:59";
 
 
 
+    
 
 </div>
 <!-- Hasta acá llega la tabla -->
@@ -245,7 +285,7 @@ $hastaFechaConHora = $hastaFecha. " 23:59:59";
             <span>Descargar reporte</span>
             </button>
 
-        <button type="button" class="botones" id="imprimir" onClick="imprimirReporte()">
+        <button type="button" class="botones" id="imprimir" onClick="crear()">
            <i class="fa fa-print" aria-hidden="true"></i>
             <span>Imprimir reporte</span>
             </button>

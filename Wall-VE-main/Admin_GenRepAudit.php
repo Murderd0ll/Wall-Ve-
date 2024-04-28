@@ -34,40 +34,77 @@ if(empty($_SESSION['user'])){
     </header>
 
 
+<script>
+      
+    function crear() {
+    const contenedor = document.getElementById('reporte');
+    const elementoTabla = document.getElementById('tablita');
 
-    <script>
+    const imagen = document.createElement('img');
+    imagen.id = 'logoImagenTicket';
+    imagen.src = './img/logoo.png';
+    imagen.style.display="inline";
+
+    // Agregar evento de carga para la imagen
+    imagen.onload = function() {
+        imprimirReporte();
+    };
+
+    contenedor.insertBefore(imagen, elementoTabla);
+    }
+
+
+
     function imprimirReporte() {
 
-        var contenido = document.getElementById("reporteAudit").innerHTML;
+        var contenido = document.getElementById("reporte").innerHTML;
+        
+
         var contenidoOriginal = document.body.innerHTML;
-
+    
         document.body.innerHTML = contenido;
-
+    
         window.print();
-
+        
         document.body.innerHTML = contenidoOriginal;
+        
+        const elementoAEliminar = document.getElementById('logoImagenTicket');
+        elementoAEliminar.remove();
+       /*  var imagenLogo = document.getElementById('logoImagenTicket');
+        imagenLogo.style.display="none";*/
+
     }
+    
+ // Definir la función generarPDF()
+ function generarPDF() {
 
-    // Definir la función generarPDF()
-    function generarPDF() {
 
-        var contenido = document.getElementById("reporteAudit").innerHTML;
+        var contenido = document.getElementById("reporte").innerHTML;
+
+        var img = new Image()
+        img.src= "./img/logoo.png"
+
 
         var doc = new jsPDF({
-            orientation: 'landscape', // Ajusta la orientación si es necesario
-            unit: 'pt', // Puedes ajustar la unidad según tus necesidades
-            format: [1000,
-            600], // Establece el tamaño de la página en puntos (en este caso, ancho: 1000pt, alto: 600pt)
+        orientation: 'landscape', // Ajusta la orientación si es necesario
+        unit: 'pt', // Puedes ajustar la unidad según tus necesidades
+        format: [1000, 600], // Establece el tamaño de la página en puntos (en este caso, ancho: 1000pt, alto: 600pt)
+        
+    });
+    doc.addImage(img,'PNG' ,830, 10, 160, 53)   
 
-        });
+        
+    
 
+    doc.fromHTML(contenido, 15, 15); // No es necesario especificar el ancho
 
-        doc.fromHTML(contenido, 15, 15); // No es necesario especificar el ancho
+    doc.setFontSize(9);
 
-        doc.setFontSize(9);
-        doc.save('reporte.pdf');
-
+  doc.save('reporte.pdf');
+    
     }
+        
+    
     </script>
 
 
@@ -131,7 +168,7 @@ if(empty($_SESSION['user'])){
             </li>
 
             <li>
-                <a href="Admin_Perfil.html">
+                <a href="Admin_Perfil.php">
                     <i class="fa-regular fa-id-card"
                         title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                     <span
@@ -252,7 +289,7 @@ ORDER BY a.fechaAudit asc";
                 <span>Descargar reporte</span>
             </button>
 
-            <button type="button" class="botones" id="imprimir" onClick="imprimirReporte()">
+            <button type="button" class="botones" id="imprimir" onClick="crear()">
                 <i class="fa fa-print" aria-hidden="true"></i>
                 <span>Imprimir reporte</span>
             </button>

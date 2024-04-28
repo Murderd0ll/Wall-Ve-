@@ -328,7 +328,7 @@ fill: #171A1FFF;
     position: absolute;
     top: 270px;
     left: 970px;
-    color: #565D6D;
+    color: #BDC1CAFF!important;
     font-family: Manrope;
 }
 #textboxGeneroEmp{
@@ -737,7 +737,7 @@ background: #FFFFFFFF;
 }
 /* disabled */
 .textbox input:disabled {
-color: #BDC1CAFF;
+color: red;
 background: #F3F4F6FF;
 }
 .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
@@ -872,7 +872,7 @@ opacity: 0.4;
 
 #MensajeInferior{
     position: absolute;
-    top: 625px;
+    top: 610px!important;
     left: 320px;
     width: 529px;
     font-family: Manrope;
