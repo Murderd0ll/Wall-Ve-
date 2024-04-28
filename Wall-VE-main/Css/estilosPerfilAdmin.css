@@ -767,3 +767,9 @@
     .button:disabled {
     opacity: 0.4;
     }
+    #textboxGeneroEmp{ 
+        position: absolute;
+        top: 235px;
+        left: 1100px;
+        opacity: 1;
+    }
