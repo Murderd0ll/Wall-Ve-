@@ -130,16 +130,6 @@ if (isset($_SESSION['idloginEmp'])) {
         </div>
         <p id="FechaNacEmp">Fecha Nacimiento</p>
         
-        <div class="textbox" id="textboxTelefonoEmp">
-            <input type="text" placeholder="<?php echo $telEmp; ?>">
-        </div>
-        <p id="TelefonoEmp">Telefono</p>
-        
-        <div class="textbox" id="textboxGeneroEmp">
-            <input type="text" placeholder="<?php echo $generoEmp; ?>">
-        </div>
-        <p id="GeneroEmp">Genero</p>
-        
         <div class="textbox" id="textboxCiudad">
             <input type="text" placeholder="<?php echo $ciudadEmp; ?>" readonly>
         </div>
@@ -164,30 +154,47 @@ if (isset($_SESSION['idloginEmp'])) {
             <input type="text" placeholder="<?php echo $rolEmp; ?>" readonly>
         </div>
         <p id="RolEmp">Rol</p>
-        
-        <div class="textbox" id="textboxNusuario">
-            <input type="text" placeholder="<?php echo $idloginEmp ?>">
-        </div>
-        <p id="NUsuarioEmp">Nombre de Usuario</p>
-        
-        <div class="textbox" id="textboxAContra">
-            <input type="password" placeholder="Antigua Contraseña">
-        </div>
-        <p id="AContraEmp">Antigua Contraseña</p>
-        
-        <div class="textbox" id="textboxNContra">
-            <input type="password" placeholder="Nueva Contraseña">
-        </div>
-        <p id="NContraEmp">Nueva Contraseña</p>
-
-        <p id="NContraEmp">Nueva Contraseña</p>
 
         <p id="BtnCancelarPE">Cancelar</p>
 
-        <p id="GuardarCamEP">Guardar Cambios</p>
+        <form method="POST" action="Empleado_actualizar_perfil.php">
+            <!-- Nombre de Usuario (editable) -->
+            <div class="textbox" id="textboxNusuario">
+                <input type="text" name="nombreUsuario" placeholder="<?php echo $idloginEmp; ?>">
+            </div>
+            <p id="NUsuarioEmp">Nombre de Usuario</p>
 
+            <!-- Contraseña Actual (necesaria para validar cambios) -->
+            <div class="textbox" id="textboxAContra">
+                <input type="password" name="contraseniaActual" placeholder="Antigua Contraseña">
+            </div>
+            <p id="AContraEmp">Antigua Contraseña</p>
+
+            <!-- Nueva Contraseña (editable) -->
+            <div class="textbox" id="textboxNContra">
+                <input type="password" name="nuevaContrasenia" placeholder="Nueva Contraseña">
+            </div>
+            <p id="NContraEmp">Nueva Contraseña</p>
+
+            <!-- Teléfono (editable) -->
+            <div class="textbox" id="textboxTelefonoEmp">
+                <input type="text" name="telefono" placeholder="<?php echo $telEmp; ?>">
+            </div>
+            <p id="TelefonoEmp">Teléfono</p>
+
+            <!-- Género (editable) -->
+            <div class="textbox" id="textboxGeneroEmp">
+                <input type="text" name="genero" placeholder="<?php echo $generoEmp; ?>">
+            </div>
+            <p id="GeneroEmp">Género</p>
+
+            <!-- Botón para guardar los cambios -->
+            <button type="submit" id="GuardarCamEP">Guardar Cambios</button>
+        </form>
+        
         <p id="MensajeInferior">Al presionar "Cancelar"  se descartarán todos los cambios que no han sido <br>
             previamente guardados.</p>
+
 
 
     </div>
