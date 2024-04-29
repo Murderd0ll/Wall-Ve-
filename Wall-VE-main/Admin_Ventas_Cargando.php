@@ -102,7 +102,7 @@ $rutaLogo = "";
             </li>
 
             <li>
-                <a href="Admin_Precios.html">
+                <a href="Admin_Precios.php?idEstacion=1">
                     <i class="fa-solid fa-tags" title="Ir a la sección de modificación de precios."></i>
                     <span title="Ir a la sección de modificación de precios.">Precios</span>
                 </a>

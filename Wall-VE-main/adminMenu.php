@@ -79,7 +79,7 @@
             <ul>
                 <li><a href="./adminMenu.php"  >Home</a></li>
                 <li><a href="./Admin_Ventas.php"  >Ventas</a></li>
-                <li><a href="./Admin_Precios.html"  >Precios</a></li>
+                <li><a href="./Admin_Precios.php?idEstacion=1"  >Precios</a></li>
                 <li><a href="./Admin_Usuarios.php"  >Usuarios</a></li>
                 <li><a href="./Admin_Reportes.html"  >Reportes</a></li>
                 <li><a href="./Admin_CopiasSeg.php"  >Copias de seguridad</a></li>
@@ -179,7 +179,7 @@
                     </a>
 
                 <!--? Caja precios -->
-                    <a class="box precios-box" id="cajaPrecios" href="./Admin_Precios.html">
+                    <a class="box precios-box" id="cajaPrecios" href="./Admin_Precios.php?idEstacion=1">
      
                         
                             <i class="fa fa-question-circle-o fa-2x" id="preguntaPrecios" aria-hidden="true" title="En este menú, podrá ver los reportes generados.Haga click al recuadro de Reportes  para entrar."></i>
