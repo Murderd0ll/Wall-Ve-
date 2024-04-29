@@ -218,21 +218,9 @@ background: #0C6A6FFF;
 opacity: 1;
 border: none;
 border-radius: 4px;
+cursor: pointer;
 }
-/* Hover */
-.button:hover {
-color: #FFFFFFFF;
-background: #09494DFF;
-}
-/* Pressed */
-.button:hover:active {
-color: #FFFFFFFF;
-background: #062F32FF;
-}
-/* Disabled */
-.button:disabled {
-opacity: 0.4;
-}
+
 
 #CuadroInferior{
 position: absolute;
@@ -261,7 +249,7 @@ border-style: solid;
 #PreActNum{
     position: absolute;
     top: 620px;
-    left: 1200px;
+    left: 1156px;
     font-family: Lexend;
     font-size: 48px;
     line-height: 68px;

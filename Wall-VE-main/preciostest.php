@@ -1,74 +1,46 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (empty($_SESSION['user'])) {
+    header('location:Login.php');
+}
+?>
+<?php
+include("connection/conexion.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- Fuentes  -->
-
-           
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-   <link rel="stylesheet" href="css/estilos.css"/>  
-   <link rel="stylesheet" href="css/reportes.css"/> 
-   
-   
-    <title>Gestión de reportes | Wall-VE</title>
+   <link rel="stylesheet" href="css/estilos.css"/>
+   <link rel="stylesheet" href="css/estilosAdminPrecios.css"/>
+    <title>Gestión de precios | Wall-VE</title>
 </head>
 <body>
     <header>
         <ul class="navig">
-            <li><a>Reportes</a></li>            
+            <li><a>Modificar precios</a></li>            
         </ul>
     </header>
-
-
-    <section class="content sau">  
-        <h3 class="titulo">Seleccione una opción</h3>
-
-            <div class="box-container">
-
-
-                <!--? Caja ventas -->
-                    <a class="box ventas-box" id="cajaPrecios" href="./Admin_GenRepTicketIndvdl.php">
-                        
-                        
-                        <img src="./img/iconos/ticket.png" alt="Simbolo de ticket">
-                        <h3>Tickets en individual</h3>
-                      
-                      
-
-                    </a>
-
-                <!--? Caja ticket -->
-                    <a class="box precios-box" id="cajaVentas" href="./Admin_RCalendario.php?id=1">
-     
-                          
-                        <img src="./img/iconos/tickets.png" alt="Simbolo de ventas">
-                        
-                        <h3>Tickets en general</h3>
-
-                    </a>
-
-                     
-                <!--? Caja auditorias -->
-                   <!--  <a class="box usuarios-box" id="cajaUsuarios" href="./Empleado_RCalendario.php?id=2">
-
-                            <img src="./img/iconos/usuarios.png" alt="Simbolo de usuarios">
-                            <h3>Auditorías</h3>
-
-                        </a>
-                     -->    
-    </div>
+   
 
     <div class="barralateral">
         <div class="logo"></div>
 
-            <ul class="menu" id="dropdown">
+        <ul class="menu" id="dropdown">
 
             <li class="list_btn">
                 <a href="#">
                     <i class="fa-solid fa-chevron-up"></i>
-                    <span>Opciones</span>
+                    <span>Opciones </span>
                 </a>
             </li>
 
@@ -79,7 +51,7 @@
                 </a>
             </li>
 
-            <li>
+            <li class="activo">
                 <a href="Admin_Precios.php?idEstacion=1">
                     <i class="fa-solid fa-tags" title="Ir a la sección de modificación de precios."></i>
                     <span title="Ir a la sección de modificación de precios.">Precios</span>
@@ -95,7 +67,7 @@
                 </a>
             </li>
 
-            <li class="activo">
+            <li>
                 <a href="Admin_Reportes.html">
                     <i class="fa-regular fa-file-lines"
                         title="Ir a la sección de reportes. Encontrará lo necesario para generar, descargar e imprimir reportes de ventas, tickets y auditorias."></i>
@@ -133,7 +105,86 @@
 
         </ul>
     </div>
+    
+    
+    
+    <?php
+    if (isset($_POST['editarUsuario'])) {
+
+        $idEstacion = $_POST['idEstacion'];
+        $precioProd = $_POST['precioProd'];
 
 
+        $sql = "update tproducto set precioProd='" . $precioProd . "'where idEstacion ='" . $idEstacion . "'";
+
+        $resultado = mysqli_query($conexion, $sql);
+
+        if ($resultado) {
+            echo "<script language ='JavaScript'> 
+                alert('Se actualizó el usuario correctamente.'); 
+                location.assign('preciostest.php?idEstacion=1');
+                </script>";
+        } else {
+            echo "<script language ='JavaScript'> 
+                alert('No se actualizó el usuario.'); 
+                location.assign('preciostest.php?idEstacion=1'); 
+                </script>";
+        }
+        mysqli_close($conexion);
+    } else {
+
+        $idEstacion = $_GET['idEstacion'];
+        $sql = "select * from tproducto where idEstacion ='" . $idEstacion . "'";
+
+        $resultado = mysqli_query($conexion, $sql);
+
+        $filas = mysqli_fetch_assoc($resultado);
+
+        $precioProd = $filas["precioProd"];
+
+        mysqli_close($conexion);
+
+    ?>
+
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="POST">
+            <br>
+            <div class="TEditar">
+
+                <div class="Did">
+                    <label>ID del usuario: <?php echo $idEstacion; ?></label><br><br>
+                </div>
+
+                <div class="DNombre">
+                    <label>Nombre </label>
+                    <input title="Ingrese su(s) nombre(s) completo(s)." type="text" name="precioProd" value="<?php echo $precioProd; ?>"> <br>
+                </div>
+                </div>
+
+                <input type="hidden" name="idEstacion" value="<?php echo $idEstacion; ?>">
+
+                
+
+                <div class="botones">                    
+                    <div class="BotonRegresar">
+                    <a href="Admin_Usuarios.php">
+                    <span>Cancelar</span>
+                    </a>                    
+                    </div>
+                    
+                    <button class="BotonActualizar" type="submit" name="editarUsuario" value="Actualizar">
+                        <a>
+                            <span class="crear">Actualizar</span>                            
+                            <i class="fa-solid fa-user-pen"></i>
+                        </a>                        
+                </div>
+
+        </form>
+        </div>
+
+
+    <?php
+    } ?>
+
+    
 </body>
 </html>
