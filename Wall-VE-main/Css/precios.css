@@ -52,10 +52,10 @@
     
     #CuadroInferior{
         position: absolute;
-        top: 550px;
+        top: 470px;
         left: 900px;
         width: 334px;
-        height: 161px;
+        height: 150px;
         background: #F8F9FAFF;
         border-radius: 8px;
         border-width: 2px;
@@ -65,7 +65,7 @@
         
         #PrecioAct{
             position: absolute;
-            top: 560px;
+            top: 480px;
             left: 1020px;  
             font-family: Lexend;
             font-size: 16px;
@@ -76,7 +76,7 @@
         
         #PreActNum{
             position: absolute;
-            top: 620px;
+            top: 520px;
             left: 956px;
             font-family: Lexend;
             font-size: 48px;
@@ -87,7 +87,7 @@
         
         #Watt{
             position: absolute;
-            top: 645px;
+            top: 545px;
             left: 1100px;
             font-family: Manrope;
             font-size: 14px;
