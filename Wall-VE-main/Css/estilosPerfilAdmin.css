@@ -773,3 +773,8 @@
         left: 1100px;
         opacity: 1;
     }
+    img#logotipo {
+        position: absolute!important;
+        top: 430px!important;
+        left: 1300px!important;
+    }

@@ -299,6 +299,7 @@ if (isset($_POST['agregarVenta'])) {
             cambioo = document.getElementById('inputCambio').value;
             pago = document.getElementById('inputTotal').value;
             cambioTotal = parseFloat(efectivo)-parseFloat(pago);
+            cambioTotal = cambioTotal.toFixed(2); //! <- esta linea
             console.log(cambioTotal);
             inputCambio.value = cambioTotal;
             

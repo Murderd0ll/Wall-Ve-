@@ -5,6 +5,26 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
+
+
+
+
+include("connection/conexion.php");
+
+
+// Consulta SQL
+$consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+// Ejecutar la consulta
+$resultado2 = mysqli_query($conexion, $consulta);
+
+// Guardar el resultado en una variable PHP
+if ($fila = mysqli_fetch_assoc($resultado2)) {
+$rutaLogo = $fila["rutaLogo"];
+} else {
+$rutaLogo = "";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +61,10 @@ if(empty($_SESSION['user'])){
 
     const imagen = document.createElement('img');
     imagen.id = 'logoImagenTicket';
-    imagen.src = './img/logoo.png';
+    imagen.src = '<?php echo $rutaLogo;?>';
     imagen.style.display="inline";
-
+    imagen.style.width ="160px";
+    imagen.style.height="53px";
     // Agregar evento de carga para la imagen
     imagen.onload = function() {
         imprimirReporte();
@@ -81,7 +102,7 @@ if(empty($_SESSION['user'])){
         var contenido = document.getElementById("reporte").innerHTML;
 
         var img = new Image()
-        img.src= "./img/logoo.png"
+        img.src= "<?php echo $rutaLogo;?>"
 
 
         var doc = new jsPDF({

@@ -5,6 +5,26 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
+
+
+
+
+   
+include("connection/conexion.php");
+
+
+// Consulta SQL
+$consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+// Ejecutar la consulta
+$resultado2 = mysqli_query($conexion, $consulta);
+
+// Guardar el resultado en una variable PHP
+if ($fila = mysqli_fetch_assoc($resultado2)) {
+$rutaLogo = $fila["rutaLogo"];
+} else {
+$rutaLogo = "";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,13 +57,15 @@ if(empty($_SESSION['user'])){
 <script>
       
     function crear() {
-    const contenedor = document.getElementById('reporte');
+    const contenedor = document.getElementById('reporteAudit');
     const elementoTabla = document.getElementById('tablita');
 
     const imagen = document.createElement('img');
     imagen.id = 'logoImagenTicket';
-    imagen.src = './img/logoo.png';
+    imagen.src = '<?php echo $rutaLogo;?>';
     imagen.style.display="inline";
+    imagen.style.width ="160px";
+    imagen.style.height="53px";
 
     // Agregar evento de carga para la imagen
     imagen.onload = function() {
@@ -57,7 +79,7 @@ if(empty($_SESSION['user'])){
 
     function imprimirReporte() {
 
-        var contenido = document.getElementById("reporte").innerHTML;
+        var contenido = document.getElementById("reporteAudit").innerHTML;
         
 
         var contenidoOriginal = document.body.innerHTML;
@@ -79,10 +101,10 @@ if(empty($_SESSION['user'])){
  function generarPDF() {
 
 
-        var contenido = document.getElementById("reporte").innerHTML;
+        var contenido = document.getElementById("reporteAudit").innerHTML;
 
         var img = new Image()
-        img.src= "./img/logoo.png"
+        img.src= "./img/logo/logo.jpg"
 
 
         var doc = new jsPDF({
@@ -168,7 +190,7 @@ if(empty($_SESSION['user'])){
             </li>
 
             <li>
-                <a href="Admin_Perfil.php">
+                <a href="Admin_Perfil.html">
                     <i class="fa-regular fa-id-card"
                         title="Ir a su perfil. Encontrará lo necesario para modificar su información y carga de los logos de su empresa."></i>
                     <span

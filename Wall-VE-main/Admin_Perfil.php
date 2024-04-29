@@ -20,7 +20,11 @@ include("connection/conexion.php");
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="css/estilos.css"/>
-   <link rel="stylesheet" href="css/estilosPerfilAdmin.css"/>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
+   
+   <link rel="stylesheet" href="css/perfilAdmin.css">
+   
+   <!-- <link rel="stylesheet" href="css/estilosPerfilAdmin.css"/> -->
     <title>Perfil | Wall-VE</title>
 </head>
 <body>
@@ -31,105 +35,6 @@ include("connection/conexion.php");
         </ul>
     </header>
    
-
-    <?php
-    if (isset($_POST['editarUsuario'])) {
-
-        $usuarioActual = $_SESSION['user'];
-        
-
-        $nombreEmp = $_POST['nombreEmp'];
-        $apellidoPEmp = $_POST['apellidoPEmp'];
-        $apellidoMEmp = $_POST['apellidoMEmp'];
-        $fechaNacEmp = $_POST['fechaNacEmp'];
-        $telEmp = $_POST['telEmp'];
-        $generoEmp = $_POST['generoEmp']; //!esto 
-        $ciudadEmp = $_POST['ciudadEmp'];
-        $direccionEmp = $_POST['direccionEmp'];
-        $emailEmp = $_POST['emailEmp'];
-        $turnoEmp = $_POST['turnoEmp'];
-        //$rolEmp = $_POST['rolEmp']; //!esto no se ocupa
-        $idloginEmp = $_POST['idloginEmp'];//?esto 
-        $passEmp = $_POST['passEmp'];//?esto 
-
-        //! SI EL USER ACTUAL DEL SESSION ES DIFERENTE AL DEL CAMPO, SE CAMBIA TODO Y SE CIERRA SESIÓN
-        
-        if($idloginEmp != $usuarioActual){
-                
-        $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
-        ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
-        ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
-        
-        RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
-        ";
-
-         $resultado = mysqli_multi_query($conexion, $sql);
-                    
-                if ($resultado) {
-                    echo "<script language ='JavaScript'> 
-                        alert('Se actualizó el usuario correctamente.'); 
-                        location.assign('logout.php');
-                        </script>";
-                } else {
-                    echo "<script language ='JavaScript'> 
-                        alert('No se actualizó el usuario.'); 
-                        location.assign('Admin_Perfil.php'); 
-                        </script>";
-                }
-
-        }
-        //! SI EL USER ACTUAL DEL SESSION ES IGUAL AL DEL CAMPO, SE CAMBIA TODO EXCEPTO EL USER
-        else{
-               
-        $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
-        ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "'";
-
-         $resultado = mysqli_query($conexion, $sql);
-                    
-                if ($resultado) {
-                    echo "<script language ='JavaScript'> 
-                        alert('Se actualizó el usuario correctamente.'); 
-                        location.assign('Admin_Perfil.php');
-                        </script>";
-                } else {
-                    echo "<script language ='JavaScript'> 
-                        alert('No se actualizó el usuario.'); 
-                        location.assign('Admin_Perfil.php'); 
-                        </script>";
-                }
-
-
-
-        }
-
-
-        mysqli_close($conexion);
-    } else {
-//! jaja esto creo que no va a hacer nada XD pero lo dejo por si acaso
-        $idloginEmp = $_SESSION['user'];
-        
-        $sql = "select * from tusuario where idloginEmp ='" . $idloginEmp . "'";
-        //echo $sql;
-        $resultado = mysqli_query($conexion, $sql);
-
-        $filas = mysqli_fetch_assoc($resultado);
-
-        $nombreEmp = $filas["nombreEmp"];
-        $apellidoPEmp = $filas["apellidoPEmp"];
-        $apellidoMEmp = $filas["apellidoMEmp"];
-        $fechaNacEmp = $filas["fechaNacEmp"];
-        $telEmp = $filas["telEmp"];
-        $generoEmp = $filas["generoEmp"];
-        $ciudadEmp = $filas["ciudadEmp"];
-        $direccionEmp = $filas["direccionEmp"];
-        $emailEmp = $filas["emailEmp"];
-        $turnoEmp = $filas["turnoEmp"];
-        $idloginEmp = $filas["idloginEmp"];
-        $passEmp = $filas["passEmp"];
-
-        mysqli_close($conexion);
-
-    ?>
 
 
     <div class="barralateral">
@@ -209,84 +114,309 @@ include("connection/conexion.php");
 
 
 
+    <?php
+    if (isset($_POST['editarUsuario'])) {
+        
+        $usuarioActual = $_SESSION['user'];
+        
+
+        $nombreEmp = $_POST['nombreEmp'];
+        $apellidoPEmp = $_POST['apellidoPEmp'];
+        $apellidoMEmp = $_POST['apellidoMEmp'];
+        $fechaNacEmp = $_POST['fechaNacEmp'];
+        $telEmp = $_POST['telEmp'];
+        $generoEmp = $_POST['generoEmp']; //!esto 
+        $ciudadEmp = $_POST['ciudadEmp'];
+        $direccionEmp = $_POST['direccionEmp'];
+        $emailEmp = $_POST['emailEmp'];
+        $turnoEmp = $_POST['turnoEmp'];
+        //$rolEmp = $_POST['rolEmp']; //!esto no se ocupa
+        $idloginEmp = $_POST['idloginEmp'];//?esto 
+        $passEmp = $_POST['passEmp'];//?esto 
+
+        //! SI EL USER ACTUAL DEL SESSION ES DIFERENTE AL DEL CAMPO, SE CAMBIA TODO Y SE CIERRA SESIÓN
+        
+        if($idloginEmp != $usuarioActual){
+
+            if (!empty($_FILES['subirLogo']['name'])) {
+                echo "<script language ='JavaScript'> 
+        console.log('a.'); 
+        
+        </script>";
+
+            $ruta = "./img/logo/";
+            $fichero = $ruta.basename($_FILES['subirLogo']['name']);
+            $rutaFinal = $ruta."logo.jpg";
+            if(move_uploaded_file($_FILES['subirLogo']['tmp_name'],$ruta."logo.jpg")){
+              
+        $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
+        ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
+        ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
+        
+        UPDATE tlogo SET rutaLogo='$rutaFinal' WHERE idLogo=1;
+        RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
+        ";
+
+         $resultado = mysqli_multi_query($conexion, $sql);
+                    
+                if ($resultado) {
+                    echo "<script language ='JavaScript'> 
+                        alert('Se actualizó el usuario correctamente.'); 
+                        location.assign('logout.php');
+                        </script>";
+                } else {
+                    echo "<script language ='JavaScript'> 
+                    alert('Error, no se actualizaron los datos de la base de datos.'); 
+                    location.assign('Admin_Perfil.php');
+                    </script>";
+                }
+            }
+              } //todo SI NO SE AGREGÓ UNA IMAGEN PERO EL USUARIO ES DIFERENTE DEBE HACER ESTO
+              else {
+                echo "<script language ='JavaScript'> 
+                console.log('b.'); 
+                
+                </script>";
+            $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
+            ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
+            ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
+            
+            RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
+            ";
+
+            $resultado = mysqli_multi_query($conexion, $sql);
+                        
+                    if ($resultado) {
+                        echo "<script language ='JavaScript'> 
+                            alert('Se actualizó el usuario correctamente.'); 
+                            location.assign('logout.php');
+                            </script>";
+                    } else {
+                        echo "<script language ='JavaScript'> 
+                        alert('Error, no se actualizaron los datos de la base de datos.'); 
+                        location.assign('Admin_Perfil.php');
+                        </script>";
+                    }
+              }
+            
+
+        }
+        //! SI EL USER ACTUAL DEL SESSION ES IGUAL AL DEL CAMPO, SE CAMBIA TODO EXCEPTO EL USER 
+        else{
+
+                //TODO SE VERIFICA QUE EL LOGO SE HAYA CAMBIADO
+            if (!empty($_FILES['subirLogo']['name'])) {
+                    $ruta = "./img/logo/";
+                    $fichero = $ruta.basename($_FILES['subirLogo']['name']);
+                    $rutaFinal = $ruta."logo.jpg";
+            if(move_uploaded_file($_FILES['subirLogo']['tmp_name'],$ruta."logo.jpg")){
+              
+               
+        $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
+        ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
+
+        UPDATE tlogo SET rutaLogo='$rutaFinal' WHERE idLogo=1;
+        
+        
+        
+        ";
+
+         $resultado = mysqli_multi_query($conexion, $sql);
+                    
+                if ($resultado) {
+                    echo "<script language ='JavaScript'> 
+                        alert('Se actualizoo el usuario correctamente.'); 
+                        location.assign('Admin_Perfil.php'); 
+                        </script>";
+                } else {
+                    echo "<script language ='JavaScript'> 
+                    alert('Error, no se actualizaron los datos de la base de datos.'); 
+                    location.assign('Admin_Perfil.php');
+                    </script>";
+                }
+ 
+            }
+        }
+        
+        //TODO SI NO SE SUBIO LOGO NI SE CAMBIO EL NOMBRE DE USUARIO
+        else{
+                   
+        $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
+        ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
+        
+        
+        
+        ";
+
+         $resultado = mysqli_multi_query($conexion, $sql);
+                    
+                if ($resultado) {
+                    echo "<script language ='JavaScript'> 
+                        alert('Se actualizó el usuario correctamente.'); 
+                        location.assign('Admin_Perfil.php'); 
+                        </script>";
+                } else {
+                    echo "<script language ='JavaScript'> 
+                    alert('Error, no se actualizaron los datos de la base de datos.'); 
+                    location.assign('Admin_Perfil.php');
+                    </script>";
+                }
+        }
 
 
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="POST">
+        }
+
+
+        mysqli_close($conexion);
+    } else {
+//! jaja esto creo que no va a hacer nada XD pero lo dejo por si acaso (MENTIRA CON ESTO SE PONEN LOS DATOS EN LOS TXTBOX)
+        $idloginEmp = $_SESSION['user'];
+        
+        $sql = "select * from tusuario where idloginEmp ='" . $idloginEmp . "'";
+        //echo $sql;
+        $resultado = mysqli_query($conexion, $sql);
+
+        $filas = mysqli_fetch_assoc($resultado);
+
+        $nombreEmp = $filas["nombreEmp"];
+        $apellidoPEmp = $filas["apellidoPEmp"];
+        $apellidoMEmp = $filas["apellidoMEmp"];
+        $fechaNacEmp = $filas["fechaNacEmp"];
+        $telEmp = $filas["telEmp"];
+        $generoEmp = $filas["generoEmp"];
+        $ciudadEmp = $filas["ciudadEmp"];
+        $direccionEmp = $filas["direccionEmp"];
+        $emailEmp = $filas["emailEmp"];
+        $turnoEmp = $filas["turnoEmp"];
+        $idloginEmp = $filas["idloginEmp"];
+        $passEmp = $filas["passEmp"];
+
+
+        
+        $sql2 = "select rutaLogo from tlogo where idLogo =1";
+        //echo $sql;
+        $resultado2 = mysqli_query($conexion, $sql2);
+
+        if ($resultado2 === false) {
+          echo "Error al obtener el logo: " . mysqli_error($conexion);
+          // Handle the error or exit gracefully
+        } else {
+          // Proceed with processing the results (assuming there are some)
+          $raw = mysqli_fetch_assoc($resultado2);
+          $imagenLogo = $raw['rutaLogo'];
+        }
+
+        mysqli_close($conexion);
+
+    ?>
+
+
+
+<form  class="row g-2" action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="POST" enctype="multipart/form-data">
     <div>
         <span id="containerPerfilAd"></span>
     </div>
-    <div class="textbox" id="textboxNomA">
-        <input type="Nombre" placeholder="Nombres" name="nombreEmp"  value="<?php echo $nombreEmp ?>">
+    <div class="col-md-6" id="textboxNomA">
+        <span id="NombreAP">Nombre</span>
+        <input type="Nombre" class="izquierdo" placeholder="Nombres" name="nombreEmp"  value="<?php echo $nombreEmp ?>">
     </div>
-    <span id="NombreAP">Nombre</span>
-    <div class="textbox" id="textboxAP">
+
+    <div class="col-md-6" id="textboxAP">
+    <span id="ApellidoPAP">Apellido Paterno</span>
         <input type="Nombre" placeholder="Apellido Paterno" name="apellidoPEmp"  value="<?php echo $apellidoPEmp ?>">
     </div>
-    <span id="ApellidoPAP">Apellido Paterno</span>
-    <div class="textbox" id="textboxAM">
-        <input type="Nombre" placeholder="Apellido Materno" name="apellidoMEmp"  value="<?php echo $apellidoMEmp ?>">
+    <div class="col-md-6" id="textboxAM">
+        
+        <span id="ApellidoMAP">Apellido Materno</span>
+        <input type="Nombre" class="izquierdo" placeholder="Apellido Materno" name="apellidoMEmp"  value="<?php echo $apellidoMEmp ?>">
     </div>
-    <span id="ApellidoMAP">Apellido Materno</span>
 
-    <div class="textbox" id="textboxTelPer">
+    <div class="col-md-6" id="textboxTelPer">
+    <span id="TelefonoPer">Telefono</span>
         <input type="Nombre" placeholder="Telefono" name="telEmp"  value="<?php echo $telEmp ?>">
     </div>
-    <span id="TelefonoPer">Telefono</span>
 
 
-    <div class="textbox" id="textboxCiudad">
-        <input type="Nombre" placeholder="Ciudad" name="ciudadEmp"  value="<?php echo $ciudadEmp ?>">
-    </div>
+    <div class="col-md-6" id="textboxCiudad">
     <span id="CuidadPer">Ciudad</span>
-    <div class="textbox" id="textboxDir">
+        <input type="Nombre" class="izquierdo" placeholder="Ciudad" name="ciudadEmp"  value="<?php echo $ciudadEmp ?>">
+    </div>
+    <div class="col-md-6" id="textboxDir">
+    <span id="DireccionPer">Direccion</span>
         <input type="Nombre" placeholder="Direccion" name="direccionEmp"  value="<?php echo $direccionEmp ?>">
     </div>
-    <span id="DireccionPer">Direccion</span>
-    <div class="textbox" id="textboxEmail">
-        <input type="Nombre" placeholder="Email" name="emailEmp"  value="<?php echo $emailEmp ?>">
-    </div>
+    <div class="col-md-6" id="textboxEmail">
     <span id="EmailPer">Email</span>
+        <input type="Nombre" class="izquierdo" placeholder="Email" name="emailEmp"  value="<?php echo $emailEmp ?>">
+    </div>
 
+    <div class="col-md-6" id="textboxFechaN">
     <span id="FechaNacPer">Fecha Nacimiento</span>
-    <div class="textbox" id="textboxFechaN">
         <input type="Nombre" placeholder="Agus 26" name="fechaNacEmp"  value="<?php echo $fechaNacEmp ?>">
     </div>
 
+    <div class="col-md-6" id="textboxGeneroEmp">
     <span id="GeneroPer">Genero</span>
-    <div class="textbox" id="textboxGeneroEmp">
-                <input type="text" name="generoEmp"  value="<?php echo $generoEmp; ?>" readonly>
+                <input type="text" class="izquierdo" name="generoEmp"  value="<?php echo $generoEmp; ?>" readonly>
     </div>
 
+    <div class="col-md-6" id="textboxTurnoP">
     <span id="TurnoPer">Turno</span>
-    <div class="textbox" id="textboxTurnoP">
         <input type="Nombre" placeholder="Turno" name="turnoEmp"  value="<?php echo $turnoEmp ?>">
     </div>
 
+    <div class="col-md-6" id="textboxNusu">
     <span id="NombreUsuPer">Nombre de Usuario</span>
-    <div class="textbox" id="textboxNusu">
-        <input type="Nombre" placeholder="Turno" name="idloginEmp"  value="<?php echo $idloginEmp ?>">
+        <input type="Nombre" class="izquierdo" placeholder="Turno" name="idloginEmp"  value="<?php echo $idloginEmp ?>">
     </div>
+    <div class="col-md-6" id="textboxContra">
     <span id="ContraPer">Contraseña</span>
-    <div class="textbox" id="textboxContra">
         <input type="password" placeholder="****" name="passEmp" value="<?php echo $passEmp?>">
     </div>
 
+    <div id="divLogo">
+
     <span id="LogotipoPer">Logotipo</span>
+    <img id="logotipo" src="<?php echo $imagenLogo; ?>" width="100" alt="" srcset="">
+    <input id="ExaminarPerfilAdmin" name="subirLogo" type="file" onchange="getImagePreview(event)" style="display:none;"></input>
+    <label for="ExaminarPerfilAdmin" id="lblSubirLogo" style="display:block;"> Subir imagen</label>
 
-    <span id="ExaminarPerfilAdmin">Examinar</span>
 
+    </div>
     <span id="LineaAbajoPerAd"></span>
     
     <p id="MensajeInferiorPA">Al cambiar el nombre de usuario, se le pedirá que vuelva a iniciar sesión.<br>
-    Al presionar "Cancelar" se descartaran todos los cambios que no han sido
-        previamente guardados</p>
+    </p>
     
-    <p id="BtnCancelarPA">Cancelar</p>
     <button name="editarUsuario" type="submit" id="BtnGuardarPA">Guardar</button>
 
     </form>
     <?php
     } ?>
+
+
+
+
+
+
+<script>
+  function getImagePreview(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        // Actualizar la imagen existente con la vista previa
+        document.getElementById('logotipo').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

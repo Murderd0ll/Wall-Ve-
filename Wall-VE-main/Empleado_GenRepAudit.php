@@ -5,6 +5,24 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
+
+
+include("connection/conexion.php");
+
+
+// Consulta SQL
+$consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+// Ejecutar la consulta
+$resultado2 = mysqli_query($conexion, $consulta);
+
+// Guardar el resultado en una variable PHP
+if ($fila = mysqli_fetch_assoc($resultado2)) {
+$rutaLogo = $fila["rutaLogo"];
+} else {
+$rutaLogo = "";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,22 +53,57 @@ if(empty($_SESSION['user'])){
     <script>
     
 
+      
+    function crear() {
+    const contenedor = document.getElementById('reporteAudit');
+    const elementoTabla = document.getElementById('tablita');
+
+    const imagen = document.createElement('img');
+    imagen.id = 'logoImagenTicket';
+    imagen.src = '<?php echo $rutaLogo;?>';
+    imagen.style.display="inline";
+    imagen.style.width ="160px";
+    imagen.style.height="53px";
+
+    // Agregar evento de carga para la imagen
+    imagen.onload = function() {
+        imprimirReporte();
+    };
+
+    contenedor.insertBefore(imagen, elementoTabla);
+    }
+
+
+
     function imprimirReporte() {
-        
+
         var contenido = document.getElementById("reporteAudit").innerHTML;
+        
+
         var contenidoOriginal = document.body.innerHTML;
     
         document.body.innerHTML = contenido;
     
         window.print();
-    
+        
         document.body.innerHTML = contenidoOriginal;
+        
+        const elementoAEliminar = document.getElementById('logoImagenTicket');
+        elementoAEliminar.remove();
+       /*  var imagenLogo = document.getElementById('logoImagenTicket');
+        imagenLogo.style.display="none";*/
+
     }
     
  // Definir la función generarPDF()
  function generarPDF() {
 
-            var contenido = document.getElementById("reporteAudit").innerHTML;
+
+        var contenido = document.getElementById("reporteAudit").innerHTML;
+
+        var img = new Image()
+        img.src= "./img/logo/logo.jpg"
+
 
         var doc = new jsPDF({
         orientation: 'landscape', // Ajusta la orientación si es necesario
@@ -58,12 +111,16 @@ if(empty($_SESSION['user'])){
         format: [1000, 600], // Establece el tamaño de la página en puntos (en este caso, ancho: 1000pt, alto: 600pt)
         
     });
+    doc.addImage(img,'PNG' ,830, 10, 160, 53)   
+
+        
     
 
     doc.fromHTML(contenido, 15, 15); // No es necesario especificar el ancho
 
     doc.setFontSize(9);
-    doc.save('reporte.pdf');
+
+  doc.save('reporte.pdf');
     
     }
         
@@ -207,7 +264,7 @@ $hastaFechaConHora = $hastaFecha. " 23:59:59";
             <span>Descargar reporte</span>
             </button>
 
-        <button type="button" class="botones" id="imprimir" onClick="imprimirReporte()">
+        <button type="button" class="botones" id="imprimir" onClick="crear()">
            <i class="fa fa-print" aria-hidden="true"></i>
             <span>Imprimir reporte</span>
             </button>

@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
      //todo si quiere cambiar solo la contra o todo
-     if($telEmp != $telefono && $idUser!=$idEmp && $contraActual != "" && $nuevaContra!= "" ){
+     if($idUser!=$idEmp && ($contraActual != "" || $nuevaContra!= "") ){
             //! VERIFICA QUE LA CONTRA SEA CORRECTA
             
         if($contraActual== $passEmp){
@@ -60,7 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                     if ($resultado_actualizar) {
                         // Redirigir a la misma página con un mensaje de éxito
-                        header("Location: logout.php");
+                        echo "<script language ='JavaScript'>
+                        alert('Se han cambiado sus datos. ');
+                        location.assign('logout.php');
+                        </script>";
         
                         
                     } else {
@@ -69,7 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }                  
                                 }
             else{
-                echo "Contraseña actual incorrecta";
+                echo "<script language ='JavaScript'>
+                alert('Contraseña actual incorrecta.');
+                location.assign('Empleado_Perfil.php');
+                </script>";
             }
     }
     elseif($telEmp==$telefono && $idUser==$idEmp && $contraActual == "" && $nuevaContra== ""  ){
@@ -82,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //TODO Si solo la contrseña está cambiada entonces..
 
-    elseif($contraActual != "" && $nuevaContra!= ""){
+    elseif($contraActual != "" || $nuevaContra!= ""){
            
             //!verificar contraseña
             if($contraActual== $passEmp){
@@ -93,7 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $resultado_actualizar = mysqli_multi_query($conexion, $sql);
                             
                     if ($resultado_actualizar) {
-                        header("Location: Empleado_Perfil.php");
+                        echo "<script language ='JavaScript'>
+                        alert('Se ha cambiado su contraseña.');
+                        location.assign('Empleado_Perfil.php');
+                        </script>";
+                        
 
                         
                     } else {
@@ -103,7 +113,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             }
             else{
-                echo "Contraseña actual incorrecta";
+                echo "<script language ='JavaScript'>
+                alert('Contraseña actual incorrecta.');
+                location.assign('Empleado_Perfil.php');
+                </script>";
             }
     } 
     //todo Si solo el telefono está cambiado entonces...
@@ -115,7 +128,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $resultado_actualizar = mysqli_query($conexion, $sql);
                 
                 if ($resultado_actualizar) {
-                    header("Location: Empleado_Perfil.php");
+                    echo "<script language ='JavaScript'>
+                    alert('Se han cambiado sus datos. ');
+                    location.assign('Empleado_Perfil.php');
+                    </script>";
     
                 } else {
                     echo mysqli_error($conexion);
@@ -133,8 +149,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 if ($resultado_actualizar) {
                     // Redirigir a la misma página con un mensaje de éxito
-
-                    header("Location: usuarioMenu.php?$idUser");
+                    echo "<script language ='JavaScript'>
+                    alert('Se han cambiado sus datos. ');
+                    location.assign('logout.php');
+                    </script>";
     
                     
                 } else {

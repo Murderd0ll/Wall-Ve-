@@ -1,3 +1,42 @@
+<?php
+           session_start();
+
+           if (isset($_SESSION['idloginEmp'])) {
+            $id = $_SESSION['idloginEmp'];
+            // Ahora $idloginEmp está disponible para su uso en este script
+        } else {
+
+            header('location:Login.php');
+            //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
+        }
+
+
+
+   
+        include("connection/conexion.php");
+
+
+        // Consulta SQL
+        $consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+        // Ejecutar la consulta
+        $resultado2 = mysqli_query($conexion, $consulta);
+
+        // Guardar el resultado en una variable PHP
+        if ($fila = mysqli_fetch_assoc($resultado2)) {
+        $rutaLogo = $fila["rutaLogo"];
+        } else {
+        $rutaLogo = "";
+        }
+
+
+
+
+        $sql = "select * from tusuario where idloginEmp='" .$id."'";
+        $resultado = mysqli_query($conexion, $sql);
+        ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +72,9 @@
                 <i class="fas fa-times" id="cancel"></i>
             </label>
 
+    
 
-
-            <a href="#"><img class="logo" src="./img/logoo.svg" alt="logo"></a>
+            <a href="#"><img class="logo" src="<?php echo $rutaLogo?>" width="160" height="53" alt="logo"></a>
 
             <ul>
                 <li><a href="./adminMenu.php"  >Home</a></li>
@@ -46,25 +85,7 @@
                 <li><a href="./Admin_CopiasSeg.php"  >Copias de seguridad</a></li>
                 <li><a href="./Admin_Perfil.php"  >Perfil</a></li>
                 <li>
-           <?php
-           session_start();
-
-           if (isset($_SESSION['idloginEmp'])) {
-            $id = $_SESSION['idloginEmp'];
-            // Ahora $idloginEmp está disponible para su uso en este script
-        } else {
-
-            header('location:Login.php');
-            //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
-        }
-
-
-
-   
-        include("connection/conexion.php");
-        $sql = "select * from tusuario where idloginEmp='" .$id."'";
-        $resultado = mysqli_query($conexion, $sql);
-        ?>
+         
     <div class="Cerrar">
         <span>
         <?php while($usu = mysqli_fetch_assoc($resultado))

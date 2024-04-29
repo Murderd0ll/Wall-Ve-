@@ -1,0 +1,123 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+@media (min-width:1401px) {
+    .izquierdo{
+        margin-left:400px;
+    }
+    #ApellidoPAP,#TelefonoPer,#DireccionPer,#FechaNacPer,#TurnoPer,#AContraEmp,#NContraEmp{
+        display: block;
+    }
+
+
+   #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
+       margin-left: 400px!important;
+     }
+     .col-md-6 {
+       flex: 0 0 auto;
+       width: 50%;
+       margin-top: 25px!important;}
+
+
+     #divLogo{
+       margin-left: 1450px;
+       
+       margin-top: -200px;
+     }
+     #LogotipoPer,#ExaminarPerfilAdmin {
+       display: block;
+     }
+     #ExaminarPerfilAdmin {
+       margin-left: -100px;
+     }
+     #GuardarCamEP {
+       position: absolute;
+       margin-top: 14px;
+       margin-left: 1104px;
+       width: 200px;
+       padding: 15px;
+       
+       background-color:#0C6A6F;
+       color:#DEE1E6;
+       font-size: "Manrope";
+     }
+     
+#MensajeInferior {
+   max-width: 44%;    
+   margin-top: 30px;
+   margin-left: 351px;
+ 
+ }
+ 
+ #lblSubirLogo {
+   
+   cursor: pointer;
+   margin-top: 10px;
+   position: absolute;
+   background-color:#0C6A6F;
+   padding: 7px;
+   color:#DEE1E6;
+   font-family: "Manrope";
+ } 
+}
+
+
+
+@media (max-width:1400px) {
+
+*{
+   overflow: hidden;
+}
+
+   #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
+       margin-left: 400px!important;
+     }
+     input{
+       display: block;
+     }
+   
+     #MensajeInferior {
+        max-width: 22%!important;
+        margin-top: 10px!important;
+        margin-left: 289px!important;
+     
+     }
+     #divLogo{
+       margin-left: 1100px;
+       margin-top: -200px;
+     }
+     #LogotipoPer,#ExaminarPerfilAdmin {
+       display: block;
+     }
+     #ExaminarPerfilAdmin {
+       margin-left: -100px;
+     } 
+     #BtnCancelarPA{
+       margin-left:800px;
+       margin-top:-50px;
+       width: 200px;
+     }
+     #GuardarCamEP{
+        margin-left: 681px;
+        width: 200px;
+        margin-top: 3px;
+        background-color: #0C6A6F;
+        color: #DEE1E6;
+        font-size: "Manrope";
+        position: absolute;
+        padding: 10px;
+     }
+     .izquierdo{
+       margin-left:400px!important;
+     }
+     
+     #lblSubirLogo {
+       cursor: pointer;
+       margin-top: 10px;
+       position: absolute;
+       background-color:#0C6A6F;
+       padding: 7px;
+       color:#DEE1E6;
+       font-size: "Manrope";
+     }
+}

@@ -5,6 +5,25 @@ if (session_status() == PHP_SESSION_NONE) {
 if(empty($_SESSION['user'])){
     header('location:Login.php');
 }
+
+
+include("connection/conexion.php");
+
+
+// Consulta SQL
+$consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+// Ejecutar la consulta
+$resultado2 = mysqli_query($conexion, $consulta);
+
+// Guardar el resultado en una variable PHP
+if ($fila = mysqli_fetch_assoc($resultado2)) {
+$rutaLogo = $fila["rutaLogo"];
+} else {
+$rutaLogo = "";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -189,7 +208,7 @@ if(empty($_SESSION['user'])){
                     <div class="modal-header">
                         <div class="headerCaja">
                             
-                        <img id="logoImagenTicket" src="./img/logoo.svg" alt="" srcset="">
+                        <img id="logoImagenTicket" src="<?php echo $rutaLogo;?>" width="160" height="53" alt="" srcset="">
                         <h5 id="ticketCompraModal">Ticket de compra</h5>
                         <h5 id="estacionModal">Estación: # <?php echo $estacion; ?>
                     
@@ -216,7 +235,6 @@ if(empty($_SESSION['user'])){
                         
                         <div class="botonesModal">
                         <button class="btn btn-success" onClick="imprimirTicket(exampleModal)" id="ticketImpri">Imprimir ticket de compra</button>
-                        <button class="btn btn-success" onClick="redireccion()" id="ticketImpri">Buscar otro ticket</button>
                         </div>
                     </div>
 

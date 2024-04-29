@@ -1,3 +1,40 @@
+      
+
+          <?php
+          session_start();
+
+          if (isset($_SESSION['idloginEmp'])) {
+           $id = $_SESSION['idloginEmp'];
+           // Ahora $idloginEmp está disponible para su uso en este script
+       } else {
+           header('location:Login.php');
+           //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
+       }
+
+
+
+   include("connection/conexion.php");
+
+
+        // Consulta SQL
+        $consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+        // Ejecutar la consulta
+        $resultado2 = mysqli_query($conexion, $consulta);
+
+        // Guardar el resultado en una variable PHP
+        if ($fila = mysqli_fetch_assoc($resultado2)) {
+        $rutaLogo = $fila["rutaLogo"];
+        } else {
+        $rutaLogo = "";
+        }
+
+
+
+   $sql = "select * from tusuario where idloginEmp='" .$id."'";
+   $resultado = mysqli_query($conexion, $sql);
+   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +73,7 @@
 
 
 
-            <a href="#"><img class="logo" src="./img/logoo.svg" alt="logo"></a>
+            <a href="#"><img class="logo" src="<?php echo $rutaLogo;?>" width="160" height="53" alt="logo"></a>
 
             <ul>
                 <li><a href="#"  >Home</a></li>
@@ -44,25 +81,7 @@
                 <li><a href="./Empleado_Reportes.html"  >Reportes</a></li>
                 <li><a href="./Empleado_Perfil.php"  >Perfil</a></li>
                 <li>         <!-- Poner que este div sea un a de usuario nomas y que  -->
-          
-
-          <?php
-          session_start();
-
-          if (isset($_SESSION['idloginEmp'])) {
-           $id = $_SESSION['idloginEmp'];
-           // Ahora $idloginEmp está disponible para su uso en este script
-       } else {
-           header('location:Login.php');
-           //echo "No se ha iniciado sesión o se ha perdido el ID de usuario.";
-       }
-
-
-
-   include("connection/conexion.php");
-   $sql = "select * from tusuario where idloginEmp='" .$id."'";
-   $resultado = mysqli_query($conexion, $sql);
-   ?>
+    
 <div class="Cerrar">
    <span>
    <?php while($usu = mysqli_fetch_assoc($resultado))
