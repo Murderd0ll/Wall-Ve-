@@ -1,0 +1,99 @@
+@media (min-width:1401px) {
+    #CuadroInferior{
+        position: absolute;
+        top: 550px;
+        left: 1100px;
+        width: 334px;
+        height: 161px;
+        background: #F8F9FAFF;
+        border-radius: 8px;
+        border-width: 2px;
+        border-color: #0C6A6FFF;
+        border-style: solid;
+        }
+        
+        #PrecioAct{
+            position: absolute;
+            top: 560px;
+            left: 1220px;  
+            font-family: Lexend;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 400;
+            color: #030303FF;
+        }
+        
+        #PreActNum{
+            position: absolute;
+            top: 620px;
+            left: 1156px;
+            font-family: Lexend;
+            font-size: 48px;
+            line-height: 68px;
+            font-weight: 700;
+            color: #030303FF;
+            }
+        
+        #Watt{
+            position: absolute;
+            top: 645px;
+            left: 1300px;
+            font-family: Manrope;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #030303FF;
+        }
+        
+}
+
+    
+@media (max-width:1400px) {
+    
+    #CuadroInferior{
+        position: absolute;
+        top: 550px;
+        left: 900px;
+        width: 334px;
+        height: 161px;
+        background: #F8F9FAFF;
+        border-radius: 8px;
+        border-width: 2px;
+        border-color: #0C6A6FFF;
+        border-style: solid;
+        }
+        
+        #PrecioAct{
+            position: absolute;
+            top: 560px;
+            left: 1020px;  
+            font-family: Lexend;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 400;
+            color: #030303FF;
+        }
+        
+        #PreActNum{
+            position: absolute;
+            top: 620px;
+            left: 956px;
+            font-family: Lexend;
+            font-size: 48px;
+            line-height: 68px;
+            font-weight: 700;
+            color: #030303FF;
+            }
+        
+        #Watt{
+            position: absolute;
+            top: 645px;
+            left: 1100px;
+            font-family: Manrope;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #030303FF;
+        }
+        
+}

@@ -80,7 +80,7 @@ if (isset($_POST['agregarVenta'])) {
 
 
    <link rel="stylesheet" href="css/estilos.css"/>
-
+    <link rel="stylesheet" href="css/precios.css">
    <link rel="stylesheet" href="css/tarjetaoverflow.css">
   
 
@@ -298,6 +298,26 @@ if (isset($_POST['agregarVenta'])) {
 
 
 </div>
+
+
+<?php
+
+include("connection/conexion.php"); 
+$sql = "select * from tproducto where idEstacion =1";
+
+$resultado = mysqli_query($conexion, $sql);
+
+$filas = mysqli_fetch_assoc($resultado);
+
+$precioProd = $filas["precioProd"];
+
+
+?>
+<Span id="CuadroInferior"></Span>
+
+<p id="PrecioAct">Precio Actual</p>
+<p id="PreActNum">$<?php echo $precioProd ?></p>
+<p id="Watt">/Watt</p>
 
 
 

@@ -58,6 +58,7 @@ if (isset($_POST['agregarVenta'])) {
         echo "Error al obtener el ID del empleado: " . mysqli_error($conexion);
     }
 
+
     mysqli_close($conexion);
 }
 ?>
@@ -80,6 +81,7 @@ if (isset($_POST['agregarVenta'])) {
 
 
    <link rel="stylesheet" href="css/estilos.css"/>
+   <link rel="stylesheet" href="css/precios.css">
     <link rel="stylesheet" href="css/tarjetaoverflow.css">
 
   
@@ -285,7 +287,24 @@ if (isset($_POST['agregarVenta'])) {
 
 </div>
 
+<?php
 
+include("connection/conexion.php"); 
+$sql = "select * from tproducto where idEstacion =1";
+
+$resultado = mysqli_query($conexion, $sql);
+
+$filas = mysqli_fetch_assoc($resultado);
+
+$precioProd = $filas["precioProd"];
+
+
+?>
+<Span id="CuadroInferior"></Span>
+
+<p id="PrecioAct">Precio Actual</p>
+<p id="PreActNum">$<?php echo $precioProd ?></p>
+<p id="Watt">/Watt</p>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
