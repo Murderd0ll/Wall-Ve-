@@ -1,3 +1,27 @@
+<?php 
+
+
+   
+include("connection/conexion.php");
+
+
+// Consulta SQL
+$consulta = "SELECT rutaLogo FROM tlogo WHERE idLogo = 1";
+
+// Ejecutar la consulta
+$resultado2 = mysqli_query($conexion, $consulta);
+
+// Guardar el resultado en una variable PHP
+if ($fila = mysqli_fetch_assoc($resultado2)) {
+$rutaLogo = $fila["rutaLogo"];
+} else {
+$rutaLogo = "";
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +39,7 @@
 
         <h1>Inicia sesión</h1>
 
-        <img class="logo" src="./img/logo.svg" srcset="">
+        <img class="logo" src="<?php echo $rutaLogo?>" width="160" height="53" srcset="">
 
         <div class="centrado">
 
