@@ -203,8 +203,7 @@ Haga click al recuadro de Reportes para entrar."></i>
     <footer>
 
         <div class="logoF">
-            <a href="#"><img src="./img/logoow.svg" 
-                " id="logoFinal"alt="Logo"></a>
+            <a href="#"><img src="<?php echo $rutaLogo;?>" id="logoFinal"alt="Logo"></a>
         </div>
 
         <div class="social">

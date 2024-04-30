@@ -312,7 +312,7 @@ include("connection/conexion.php");
 
 
 
-<form  class="row g-2" action="<?= $_SERVER['PHP_SELF'] ?>" autocomplete="off" method="POST" enctype="multipart/form-data">
+<form  class="row g-2" id="formulario" autocomplete="off" method="POST" enctype="multipart/form-data">
     <div>
         <span id="containerPerfilAd"></span>
     </div>
@@ -374,11 +374,11 @@ include("connection/conexion.php");
         <input type="password" placeholder="****" name="passEmp" value="<?php echo $passEmp?>">
     </div>
 
-    <div id="divLogo">
+       <div id="divLogo">
 
     <span id="LogotipoPer">Logotipo</span>
     <img id="logotipo" src="<?php echo $imagenLogo; ?>" width="100" alt="" srcset="">
-    <input id="ExaminarPerfilAdmin" name="subirLogo" type="file" onchange="getImagePreview(event)" style="display:none;"></input>
+    <input id="ExaminarPerfilAdmin" name="subirLogo" accept="image/jpeg" type="file" onchange="getImagePreview(event)" style="display:none;"></input>
     <label for="ExaminarPerfilAdmin" id="lblSubirLogo" style="display:block;"> Subir imagen</label>
 
 
@@ -400,17 +400,41 @@ include("connection/conexion.php");
 
 
 <script>
-  function getImagePreview(event) {
-    const file = event.target.files[0];
+    // TODO si está vacío lo de elegir archivo, entonces que haga submit
+    //! Si no está vacio, verifica primero el tamaño, si no es el tamaño adecuado, no lo deje hacer submit
+    
+    function getImagePreview(event) {
+        
+
+    var file = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        // Actualizar la imagen existente con la vista previa
-        document.getElementById('logotipo').src = e.target.result;
-      };
-      reader.readAsDataURL(file);
+        let selectedFile = event.target.files[0]; // Asignar el archivo seleccionado
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var img = new Image();
+            img.onload = function() {
+                var width = this.width;
+                var height = this.height;
+
+                // Verificar las dimensiones
+                if (width === 160 && height === 53) {
+                    document.getElementById('logotipo').src = e.target.result;
+                } else {
+                    alert("La imagen debe tener un ancho de 160px y un alto de 53px, su imagen no se ha enviado.");
+                    event.target.value = null;
+
+    
+                        
+                }
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        
     }
-  }
+}
 
 </script>
 
