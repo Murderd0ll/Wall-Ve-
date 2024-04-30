@@ -19,6 +19,7 @@ include("connection/conexion.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- Fuentes  -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   
    <link rel="stylesheet" href="css/estilos.css"/>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
    
@@ -380,7 +381,7 @@ include("connection/conexion.php");
     <img id="logotipo" src="<?php echo $imagenLogo; ?>" width="100" alt="" srcset="">
     <input id="ExaminarPerfilAdmin" name="subirLogo" accept="image/jpeg" type="file" onchange="getImagePreview(event)" style="display:none;"></input>
     <label for="ExaminarPerfilAdmin" id="lblSubirLogo" style="display:block;"> Subir imagen</label>
-
+    <p id="requisito">Suba una imagen que tenga una resolucion de 160px de ancho x 53px de largo</p>
 
     </div>
     <span id="LineaAbajoPerAd"></span>

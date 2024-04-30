@@ -1,6 +1,11 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
 
+#requisito {
+  margin-top: 80px !important;
+  margin-right:20px!important;
+  width: 17% !important;
+}
  @media (min-width:1401px) {
     
     #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
@@ -12,8 +17,8 @@
         margin-top: 25px!important;}
 
 
-      #divLogo{
-        margin-left: 1450px;
+      #divLogo{        
+        margin-left: 1250px;
         
         margin-top: -200px;
       }
