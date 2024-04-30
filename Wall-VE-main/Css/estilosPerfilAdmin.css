@@ -574,6 +574,22 @@
     left: 700px;
     color: Neutral 650;
 }
+.DContra{
+    display: flex;
+    position: absolute;
+    top: 20rem;
+    left: 30rem;
+    flex-direction: column;
+}
+.DContraINPUT{
+    display: flex;
+    align-items: center;
+}
+.DContra img{
+    width: 20px;
+    cursor: pointer;
+}
+
 #textboxContra{
     position: absolute;
     top: 525px;

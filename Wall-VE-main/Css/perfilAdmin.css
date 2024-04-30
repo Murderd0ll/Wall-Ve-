@@ -7,6 +7,21 @@
   width: 17% !important;
 }
  @media (min-width:1401px) {
+  #DContraINPUT{
+    display: flex;
+    position: absolute;
+    top: 23rem;
+    left: 58rem;
+    flex-direction: inline;
+  }
+  #DContraINPUT{
+    display: flex;
+    align-items: center;
+  }
+  #DContraINPUT img{
+    width: 20px;
+    cursor: pointer;
+  }
     
     #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
         margin-left: 400px!important;
@@ -16,6 +31,11 @@
         width: 50%;
         margin-top: 25px!important;}
 
+        #divEmpresa{
+          margin-left: 1200px;
+        
+        margin-top: -300px;
+        }
 
       #divLogo{        
         margin-left: 1250px;
@@ -66,6 +86,22 @@
 *{
     overflow: hidden;
 }
+#DContraINPUT{
+  display: flex;
+  position: absolute;
+  top: 26.8rem;
+  left: 662px;
+  flex-direction: inline;
+}
+#DContraINPUT{
+  display: flex;
+  align-items: center;
+}
+#DContraINPUT img{
+  width: 20px;
+  cursor: pointer;
+}
+
 
     #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
         margin-left: 400px!important;
