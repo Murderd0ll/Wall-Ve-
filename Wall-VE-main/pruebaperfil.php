@@ -25,7 +25,7 @@ include("connection/conexion.php");
    <link rel="stylesheet" href="css/perfilAdmin.css">
    
    <!-- <link rel="stylesheet" href="css/estilosPerfilAdmin.css"/> -->
-    <title>Perfil | Wall-VE</title>
+    <title>Perfil | <?php echo $_SESSION ['empresa']?></title>
 </head>
 <body>
     
@@ -134,6 +134,7 @@ include("connection/conexion.php");
         $idloginEmp = $_POST['idloginEmp'];//?esto 
         $passEmp = $_POST['passEmp'];//?esto 
 
+        $nomEmpresa = $_POST['nomEmpresa'];
         //! SI EL USER ACTUAL DEL SESSION ES DIFERENTE AL DEL CAMPO, SE CAMBIA TODO Y SE CIERRA SESIÓN
         
         if($idloginEmp != $usuarioActual){
@@ -153,8 +154,13 @@ include("connection/conexion.php");
         ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
         ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
         
+       
+        UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
+
         UPDATE tlogo SET rutaLogo='$rutaFinal' WHERE idLogo=1;
         RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
+
+        
         ";
 
          $resultado = mysqli_multi_query($conexion, $sql);
@@ -180,7 +186,8 @@ include("connection/conexion.php");
             $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
             ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
             ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
-            
+            UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
+
             RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
             ";
 
@@ -215,6 +222,8 @@ include("connection/conexion.php");
         $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
         ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
 
+        
+        UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
         UPDATE tlogo SET rutaLogo='$rutaFinal' WHERE idLogo=1;
         
         
@@ -244,7 +253,7 @@ include("connection/conexion.php");
         $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
         ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
         
-        
+        UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
         
         ";
 
@@ -305,6 +314,14 @@ include("connection/conexion.php");
           $raw = mysqli_fetch_assoc($resultado2);
           $imagenLogo = $raw['rutaLogo'];
         }
+
+        $sql3 = "select nomEmpresa from tlogo where idLogo = 1";
+        
+        $resultado3 = mysqli_query($conexion, $sql3);
+        $fila3 = mysqli_fetch_assoc($resultado3);
+
+        $nomEmpresa = $fila3["nomEmpresa"];
+
 
         mysqli_close($conexion);
 
@@ -398,9 +415,9 @@ include("connection/conexion.php");
                         }
                     </script>
 
-<div id="divEmpresa">
+<div class="divEmpresa">
         <span class="NEmp">Nombre de la empresa</span>
-        <input type="text" name="nomEmpresa" placeholder="Nombre de empresa" id="nomEmpresa" value="<?php echo $nomEmpresa; ?>">
+        <input type="text" name="nomEmpresa" placeholder="Nombre de empresa" id="nomEmprenomEmpresasa" value="<?php echo $nomEmpresa; ?>">
 
     </div>
 

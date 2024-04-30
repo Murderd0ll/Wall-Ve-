@@ -25,7 +25,7 @@ include("connection/conexion.php");
    <link rel="stylesheet" href="css/perfilAdmin.css">
    
    <!-- <link rel="stylesheet" href="css/estilosPerfilAdmin.css"/> -->
-    <title>Perfil | Wall-VE</title>
+    <title>Perfil | <?php echo $_SESSION ['empresa']?></title>
 </head>
 <body>
     

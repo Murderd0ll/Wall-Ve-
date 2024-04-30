@@ -22,7 +22,7 @@ include("connection/conexion.php");
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/est.css">
     <link rel="stylesheet" href="css/estilos.css" />
-    <title>Modificar Usuario| Wall-VE</title>
+    <title>Modificar Usuario| <?php echo $_SESSION ['empresa']?></title>
 </head>
 
 <body>

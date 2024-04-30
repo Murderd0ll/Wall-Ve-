@@ -40,7 +40,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú principal | WALL-VE</title>
+    <title>Menú principal | <?php echo $_SESSION ['empresa']?></title>
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"

@@ -43,7 +43,7 @@ $rutaLogo = "";
 
     <script src="./scripts/jspdf.debug.js"></script>
 
-    <title>Gestión de reportes | Wall-VE</title>
+    <title>Gestión de reportes | <?php echo $_SESSION ['empresa']?></title>
 </head>
 
 <body>

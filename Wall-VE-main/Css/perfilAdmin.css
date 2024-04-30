@@ -26,11 +26,10 @@
         width: 50%;
         margin-top: 25px!important;}
 
-        #divEmpresa{
-          margin-left: 1200px;
-        
-        margin-top: -300px;
-        }
+      .divEmpresa{
+        top: 5rem;
+        margin-left: 19rem;
+      }  
 
       #divLogo{
         margin-left: 1450px;
@@ -96,7 +95,10 @@
   width: 20px;
   cursor: pointer;
 }
-
+.divEmpresa{
+  top: 4rem;
+  margin-left: 34rem;
+}  
 
     #NombreAP,#ApellidoMAP,#CuidadPer,#EmailPer,#GeneroPer,#NombreUsuPer {
         margin-left: 400px!important;

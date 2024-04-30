@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/est.css" />
     <link rel="stylesheet" href="css/copiaseguridad.css" />
-    <title>Copias de seguridad | Wall-VE</title>
+    <title>Copias de seguridad | <?php echo $_SESSION ['empresa']?></title>
 </head>
 
 <body>

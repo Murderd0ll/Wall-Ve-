@@ -42,7 +42,7 @@ $rutaLogo = "";
 <script src="./scripts/jspdf.debug.js"></script>
 <script src="jspdf.plugin.autotable.min.js"></script>
 
-    <title>Gestión de reportes | Wall-VE</title>
+    <title>Gestión de reportes | <?php echo $_SESSION ['empresa']?></title>
 </head>
 <body>
     <header>

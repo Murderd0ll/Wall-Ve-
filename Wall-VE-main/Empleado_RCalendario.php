@@ -28,7 +28,7 @@ if(empty($_SESSION['user'])){
 <link rel="stylesheet" href="Css/estilosAntiguo.css"/>
 
 
-    <title>Gestión de reportes | Wall-VE</title>
+    <title>Gestión de reportes | <?php echo $_SESSION ['empresa']?></title>
 </head>
 <body>
     <header>

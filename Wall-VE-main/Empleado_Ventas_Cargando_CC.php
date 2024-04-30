@@ -28,7 +28,7 @@ if(empty($_SESSION['user'])){
   
 
 
-    <title>Venta de energía | Wall-VE </title>
+    <title>Venta de energía | <?php echo $_SESSION ['empresa']?> </title>
 </head>
 <body>
     <header>

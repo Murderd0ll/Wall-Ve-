@@ -7,7 +7,7 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="css/estilos.css"/>
    <link rel="stylesheet" href="css/copiaseguridad.css"/>
-    <title>Copias de seguridad | Wall-VE</title>
+    <title>Copias de seguridad | <?php echo $_SESSION ['empresa']?></title>
 </head>
 <body>
     <header>

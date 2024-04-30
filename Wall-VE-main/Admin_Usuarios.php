@@ -41,7 +41,7 @@ if (empty($_SESSION['user'])) {
 
     <link rel="stylesheet" href="css/est.css" />
     <link rel="stylesheet" href="css/estilos.css" />
-    <title>Gestión de Usuarios | Wall-VE</title>
+    <title>Gestión de Usuarios | <?php echo $_SESSION ['empresa']?></title>
 
 
     

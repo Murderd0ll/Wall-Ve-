@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/est.css" />
         <link rel="stylesheet" href="css/estilos.css" />
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        <title>Agregar usuario | Wall-VE</title>
+        <title>Agregar usuario | <?php echo $_SESSION ['empresa']?></title>
         <script>
             function validarFormulario() {
                 var nombre = document.getElementsByName("nombreEmp")[0].value.trim();
