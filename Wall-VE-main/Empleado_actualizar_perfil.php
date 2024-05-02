@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Redirigir a la misma página con un mensaje de éxito
                         echo "<script language ='JavaScript'>
                         alert('Se han cambiado sus datos. ');
-                        location.assign('logout.php');
+                        location.assign('index.php');
                         </script>";
         
                         
@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Redirigir a la misma página con un mensaje de éxito
                     echo "<script language ='JavaScript'>
                     alert('Se han cambiado sus datos. ');
-                    location.assign('logout.php');
+                    location.assign('index.php');
                     </script>";
     
                     

@@ -168,7 +168,7 @@ include("connection/conexion.php");
                 if ($resultado) {
                     echo "<script language ='JavaScript'> 
                         alert('Se actualizó el usuario correctamente.'); 
-                        location.assign('logout.php');
+                        location.assign('index.php');
                         </script>";
                 } else {
                     echo "<script language ='JavaScript'> 
@@ -196,7 +196,7 @@ include("connection/conexion.php");
                     if ($resultado) {
                         echo "<script language ='JavaScript'> 
                             alert('Se actualizó el usuario correctamente.'); 
-                            location.assign('logout.php');
+                            location.assign('index.php');
                             </script>";
                     } else {
                         echo "<script language ='JavaScript'> 

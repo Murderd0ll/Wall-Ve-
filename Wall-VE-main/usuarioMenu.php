@@ -98,7 +98,7 @@
    <?php
        mysqli_close($conexion);
        ?>
-           <a href="logout.php" id="aLogout" class="logout">
+           <a href="index.php" id="aLogout" class="logout">
            
                        <i class="fa-solid fa-arrow-right-to-bracket"><p id="cerrarSesion">Cerrar Sesion</p></i>
                        
