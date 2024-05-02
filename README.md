@@ -1,15 +1,8 @@
 # Wall-Ve-
 Este es el chido
 
-* Modificar precios ---- Jasiel.
-* Perfil empleado y admin --- Jasiel 
+
 * Encriptar las contraseñas ---- Hasta el final.
-<br>
-
-* Poner el logo en el reporte
-* Poner que cuando ponga watts mandé al efectivo
-* Tener apartado de cuánto equivale cada cosa
-
 
 
 
@@ -20,6 +13,13 @@ LISTO.............
 
 <br>
 
+
+
+* Modificar precios
+* Perfil empleado y admin
+* Poner el logo en el reporte
+* Poner que cuando ponga watts mandé al efectivo
+* Tener apartado de cuánto equivale cada cosa
 * Poner estaciones de carga
 * Ticket ponerlo cuando dé click al boton de autorizar carga (Que se muestre al momento que esté cargando)
 * Diseño ventas en empleado (Que la barra de carga no se mueva en pantallas chicas)
