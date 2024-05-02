@@ -18,9 +18,10 @@ include("connection/conexion.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <!-- Fuentes  -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-   
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> 
    <link rel="stylesheet" href="css/estilos.css"/>
+
+   
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
    
    <link rel="stylesheet" href="css/perfilAdmin.css">
@@ -135,6 +136,7 @@ include("connection/conexion.php");
         $idloginEmp = $_POST['idloginEmp'];//?esto 
         $passEmp = $_POST['passEmp'];//?esto 
 
+        $nomEmpresa = $_POST['nomEmpresa'];
         //! SI EL USER ACTUAL DEL SESSION ES DIFERENTE AL DEL CAMPO, SE CAMBIA TODO Y SE CIERRA SESIÓN
         
         if($idloginEmp != $usuarioActual){
@@ -181,7 +183,8 @@ include("connection/conexion.php");
             $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
             ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "
             ',idloginEmp='" . $idloginEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $usuarioActual . "';
-            
+            UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
+
             RENAME USER '$usuarioActual'@'%' TO '$idloginEmp'@'%';
             ";
 
@@ -216,6 +219,7 @@ include("connection/conexion.php");
         $sql = "update tusuario set nombreEmp='" . $nombreEmp . "',apellidoPEmp='" . $apellidoPEmp . "',apellidoMEmp='" . $apellidoMEmp . "',fechaNacEmp='" . $fechaNacEmp . "',telEmp='" . $telEmp . "
         ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
 
+        UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
         UPDATE tlogo SET rutaLogo='$rutaFinal' WHERE idLogo=1;
         
         
@@ -246,7 +250,7 @@ include("connection/conexion.php");
         ',generoEmp='" . $generoEmp . "',ciudadEmp='" . $ciudadEmp . "',direccionEmp='" . $direccionEmp . "',emailEmp='" . $emailEmp . "',turnoEmp='" . $turnoEmp . "',passEmp='" . $passEmp . "'where idloginEmp ='" . $idloginEmp . "';
         
         
-        
+        UPDATE tlogo SET nomEmpresa='$nomEmpresa' WHERE idLogo=1;
         ";
 
          $resultado = mysqli_multi_query($conexion, $sql);
@@ -306,6 +310,12 @@ include("connection/conexion.php");
           $raw = mysqli_fetch_assoc($resultado2);
           $imagenLogo = $raw['rutaLogo'];
         }
+        $sql3 = "select nomEmpresa from tlogo where idLogo = 1";
+        
+        $resultado3 = mysqli_query($conexion, $sql3);
+        $fila3 = mysqli_fetch_assoc($resultado3);
+
+        $nomEmpresa = $fila3["nomEmpresa"];
 
         mysqli_close($conexion);
 
@@ -372,9 +382,33 @@ include("connection/conexion.php");
     </div>
     <div class="col-md-6" id="textboxContra">
     <span id="ContraPer">Contraseña</span>
-        <input type="password" placeholder="****" name="passEmp" value="<?php echo $passEmp?>">
+        
     </div>
+    <div  class="col-md-6"id="DContraINPUT">
+                        <input type="password" name="passEmp" placeholder="Contraseña" id="password" value="<?php echo $passEmp; ?>">
+                        <img src="img/eyeClosed.png" id="eyeicon">
+                    </div>
 
+                    <script>
+                        let eyeicon = document.getElementById("eyeicon");
+                        let password = document.getElementById("password");
+
+                        eyeicon.onclick = function() {
+                            if (password.type == "password") {
+                                password.type = "text";
+                                eyeicon.src = "img/eyeOpen.png"
+                            } else {
+                                password.type = "password";
+                                eyeicon.src = "img/eyeClosed.png"
+                            }
+                        }
+                    </script>
+
+<div class="divEmpresa">
+        <span class="NEmp">Nombre de la empresa</span>
+        <input type="text" name="nomEmpresa" placeholder="Nombre de empresa" id="nomEmprenomEmpresasa" value="<?php echo $nomEmpresa; ?>">
+
+    </div>
        <div id="divLogo">
 
     <span id="LogotipoPer">Logotipo</span>
