@@ -315,12 +315,12 @@ include("connection/conexion.php");
           $imagenLogo = $raw['rutaLogo'];
         }
 
-        $sql3 = "select nomEmpresa from tlogo where idLogo = 1";
-        
-        $resultado3 = mysqli_query($conexion, $sql3);
-        $fila3 = mysqli_fetch_assoc($resultado3);
+            $sql3 = "select nomEmpresa from tlogo where idLogo = 1";
+            
+            $resultado3 = mysqli_query($conexion, $sql3);
+            $fila3 = mysqli_fetch_assoc($resultado3);
 
-        $nomEmpresa = $fila3["nomEmpresa"];
+            $nomEmpresa = $fila3["nomEmpresa"];
 
 
         mysqli_close($conexion);
